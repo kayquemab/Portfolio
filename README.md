@@ -22,7 +22,7 @@ Este repositório reúne informações do meu trabalho: links para repositórios
 
 ### 🚀 Como Usar
 
-1. Acesse o portfólio: 
+1. Acesse o portfólio:<br>
    link: (https://kayque-dev.vercel.app/)
 2. Explore as seções da página (projetos, stack, sobre e documentação).
 3. Entre em contato pelos canais disponibilizados no site (links diretos no rodapé/contato).
