@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Header({ scrollToSection }) {
-  
+
   return (
 
     <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
@@ -15,7 +17,17 @@ export default function Header({ scrollToSection }) {
           <span className="block md:hidden"></span>
 
           {/* Desktop: nome completo */}
-          <span className="hidden md:block">Kayque Miqueias</span>
+          <ul>
+            <li>
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="hidden md:block hover:opacity-70 transition-opacity"
+              >
+                Kayque Miqueias
+              </button>
+            </li>
+          </ul>
+
 
         </h1>
 
