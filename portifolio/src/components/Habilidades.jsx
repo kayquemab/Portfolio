@@ -34,7 +34,7 @@ export default function Habilidades() {
     { name: 'Angular.js', icon: FaAngular },
     { name: 'Next.js', icon: SiNextdotjs },
     { name: 'Vite', icon: SiVite },
-    { name: 'Tailwind CSS', icon: SiTailwindcss },
+    { name: 'Tailwind', icon: SiTailwindcss },
     { name: 'Bootstrap', icon: FaBootstrap },
     { name: 'MUI', icon: SiMui },
   ];
@@ -54,7 +54,7 @@ export default function Habilidades() {
 
   const devOpsCloud = [
     { name: 'Docker', icon: FaDocker },
-    { name: 'Azure DevOps', icon: VscAzureDevops },
+    { name: 'DevOps', icon: VscAzureDevops },
     { name: 'Google Cloud', icon: SiGooglecloud },
     { name: 'AWS', icon: FaAws },
   ];

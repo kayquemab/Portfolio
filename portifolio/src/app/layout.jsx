@@ -4,6 +4,12 @@ import FaviconSwitcher from "@/components/common/FaviconSwitcher";
 
 export const metadata = {
   title: "Kayque | Portfólio",
+  icons: {
+    icon: [
+      { url: '/Iconlight.svg',  media: '(prefers-color-scheme: dark)' },
+      { url: '/Icondark.svg', media: '(prefers-color-scheme: light)' }
+    ]
+  }
 };
 
 export default function RootLayout({ children }) {
@@ -11,10 +17,10 @@ export default function RootLayout({ children }) {
     <html lang="pt-br" suppressHydrationWarning>
       <head>
         <title>{metadata.title}</title>
+        <link rel="icon" href="/Iconlight.svg" media="(prefers-color-scheme: dark)"  />
+        <link rel="icon" href="/Icondark.svg" media="(prefers-color-scheme: light)" />
       </head>
       <body>
-        {/* Componente que troca dinamicamente o favicon */}
-        <FaviconSwitcher lightIcon="/icondark.svg" darkIcon="/iconlight.svg" />
         <SectionWrapper>{children}</SectionWrapper>
       </body>
     </html>
