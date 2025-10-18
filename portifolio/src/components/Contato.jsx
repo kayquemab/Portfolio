@@ -161,7 +161,7 @@ export default function Contato() {
           {/* Linkedin */}
           <motion.div whileHover={{ scale: 1.2, y: -5 }}>
             <Link
-              href="https://www.linkedin.com/in/kayque-miqueias-463581326/"
+              href="https://www.linkedin.com/in/kayque-miqueias/"
               target="_blank"
               className="bg-transparent text-white px-6 py-3 rounded-lg 
                        transition-all duration-300 

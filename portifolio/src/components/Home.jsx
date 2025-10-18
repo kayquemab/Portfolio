@@ -126,6 +126,7 @@ export default function Home() {
                 </p>
                 {/* Botões */}
                 <div className="flex flex-wrap justify-center gap-4 mt-6">
+                    
                     {/* Github */}
                     <Link
                         href="https://github.com/kayquemab"
@@ -136,9 +137,10 @@ export default function Home() {
                     >
                         <Github />
                     </Link>
+
                     {/* Linkedin */}
                     <Link
-                        href="https://www.linkedin.com/in/kayque-miqueias-463581326/"
+                        href="https://www.linkedin.com/in/kayque-miqueias/"
                         target="_blank"
                         className="bg-transparent text-white px-6 py-3 rounded-lg 
              transition-all duration-300 
@@ -146,6 +148,7 @@ export default function Home() {
                     >
                         <Linkedin />
                     </Link>
+
                     {/* Currículo */}
                     <Link
                         href="/Currículo.pdf"
@@ -156,6 +159,7 @@ export default function Home() {
                     >
                         <FileText />
                     </Link>
+
                 </div>
             </div>
         </motion.section>
