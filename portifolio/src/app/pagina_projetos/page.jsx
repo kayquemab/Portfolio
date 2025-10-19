@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Todos() {
 
     const projetos = [
-        
+
         {
             name: "Projeto: Costs",
             descricao: "Sistema para gerenciar orçamentos e custos de projetos.",
@@ -19,7 +19,14 @@ export default function Todos() {
             github: "https://github.com/kayquemab/Projeto_Algoritmos",
             video: "/video_algoritmos.mp4",
         },
-        
+        {
+            name: "Projeto: Google Glass",
+            descricao: "Site informativo sobre o Google Glass e suas especificações.",
+            site: "https://google-glass-blue.vercel.app/",
+            github: "https://github.com/kayquemab/Projeto_Algoritmos",
+            video: "/video_googleGlass.mp4",
+        },
+
     ];
 
     // Variantes de animação
