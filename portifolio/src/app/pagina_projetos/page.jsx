@@ -23,7 +23,7 @@ export default function Todos() {
             name: "Projeto: Google Glass",
             descricao: "Site informativo sobre o Google Glass e suas especificações.",
             site: "https://google-glass-blue.vercel.app/",
-            github: "https://github.com/kayquemab/Projeto_Algoritmos",
+            github: "https://github.com/kayquemab/Projeto_GoogleGlass",
             video: "/video_googleGlass.mp4",
         },
 
@@ -80,12 +80,12 @@ export default function Todos() {
                                 )}
 
                                 {/* Nome do projeto */}
-                                <h3 className="text-lg font-semibold dark:text-white flex-grow">
+                                <h3 className="text-lg font-semibold dark:text-white grow">
                                     {proj.name}
                                 </h3>
 
                                 {/* Nome do projeto */}
-                                <p className="text-sm text-left dark:text-white flex-grow mt-4">
+                                <p className="text-sm text-left dark:text-white grow mt-4">
                                     <strong>Descrição:</strong> {proj.descricao}
                                 </p>
 
