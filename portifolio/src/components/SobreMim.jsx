@@ -44,8 +44,8 @@ export default function SobreMim() {
           </p>
 
           <p className="text-lg text-gray-300 leading-relaxed">
-            Trabalho com React, Tailwind CSS, Node.js, Electron e bancos de dados como MongoDB e PostgreSQL.
-            Tenho experiência desenvolvendo dashboards, sistemas internos, CRUDs otimizados e integração com APIs REST,
+            Trabalho com React, Tailwind CSS, Node.js, e bancos de dados como MongoDB e PostgreSQL.
+            Tenho experiência desenvolvendo dashboards, sistemas internos, e integração com APIs REST,
             sempre priorizando performance, clareza no código e uma ótima experiência para o usuário.
           </p>
 
