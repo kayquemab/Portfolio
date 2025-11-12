@@ -126,7 +126,7 @@ export default function Home() {
                 </p>
                 {/* Botões */}
                 <div className="flex flex-wrap justify-center gap-4 mt-6">
-                    
+
                     {/* Github */}
                     <Link
                         href="https://github.com/kayquemab"
@@ -151,7 +151,7 @@ export default function Home() {
 
                     {/* Currículo */}
                     <Link
-                        href="/Currículo.pdf"
+                        href="/Curriculo.pdf"
                         target="_blank"
                         className="bg-transparent text-white px-6 py-3 rounded-lg 
              transition-all duration-300 
