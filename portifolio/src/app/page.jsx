@@ -1,6 +1,7 @@
 "use client";
 
 import Contato from "@/components/Contato";
+import FormacaoCertificacoes from "@/components/FormacaoCertificacoes";
 import Habilidades from "@/components/Habilidades";
 import Header from "@/components/Header";
 import Home from "@/components/Home";
@@ -50,6 +51,11 @@ export default function Page() {
       {/* Habilidades */}
       <div>
         <Habilidades />
+      </div>
+
+      {/* Formações e Certificados */}
+      <div>
+        <FormacaoCertificacoes />
       </div>
 
       {/* Projetos */}
