@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FolderGit } from "lucide-react";
 
 export default function Projetos() {
 
@@ -157,7 +158,12 @@ export default function Projetos() {
           transition: { duration: 0.1, ease: "easeIn" }
         }}
       >
-        Ver todos os projetos
+
+        <span className="inline-flex items-center gap-2">
+          <FolderGit size={16} className="inline-block" />
+          Ver todos os projetos
+        </span>
+
       </motion.a>
 
     </section>

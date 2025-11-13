@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Send } from "lucide-react";
 import Link from "next/link";
 import { FaEnvelope, FaUser } from "react-icons/fa";
 
@@ -129,7 +129,11 @@ export default function Contato() {
             window.location.href = `mailto:kayquemiqueias17@gmail.com?subject=${subject}&body=${body}`;
           }}
         >
-          Enviar
+
+          <span className="inline-flex items-center gap-2">
+            <Send size={16} className="inline-block" />
+            Enviar
+          </span>
         </motion.button>
 
       </motion.form>

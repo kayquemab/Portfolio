@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { House } from "lucide-react";
 
 export default function Todos() {
 
@@ -50,6 +51,16 @@ export default function Todos() {
     pt-16 sm:pt-20 md:pt-24 lg:pt-8
   "
         >
+
+            <motion.h1
+                className="text-3xl md:text-4xl font-bold text-white mb-8"
+                initial={{ opacity: 0, y: -40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, ease: "easeOut" }}
+                viewport={{ once: true }}
+            >
+                Meus Projetos
+            </motion.h1>
 
             {/* Card de exibição */}
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3">
@@ -148,7 +159,10 @@ export default function Todos() {
                     transition: { duration: 0.1, ease: "easeIn" }
                 }}
             >
-                Voltar para Home
+                <span className="inline-flex items-center gap-2">
+                    <House size={16} className="inline-block" />
+                    Voltar para Home
+                </span>
             </motion.a>
 
         </section>
