@@ -32,7 +32,7 @@ export default function Contato() {
 
       {/* Subtítulo */}
       <motion.p
-        className="text-gray-300 mb-8 text-center"
+        className="text-gray-300 mb-8 text-center max-w-2xl"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.2 }}

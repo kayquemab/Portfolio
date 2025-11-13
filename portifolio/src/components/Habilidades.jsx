@@ -40,16 +40,16 @@ export default function Habilidades() {
   ];
 
   const backEnd = [
-    { name: 'Node', icon: FaNodeJs  },
-    { name: 'PHP', icon: FaPhp  },
+    { name: 'Node', icon: FaNodeJs },
+    { name: 'PHP', icon: FaPhp },
     { name: 'Python', icon: FaPython },
     { name: 'Laravel', icon: FaLaravel },
     { name: 'Django', icon: SiDjango },
-    { name: 'Express', icon: SiExpress  },
-    { name: 'MySQL', icon: DiMysql  },
-    { name: 'PostgreSQL', icon: DiPostgresql  },
-    { name: 'MongoDB', icon: TbBrandMongodb  },
-    { name: 'FastAPI', icon: SiFastapi  },
+    { name: 'Express', icon: SiExpress },
+    { name: 'MySQL', icon: DiMysql },
+    { name: 'PostgreSQL', icon: DiPostgresql },
+    { name: 'MongoDB', icon: TbBrandMongodb },
+    { name: 'FastAPI', icon: SiFastapi },
   ];
 
   const devOpsCloud = [
@@ -120,6 +120,17 @@ export default function Habilidades() {
       >
         Linguagens e Tecnologias
       </motion.h2>
+
+      {/* Subtítulo */}
+      <motion.p
+        className="text-gray-300 mb-8 text-center max-w-2xl"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        Tecnologias que utilizo para construir aplicações modernas e eficientes.
+      </motion.p>
 
       {/* Linguagens e tecnologias separadas por tipo */}
       <div className="flex flex-col lg:flex-row gap-16 w-full">
