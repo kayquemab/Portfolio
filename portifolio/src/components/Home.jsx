@@ -150,15 +150,17 @@ export default function Home() {
                     </Link>
 
                     {/* Currículo */}
-                    <Link
+                    <a
                         href="/Curriculo.pdf"
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="bg-transparent text-white px-6 py-3 rounded-lg 
-             transition-all duration-300 
-             hover:text-white hover:scale-110 hover:shadow-lg hover:-translate-y-1"
+  transition-all duration-300 
+  hover:text-white hover:scale-110 hover:shadow-lg hover:-translate-y-1"
                     >
                         <FileText />
-                    </Link>
+                    </a>
+
 
                 </div>
             </div>
