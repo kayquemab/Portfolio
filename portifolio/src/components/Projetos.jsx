@@ -64,6 +64,7 @@ export default function Projetos() {
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
 
         {projetos.map((proj, i) => (
+          
           <motion.div
             key={proj.name}
             className="bg-neutral-800 rounded-xl shadow-md overflow-hidden flex flex-col"
@@ -130,6 +131,7 @@ export default function Projetos() {
             </div>
 
           </motion.div>
+
         ))}
 
       </div>

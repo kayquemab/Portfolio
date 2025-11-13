@@ -1,6 +1,5 @@
 import "./globals.css";
 import SectionWrapper from "@/components/common/SectionWrapper";
-import FaviconSwitcher from "@/components/common/FaviconSwitcher";
 
 export const metadata = {
   title: "Kayque | Portfólio",

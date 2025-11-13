@@ -96,9 +96,8 @@ export default function Home() {
         return () => clearInterval(interval);
     }, [charIndex, phraseIndex, phrases]);
 
-
-
     return (
+
         <motion.section
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -112,18 +111,23 @@ export default function Home() {
                 pt-16 sm:pt-20 md:pt-24 lg:pt-32
             "
         >
+
             <div className="max-w-3xl flex flex-col items-center gap-6">
+
                 {/* Texto */}
                 <p className="text-white font-mono text-lg">{displayedText}|</p>
+
                 {/* Nome e função */}
                 <h1 className="text-4xl md:text-5xl font-bold text-white">
                     Kayque Miqueias<br />
                     Desenvolvedor Full-Stack
                 </h1>
+
                 {/* Descrição */}
                 <p className="text-gray-300 text-center">
                     Apaixonado por desenvolvimento, construo minha trajetória como full-stack, unindo prática em projetos reais e evolução profissional.
                 </p>
+
                 {/* Botões */}
                 <div className="flex flex-wrap justify-center gap-4 mt-6">
 
@@ -161,10 +165,12 @@ export default function Home() {
                         <FileText />
                     </a>
 
-
                 </div>
+                
             </div>
+
         </motion.section>
+
     );
 
 }

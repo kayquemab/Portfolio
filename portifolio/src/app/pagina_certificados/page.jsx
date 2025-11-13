@@ -5,6 +5,7 @@ import { House } from "lucide-react";
 import { FaLaptopCode } from "react-icons/fa6";
 
 export default function Certificados() {
+  
   const certificacoes = [
     { titulo: "Algoritmo [40 Horas]", org: "Curso em Vídeo", data: "Emitido: Dez 2024" },
     { titulo: "HTML5 [40 Horas]", org: "Curso em Vídeo", data: "Emitido: Jun 2025" },
@@ -29,7 +30,9 @@ export default function Certificados() {
   };
 
   return (
+
     <section className="min-h-screen px-6 sm:px-10 md:px-16 py-24 text-center">
+    
       <motion.h1
         className="text-3xl md:text-4xl font-bold text-white mb-8"
         initial={{ opacity: 0, y: -40 }}
@@ -99,5 +102,6 @@ export default function Certificados() {
       </motion.a>
 
     </section>
+
   );
 }

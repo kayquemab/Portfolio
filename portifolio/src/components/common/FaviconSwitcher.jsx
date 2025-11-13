@@ -3,7 +3,9 @@
 import { useEffect } from "react";
 
 export default function FaviconSwitcher({ lightIcon = "/iconlight.svg", darkIcon = "/icondark.svg" }) {
+  
   useEffect(() => {
+    
     const updateFavicon = () => {
       const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
       const favicon = document.querySelector('link[rel="icon"]');

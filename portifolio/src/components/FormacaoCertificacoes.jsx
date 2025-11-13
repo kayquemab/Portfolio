@@ -5,6 +5,7 @@ import { FileBadge, ScrollText } from "lucide-react";
 import { FaGraduationCap } from "react-icons/fa6";
 
 export default function FormacaoCertificacoes({ onVerCertificados }) {
+
   const formacao = [
     {
       titulo: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
@@ -36,6 +37,7 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
   ];
 
   return (
+
     <section
       id="certificados"
       className="
@@ -47,24 +49,25 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
         pt-16 sm:pt-20 md:pt-24 lg:pt-32
       "
     >
+
       {/* Título */}
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-white mb-4"
-        initial={{ opacity: 0, y: 80 }}
+        className="text-3xl md:text-4xl font-bold text-white mb-8"
+        initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.15 }}
-        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
       >
         Formação & Certificações
       </motion.h2>
 
-      {/* Descrição */}
+      {/* Subtítulo */}
       <motion.p
-        className="text-gray-300 mb-12 max-w-2xl"
-        initial={{ opacity: 0, y: 60 }}
+        className="text-gray-300 mb-8 text-center max-w-2xl"
+        initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.25 }}
-        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.9, delay: 0.2 }}
+        viewport={{ once: true }}
       >
         Resumo da minha formação acadêmica e qualificação profissional.
       </motion.p>
@@ -77,8 +80,10 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
         transition={{ duration: 0.8, delay: 0.3 }}
         viewport={{ once: true, amount: 0.3 }}
       >
+
         {/* Coluna Formação */}
         <div className="flex-1 text-left">
+
           <motion.h3
             className="text-xl font-semibold mb-6 text-center lg:text-left text-white"
             initial={{ opacity: 0, y: 40 }}
@@ -123,7 +128,9 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
                 </div>
               </motion.div>
             ))}
+
           </div>
+
         </div>
 
         {/* Coluna Certificações */}
@@ -214,7 +221,10 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
             </span>
           </motion.a>
         </div>
+
       </motion.div>
+
     </section>
+
   );
 }

@@ -109,13 +109,13 @@ export default function Habilidades() {
   pb-16 sm:pb-20 md:pb-24 lg:pb-32
   pt-16 sm:pt-20 md:pt-24 lg:pt-32
 ">
-    
-      {/* Titulo */}
+
+      {/* Título */}
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-white mb-12"
-        initial={{ opacity: 0, y: -40 }}
+        className="text-3xl md:text-4xl font-bold text-white mb-8"
+        initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         Linguagens e Tecnologias

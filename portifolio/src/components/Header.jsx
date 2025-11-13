@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 export default function Header({ scrollToSection }) {
 
   return (
@@ -27,7 +25,6 @@ export default function Header({ scrollToSection }) {
               </button>
             </li>
           </ul>
-
 
         </h1>
 
