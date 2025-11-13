@@ -40,7 +40,20 @@ export default function FormacaoCertificacoes() {
       data: "Emitido: Fev 2025",
       icon: <FaLaptopCode size={24} className="text-white" />,
     },
+    {
+      titulo: "Javascript do zero [10 horas]",
+      org: "Trybe",
+      data: "Emitido: Nov 2025",
+      icon: <FaLaptopCode size={24} className="text-white" />,
+    },
+    {
+      titulo: "Lógica de Programação [10 horas]",
+      org: "Trybe",
+      data: "Emitido: Nov 2025",
+      icon: <FaLaptopCode size={24} className="text-white" />,
+    },
   ];
+
 
   const cardVariants = {
     hidden: { opacity: 0, y: 40 },
