@@ -26,15 +26,29 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
       id: 1,
       titulo: "CERTIFICAÇÃO AWS",
       instituicao: "Amazon Web Services",
-      ano: "2028",
+      data: "Emitido: Fev 2028",
     },
     {
       id: 2,
       titulo: "CERTIFICAÇÃO GOOGLE CLOUD",
       instituicao: "Google Cloud",
-      ano: "2028",
+      data: "Emitido: Dez 2028",
     },
   ];
+
+  // animação suave, inspirada em Habilidades mas um pouco mais devagar
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: i * 0.12, // um tiquinho mais devagar
+        ease: "easeOut",
+      },
+    }),
+  };
 
   return (
 
@@ -69,7 +83,7 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
         transition={{ duration: 0.9, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        Resumo da minha formação acadêmica e qualificação profissional.
+        Resumo da minha formação acadêmica e da minha qualificação profissional.
       </motion.p>
 
       {/* Container das duas colunas */}
@@ -154,26 +168,26 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
             viewport={{ once: true, amount: 0.3 }}
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6">
-              {certificacoesTeste.map((cert, index) => (
+              {certificacoesTeste.map((cert, i) => (
+
                 <motion.div
-                  key={cert.id}
-                  className="bg-white/5 border border-white/10 p-4 rounded-xl text-left flex gap-3 items-start shadow-md"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.7,
-                    delay: 0.5 + index * 0.12,
-                  }}
-                  viewport={{ once: true, amount: 0.3 }}
+                  key={cert.titulo}
+                  className="bg-neutral-800 p-5 rounded-xl text-left flex gap-4 items-start shadow-md"
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={i}
                   whileHover={{
-                    scale: 1.06,
+                    scale: 1.08,
                     transition: {
                       type: "spring",
                       stiffness: 220,
-                      damping: 20,
+                      damping: 24,
                     },
                   }}
                 >
+
                   <ScrollText size={20} className="text-white mt-1 shrink-0" />
                   <div>
                     <p className="text-white font-medium text-sm">
@@ -183,9 +197,10 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
                       {cert.instituicao}
                     </p>
                     <p className="text-gray-500 text-[11px] mt-1">
-                      {cert.ano}
+                      {cert.data}
                     </p>
                   </div>
+
                 </motion.div>
               ))}
             </div>

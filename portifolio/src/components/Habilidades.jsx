@@ -129,7 +129,7 @@ export default function Habilidades() {
         transition={{ duration: 0.9, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        Tecnologias que utilizo para construir aplicações modernas e eficientes.
+        Tecnologias que utilizo para construir aplicações modernas, eficientes e bem estruturadas.
       </motion.p>
 
       {/* Linguagens e tecnologias separadas por tipo */}

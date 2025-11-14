@@ -57,14 +57,14 @@ export default function Projetos() {
         transition={{ duration: 0.9, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        Confira meus projetos e soluções criativas que desenvolvi.
+        Confira meus projetos e as soluções criativas que desenvolvi.
       </motion.p>
 
       {/* Card de exibição */}
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
 
         {projetos.map((proj, i) => (
-          
+
           <motion.div
             key={proj.name}
             className="bg-neutral-800 rounded-xl shadow-md overflow-hidden flex flex-col"
