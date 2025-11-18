@@ -13,27 +13,27 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
       periodo: "Fev 2022 - Dez 2024",
       icon: <FaGraduationCap className="text-white" size={20} />,
     },
-    {
-      titulo: "Pós Graduação em Arquitetura de Software",
-      instituicao: "FIAP",
-      periodo: "Fev 2027 - Dez 2027",
-      icon: <FaGraduationCap className="text-white" size={20} />,
-    },
+    // {
+    //   titulo: "Pós Graduação em Arquitetura de Software",
+    //   instituicao: "FIAP",
+    //   periodo: "Fev 2027 - Dez 2027",
+    //   icon: <FaGraduationCap className="text-white" size={20} />,
+    // },
   ];
 
   const certificacoesTeste = [
-    {
-      id: 1,
-      titulo: "CERTIFICAÇÃO AWS",
-      instituicao: "Amazon Web Services",
-      data: "Emitido: Fev 2028",
-    },
-    {
-      id: 2,
-      titulo: "CERTIFICAÇÃO GOOGLE CLOUD",
-      instituicao: "Google Cloud",
-      data: "Emitido: Dez 2028",
-    },
+    // {
+    //   id: 1,
+    //   titulo: "CERTIFICAÇÃO AWS",
+    //   instituicao: "Amazon Web Services",
+    //   data: "Emitido: Fev 2028",
+    // },
+    // {
+    //   id: 2,
+    //   titulo: "CERTIFICAÇÃO GOOGLE CLOUD",
+    //   instituicao: "Google Cloud",
+    //   data: "Emitido: Dez 2028",
+    // },
   ];
 
   // animação suave, inspirada em Habilidades mas um pouco mais devagar

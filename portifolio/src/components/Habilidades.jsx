@@ -28,35 +28,35 @@ export default function Habilidades() {
     { name: 'HTML5', icon: FaHtml5 },
     { name: 'CSS3', icon: IoLogoCss3 },
     { name: 'JavaScript', icon: IoLogoJavascript },
-    { name: 'TypeScript', icon: SiTypescript },
+    // { name: 'TypeScript', icon: SiTypescript },
     { name: 'React', icon: FaReact },
-    { name: 'Vue', icon: FaVuejs },
-    { name: 'Angular', icon: FaAngular },
+    // { name: 'Vue', icon: FaVuejs },
+    // { name: 'Angular', icon: FaAngular },
     { name: 'Next', icon: SiNextdotjs },
-    { name: 'Vite', icon: SiVite },
+    // { name: 'Vite', icon: SiVite },
     { name: 'Tailwind', icon: SiTailwindcss },
-    { name: 'Bootstrap', icon: FaBootstrap },
+    // { name: 'Bootstrap', icon: FaBootstrap },
     { name: 'MUI', icon: SiMui },
   ];
 
   const backEnd = [
-    { name: 'Node', icon: FaNodeJs },
-    { name: 'PHP', icon: FaPhp },
+    // { name: 'Node', icon: FaNodeJs },
+    // { name: 'PHP', icon: FaPhp },
     { name: 'Python', icon: FaPython },
-    { name: 'Laravel', icon: FaLaravel },
-    { name: 'Django', icon: SiDjango },
-    { name: 'Express', icon: SiExpress },
-    { name: 'MySQL', icon: DiMysql },
-    { name: 'PostgreSQL', icon: DiPostgresql },
-    { name: 'MongoDB', icon: TbBrandMongodb },
+    // { name: 'Laravel', icon: FaLaravel },
+    // { name: 'Django', icon: SiDjango },
+    // { name: 'Express', icon: SiExpress },
+    // { name: 'MySQL', icon: DiMysql },
+    // { name: 'PostgreSQL', icon: DiPostgresql },
+    // { name: 'MongoDB', icon: TbBrandMongodb },
     { name: 'FastAPI', icon: SiFastapi },
   ];
 
   const devOpsCloud = [
-    { name: 'Docker', icon: FaDocker },
-    { name: 'DevOps', icon: VscAzureDevops },
-    { name: 'Google Cloud', icon: SiGooglecloud },
-    { name: 'AWS', icon: FaAws },
+    // { name: 'Docker', icon: FaDocker },
+    // { name: 'DevOps', icon: VscAzureDevops },
+    // { name: 'Google Cloud', icon: SiGooglecloud },
+    // { name: 'AWS', icon: FaAws },
   ];
 
   // animação padrão para surgimento

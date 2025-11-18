@@ -12,17 +12,17 @@ export default function Home() {
         // 🔹 JavaScript
         'console.log("Hello World")',
 
-        // 🔹 TypeScript
-        'console.log("Hello World")',
+        // // 🔹 TypeScript
+        // 'console.log("Hello World")',
 
         // 🔹 Python
         'print("Hello World")',
 
-        // 🔹 PHP
-        '<?php echo "Hello World"; ?>',
+        // // 🔹 PHP
+        // '<?php echo "Hello World"; ?>',
 
-        // 🔹 SQL
-        "SELECT 'Hello World';",
+        // // 🔹 SQL
+        // "SELECT 'Hello World';",
 
         // 🔹 HTML
         '<h1>Hello World</h1>',
@@ -33,44 +33,44 @@ export default function Home() {
         // 🔹 React
         'export default function App() { return <h1>Hello World</h1>; }',
 
-        // 🔹 Vue.js
-        '<template><h1>{{ message }}</h1></template>\n<script>export default { data() { return { message: "Hello World" }; } }</script>',
+        // // 🔹 Vue.js
+        // '<template><h1>{{ message }}</h1></template>\n<script>export default { data() { return { message: "Hello World" }; } }</script>',
 
-        // 🔹 Angular
-        '<h1>{{ title }}</h1> // title = "Hello World";',
+        // // 🔹 Angular
+        // '<h1>{{ title }}</h1> // title = "Hello World";',
 
         // 🔹 Next.js
         'export default function Page() { return <h1>Hello World</h1>; }',
 
-        // 🔹 Vite (React base)
-        'export default function App() { return <h1>Hello World</h1>; }',
+        // // 🔹 Vite (React base)
+        // 'export default function App() { return <h1>Hello World</h1>; }',
 
         // 🔹 Tailwind CSS
         '<h1 class="text-2xl font-bold">Hello World</h1>',
 
-        // 🔹 Bootstrap
-        '<h1 class="text-primary">Hello World</h1>',
+        // // 🔹 Bootstrap
+        // '<h1 class="text-primary">Hello World</h1>',
 
         // 🔹 Material UI
         'import { Typography } from "@mui/material";\n<Typography variant="h1">Hello World</Typography>',
 
-        // 🔹 Node.js
-        'console.log("Hello World")',
+        // // 🔹 Node.js
+        // 'console.log("Hello World")',
 
-        // 🔹 Express
-        'app.get("/", (req, res) => res.send("Hello World"));',
+        // // 🔹 Express
+        // 'app.get("/", (req, res) => res.send("Hello World"));',
 
-        // 🔹 Laravel
-        "Route::get('/', function () { return 'Hello World'; });",
+        // // 🔹 Laravel
+        // "Route::get('/', function () { return 'Hello World'; });",
 
-        // 🔹 Django
-        'def hello(request):\n    return HttpResponse("Hello World")',
+        // // 🔹 Django
+        // 'def hello(request):\n    return HttpResponse("Hello World")',
 
-        // 🔹 Docker
-        'CMD echo "Hello World"',
+        // // 🔹 Docker
+        // 'CMD echo "Hello World"',
 
-        // 🔹 Google Cloud / AWS / Azure (Função serverless exemplo)
-        'exports.helloWorld = (req, res) => { res.send("Hello World"); };',
+        // // 🔹 Google Cloud / AWS / Azure (Função serverless exemplo)
+        // 'exports.helloWorld = (req, res) => { res.send("Hello World"); };',
 
     ];
 
