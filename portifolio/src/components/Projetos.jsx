@@ -9,7 +9,7 @@ export default function Projetos() {
     {
       name: "Projeto: Costs",
       descricao: "Sistema para gerenciar orçamentos e custos de projetos.",
-      site: "https://projeto-costs-two.vercel.app/",
+      site: "https://costs-projeto.vercel.app/",
       github: "https://github.com/kayquemab/Projeto_Costs",
       video: "/video_costs.mp4",
     },

@@ -10,7 +10,7 @@ export default function Todos() {
         {
             name: "Projeto: Costs",
             descricao: "Sistema para gerenciar orçamentos e custos de projetos.",
-            site: "https://projeto-costs-two.vercel.app/",
+            site: "https://costs-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_Costs",
             video: "/video_costs.mp4",
         },
@@ -23,7 +23,7 @@ export default function Todos() {
         {
             name: "Projeto: Google Glass",
             descricao: "Site informativo sobre o Google Glass e suas especificações.",
-            site: "https://google-glass-blue.vercel.app/",
+            site: "https://google-glass-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_GoogleGlass",
             video: "/video_googleGlass.mp4",
         },
