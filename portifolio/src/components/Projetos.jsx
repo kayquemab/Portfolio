@@ -85,7 +85,7 @@ export default function Projetos() {
                   <video
                     src={proj.video}
                     controls
-                    className="w-full h-40 rounded-md mb-4 object-cover"
+                    className="w-full h-45 rounded-md mb-4 object-cover"
                   />
                 )}
 
