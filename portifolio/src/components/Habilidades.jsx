@@ -20,6 +20,8 @@ import { SiGooglecloud } from "react-icons/si";
 import { FaAws } from "react-icons/fa6";
 import { VscAzureDevops } from "react-icons/vsc";
 import { SiFastapi } from "react-icons/si";
+import { RiVercelLine } from "react-icons/ri";
+import { FaGitAlt } from "react-icons/fa";
 
 
 export default function Habilidades() {
@@ -28,35 +30,38 @@ export default function Habilidades() {
     { name: 'HTML5', icon: FaHtml5 },
     { name: 'CSS3', icon: IoLogoCss3 },
     { name: 'JavaScript', icon: IoLogoJavascript },
-    // { name: 'TypeScript', icon: SiTypescript },
+    { name: 'TypeScript', icon: SiTypescript },
     { name: 'React', icon: FaReact },
-    // { name: 'Vue', icon: FaVuejs },
-    // { name: 'Angular', icon: FaAngular },
+    { name: 'Vue', icon: FaVuejs },
+    { name: 'Angular', icon: FaAngular },
     { name: 'Next', icon: SiNextdotjs },
-    // { name: 'Vite', icon: SiVite },
+    { name: 'Vite', icon: SiVite },
     { name: 'Tailwind', icon: SiTailwindcss },
-    // { name: 'Bootstrap', icon: FaBootstrap },
+    { name: 'Bootstrap', icon: FaBootstrap },
     { name: 'MUI', icon: SiMui },
   ];
 
   const backEnd = [
-    // { name: 'Node', icon: FaNodeJs },
-    // { name: 'PHP', icon: FaPhp },
+    { name: 'Node', icon: FaNodeJs },
+    { name: 'PHP', icon: FaPhp },
     { name: 'Python', icon: FaPython },
-    // { name: 'Laravel', icon: FaLaravel },
-    // { name: 'Django', icon: SiDjango },
-    // { name: 'Express', icon: SiExpress },
-    // { name: 'MySQL', icon: DiMysql },
-    // { name: 'PostgreSQL', icon: DiPostgresql },
-    // { name: 'MongoDB', icon: TbBrandMongodb },
+    { name: 'Laravel', icon: FaLaravel },
+    { name: 'Django', icon: SiDjango },
+    { name: 'Express', icon: SiExpress },
+    { name: 'MySQL', icon: DiMysql },
+    { name: 'PostgreSQL', icon: DiPostgresql },
+    { name: 'MongoDB', icon: TbBrandMongodb },
     { name: 'FastAPI', icon: SiFastapi },
   ];
 
   const devOpsCloud = [
-    // { name: 'Docker', icon: FaDocker },
-    // { name: 'DevOps', icon: VscAzureDevops },
-    // { name: 'Google Cloud', icon: SiGooglecloud },
-    // { name: 'AWS', icon: FaAws },
+    { name: 'Docker', icon: FaDocker },
+    { name: 'Vercel', icon: RiVercelLine },
+    { name: 'Git', icon: FaGitAlt },
+    { name: 'DevOps', icon: VscAzureDevops },
+    { name: 'Google Cloud', icon: SiGooglecloud },
+    { name: 'AWS', icon: FaAws },
+
   ];
 
   // animação padrão para surgimento
@@ -153,7 +158,7 @@ export default function Habilidades() {
 
         {/* DevOps e Cloud */}
         <div className="flex-1">
-          <h3 className="text-xl font-semibold mb-6 text-center text-white">DevOps e Cloud</h3>
+          <h3 className="text-xl font-semibold mb-6 text-center text-white">DevOps, Cloud e Tools</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4">
             {devOpsCloud.map((skill, i) => renderSkillCard(skill, i))}
           </div>
