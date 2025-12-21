@@ -8,70 +8,74 @@ import { motion } from "framer-motion";
 export default function Home() {
 
     const phrases = [
-
-        // 🔹 JavaScript
-        'console.log("Hello World")',
-
-        // // 🔹 TypeScript
-        // 'console.log("Hello World")',
-
-        // 🔹 Python
-        'print("Hello World")',
-
-        // // 🔹 PHP
-        // '<?php echo "Hello World"; ?>',
-
-        // // 🔹 SQL
-        // "SELECT 'Hello World';",
-
-        // 🔹 HTML
+        // HTML
         '<h1>Hello World</h1>',
 
-        // 🔹 CSS
+        // CSS
         'body::after { content: "Hello World"; }',
 
-        // 🔹 React
+        // JavaScript
+        'console.log("Hello World")',
+
+        // TypeScript
+        'console.log("Hello World")',
+
+        // React
         'export default function App() { return <h1>Hello World</h1>; }',
 
-        // // 🔹 Vue.js
-        // '<template><h1>{{ message }}</h1></template>\n<script>export default { data() { return { message: "Hello World" }; } }</script>',
+        // Vue.js
+        '<template><h1>{{ message }}</h1></template>\n<script>export default { data() { return { message: "Hello World" }; } }</script>',
 
-        // // 🔹 Angular
-        // '<h1>{{ title }}</h1> // title = "Hello World";',
+        // Angular
+        '<h1>{{ title }}</h1> // title = "Hello World";',
 
-        // 🔹 Next.js
+        // Next.js
         'export default function Page() { return <h1>Hello World</h1>; }',
 
-        // // 🔹 Vite (React base)
-        // 'export default function App() { return <h1>Hello World</h1>; }',
+        // Vite (React)
+        'export default function App() { return <h1>Hello World</h1>; }',
 
-        // 🔹 Tailwind CSS
+        // Tailwind CSS
         '<h1 class="text-2xl font-bold">Hello World</h1>',
 
-        // // 🔹 Bootstrap
-        // '<h1 class="text-primary">Hello World</h1>',
+        // Bootstrap
+        '<h1 class="text-primary">Hello World</h1>',
 
-        // 🔹 Material UI
+        // Material UI (MUI)
         'import { Typography } from "@mui/material";\n<Typography variant="h1">Hello World</Typography>',
 
-        // // 🔹 Node.js
-        // 'console.log("Hello World")',
+        // Node.js
+        'console.log("Hello World")',
 
-        // // 🔹 Express
-        // 'app.get("/", (req, res) => res.send("Hello World"));',
+        // PHP
+        '<?php echo "Hello World"; ?>',
 
-        // // 🔹 Laravel
-        // "Route::get('/', function () { return 'Hello World'; });",
+        // Python
+        'print("Hello World")',
 
-        // // 🔹 Django
-        // 'def hello(request):\n    return HttpResponse("Hello World")',
+        // Express
+        'app.get("/", (req, res) => res.send("Hello World"));',
 
-        // // 🔹 Docker
-        // 'CMD echo "Hello World"',
+        // Laravel
+        "Route::get('/', function () { return 'Hello World'; });",
 
-        // // 🔹 Google Cloud / AWS / Azure (Função serverless exemplo)
-        // 'exports.helloWorld = (req, res) => { res.send("Hello World"); };',
+        // Django
+        'def hello(request):\n    return HttpResponse("Hello World")',
 
+        // MySQL / PostgreSQL
+        "SELECT 'Hello World';",
+
+        // MongoDB
+        'db.hello.insertOne({ message: "Hello World" })',
+
+        // FastAPI
+        'from fastapi import FastAPI\napp = FastAPI()\n@app.get("/")\ndef hello(): return {"message": "Hello World"}',
+
+        // Docker
+        'CMD echo "Hello World"',
+
+        // Serverless (AWS / GCP / Vercel)
+        'exports.helloWorld = (req, res) => { res.send("Hello World"); };'
     ];
 
     const [displayedText, setDisplayedText] = useState("");
@@ -82,19 +86,26 @@ export default function Home() {
     useEffect(() => {
         const interval = setInterval(() => {
             const currentPhrase = phrases[phraseIndex];
+
             setDisplayedText(currentPhrase.slice(0, charIndex + 1));
             setCharIndex((prev) => prev + 1);
 
             if (charIndex + 1 > currentPhrase.length) {
                 setTimeout(() => {
                     setCharIndex(0);
-                    setPhraseIndex((prev) => (prev + 1) % phrases.length);
+
+                    let nextIndex;
+                    do {
+                        nextIndex = Math.floor(Math.random() * phrases.length);
+                    } while (nextIndex === phraseIndex);
+
+                    setPhraseIndex(nextIndex);
                 }, 1000);
             }
         }, 100);
 
         return () => clearInterval(interval);
-    }, [charIndex, phraseIndex, phrases]);
+    }, [charIndex, phraseIndex]);
 
     return (
 
@@ -166,7 +177,7 @@ export default function Home() {
                     </a>
 
                 </div>
-                
+
             </div>
 
         </motion.section>
