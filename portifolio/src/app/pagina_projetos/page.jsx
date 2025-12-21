@@ -27,6 +27,13 @@ export default function Todos() {
             github: "https://github.com/kayquemab/Projeto_GoogleGlass",
             video: "/video_googleGlass.mp4",
         },
+        {
+            name: "Projeto: PokeNext",
+            descricao: "Sistema informativo sobre o mundo Pokémon.",
+            site: "https://poke-next-projeto.vercel.app/",
+            github: "https://github.com/kayquemab/Projeto_PokeNext",
+            video: "/video_pokenext.mp4",
+        },
 
     ];
 
