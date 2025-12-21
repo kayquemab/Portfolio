@@ -19,9 +19,11 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/Iconlight.svg" media="(prefers-color-scheme: dark)"  />
         <link rel="icon" href="/Icondark.svg" media="(prefers-color-scheme: light)" />
       </head>
+
       <body>
         <SectionWrapper>{children}</SectionWrapper>
       </body>
+      
     </html>
   );
 }
