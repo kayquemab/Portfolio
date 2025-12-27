@@ -34,6 +34,13 @@ export default function Todos() {
             github: "https://github.com/kayquemab/Projeto_PokeNext",
             video: "/video_pokenext.mp4",
         },
+        {
+            name: "Projeto: StarBucks",
+            descricao: "Clone da página inicial do StarBucks com design responsivo.",
+            site: "https://star-bucks-projeto.vercel.app/",
+            github: "https://github.com/kayquemab/Projeto_StarBucks",
+            video: "",
+        },
 
     ];
 

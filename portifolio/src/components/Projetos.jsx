@@ -13,6 +13,13 @@ export default function Projetos() {
       github: "https://github.com/kayquemab/Projeto_Costs",
       video: "/video_costs.mp4",
     },
+    {
+      name: "Projeto: StarBucks",
+      descricao: "Clone da página inicial do StarBucks com design responsivo.",
+      site: "https://star-bucks-projeto.vercel.app/",
+      github: "https://github.com/kayquemab/Projeto_StarBucks",
+      video: "",
+    },
 
 
   ];
@@ -90,12 +97,12 @@ export default function Projetos() {
                 )}
 
                 {/* Nome do projeto */}
-                <h3 className="text-lg font-semibold dark:text-white flex-grow">
+                <h3 className="text-lg font-semibold dark:text-white grow">
                   {proj.name}
                 </h3>
 
                 {/* Nome do projeto */}
-                <p className="text-sm text-left dark:text-white flex-grow mt-4">
+                <p className="text-sm text-left dark:text-white grow mt-4">
                   <strong>Descrição:</strong> {proj.descricao}
                 </p>
 
