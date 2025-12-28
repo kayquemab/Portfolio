@@ -18,7 +18,7 @@ export default function Projetos() {
       descricao: "Clone da página inicial do StarBucks com design responsivo.",
       site: "https://star-bucks-projeto.vercel.app/",
       github: "https://github.com/kayquemab/Projeto_StarBucks",
-      video: "",
+      video: "/video_starbucks.mp4",
     },
 
 
