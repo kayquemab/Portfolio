@@ -1,7 +1,50 @@
-# 🧑🏻‍💻 Portfólio | Dev — Kayque Miqueias
+# 📌 Portfólio | Dev — Kayque Miqueias
 
-README do portfólio, elaborado para apresentar a estrutura do repositório, orientar a navegação pelos projetos e descrever padrões de uso e contribuição.
+Portfólio pessoal de desenvolvimento, reunindo projetos criados para estudo, prática e demonstração de habilidades técnicas.
 
-### 📌 Sobre
+---
 
-Este repositório reúne informações do meu trabalho: links para repositórios públicos, anotações e documentação de estudos. Os projetos estão no meu GitHub — aqui você encontra a organização e como acessá-los.
+## 🚀 Tecnologias
+
+* Next.js
+* JavaScript
+* Tailwind
+
+---
+
+## ✨ Funcionalidades
+
+* Exibição de projetos desenvolvidos
+* Informações sobre tecnologias utilizadas
+* Links para repositórios e demonstrações
+
+---
+
+## ⚙️ Como executar
+
+```bash
+# Clone o repositório
+git clone https://github.com/kayquemab/Portfolio
+
+# Entre na pasta
+cd portifolio
+
+# Instale as dependências
+npm install
+
+# Rode o projeto
+npm run dev
+```
+
+---
+
+## 📌 Observações
+
+* Projetos desenvolvidos para estudo e prática
+* Em constante evolução com novos projetos e tecnologias
+
+---
+
+## 👤 Autor
+
+Criado por **Vitor Lippi** | Desenvolvido por **Kayque Miqueias**
