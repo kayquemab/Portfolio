@@ -1,6 +1,6 @@
-# 📌 Portfólio | Dev — Kayque Miqueias
+📌 Portfólio | Dev — Kayque Miqueias
 
-Portfólio pessoal de desenvolvimento, reunindo projetos criados para estudo, prática e demonstração de habilidades técnicas.
+Portfólio pessoal com projetos e trabalhos de desenvolvimento.
 
 ---
 
@@ -15,7 +15,7 @@ Portfólio pessoal de desenvolvimento, reunindo projetos criados para estudo, pr
 ## ✨ Funcionalidades
 
 * Exibição de projetos desenvolvidos
-* Informações sobre tecnologias utilizadas
+* Informações sobre tecnologias conhecidas
 * Links para repositórios e demonstrações
 
 ---
@@ -26,8 +26,8 @@ Portfólio pessoal de desenvolvimento, reunindo projetos criados para estudo, pr
 # Clone o repositório
 git clone https://github.com/kayquemab/Portfolio
 
-# Entre na pasta
-cd portifolio
+# Entre na pasta do projeto
+cd Portfolio
 
 # Instale as dependências
 npm install
@@ -38,10 +38,10 @@ npm run dev
 
 ---
 
-## 📌 Observações
+📌 Observações
 
-* Projetos desenvolvidos para estudo e prática
-* Em constante evolução com novos projetos e tecnologias
+Projeto feito para estudo e prática
+Pode receber melhorias e novos conteúdos com o tempo
 
 ---
 
