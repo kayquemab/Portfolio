@@ -40,8 +40,8 @@ npm run dev
 
 📌 Observações
 
-Projeto feito para estudo e prática
-Pode receber melhorias e novos conteúdos com o tempo
+* Projeto feito para estudo e prática
+* Pode receber melhorias e novos conteúdos com o tempo
 
 ---
 
