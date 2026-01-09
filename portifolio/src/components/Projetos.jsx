@@ -20,8 +20,12 @@ export default function Projetos() {
       github: "https://github.com/kayquemab/Projeto_StarBucks",
       video: "/video_starbucks.mp4",
     },
-
-
+    {
+      name: "Projeto: 100 Algotitmos",
+      descricao: "Repositório com 100 algoritmos de lógica de programação.",
+      github: "https://github.com/kayquemab/Projeto_Algoritmos",
+      video: "/video_algoritmos.mp4",
+    },
   ];
 
   // Variantes de animação
