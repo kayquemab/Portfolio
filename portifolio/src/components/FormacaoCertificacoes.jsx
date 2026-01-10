@@ -22,18 +22,24 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
   ];
 
   const certificacoesTeste = [
-    // {
-    //   id: 1,
-    //   titulo: "CERTIFICAÇÃO AWS",
-    //   instituicao: "Amazon Web Services",
-    //   data: "Emitido: Fev 2028",
-    // },
-    // {
-    //   id: 2,
-    //   titulo: "CERTIFICAÇÃO GOOGLE CLOUD",
-    //   instituicao: "Google Cloud",
-    //   data: "Emitido: Dez 2028",
-    // },
+    //    {
+    //      id: 1,
+    //      titulo: "CERTIFICAÇÃO AWS",
+    //      instituicao: "Amazon Web Services",
+    //      data: "Emitido: Fev 2028",
+    //    },
+    //    {
+    //     id: 2,
+    //     titulo: "CERTIFICAÇÃO GOOGLE CLOUD",
+    //     instituicao: "Google Cloud",
+    //     data: "Emitido: Dez 2028",
+    //   },
+    //        {
+    //     id: 3,
+    //     titulo: "CERTIFICAÇÃO MICROSOFT",
+    //     instituicao: "Microsoft",
+    //     data: "Emitido: Dez 2028",
+    //   },
   ];
 
   // animação suave, inspirada em Habilidades mas um pouco mais devagar
