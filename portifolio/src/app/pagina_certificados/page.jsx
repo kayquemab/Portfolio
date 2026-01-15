@@ -83,6 +83,17 @@ export default function Certificados() {
         Meus Certificados
       </motion.h2>
 
+      {/* Subtítulo */}
+      <motion.p
+        className="text-gray-300 mb-8 text-center max-w-2xl mx-auto"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        Clique em um certificado para ampliá-lo.
+      </motion.p>
+
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {certificacoes.map((cert, i) => (
