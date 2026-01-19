@@ -9,30 +9,30 @@ export default function Certificados() {
   const [selectedCert, setSelectedCert] = useState(null);
 
   const certificacoes = [
-    {
-      titulo: "Algoritmo [40 Horas]",
-      org: "Curso em Vídeo",
-      data: "Emitido: Dez 2024",
-      imagem: "/certificados/algoritmo.png",
-    },
-    {
-      titulo: "HTML5 [40 Horas]",
-      org: "Curso em Vídeo",
-      data: "Emitido: Jun 2025",
-      imagem: "/certificados/html5.png",
-    },
-    {
-      titulo: "Javascript [40 Horas]",
-      org: "Curso em Vídeo",
-      data: "Emitido: Set 2025",
-      imagem: "/certificados/javascript-40h.png",
-    },
-    {
-      titulo: "Git e GitHub [20 Horas]",
-      org: "Curso em Vídeo",
-      data: "Emitido: Fev 2025",
-      imagem: "/certificados/git-github.png",
-    },
+    // {
+    //   titulo: "Algoritmo [40 Horas]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Dez 2024",
+    //   imagem: "/certificados/algoritmo.png",
+    // },
+    // {
+    //   titulo: "HTML5 [40 Horas]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Jun 2025",
+    //   imagem: "/certificados/html5.png",
+    // },
+    // {
+    //   titulo: "Javascript [40 Horas]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Set 2025",
+    //   imagem: "/certificados/javascript-40h.png",
+    // },
+    // {
+    //   titulo: "Git e GitHub [20 Horas]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Fev 2025",
+    //   imagem: "/certificados/git-github.png",
+    // },
     {
       titulo: "Javascript do zero [10 horas]",
       org: "Trybe",
