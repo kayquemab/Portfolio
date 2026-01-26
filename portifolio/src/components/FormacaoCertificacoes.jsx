@@ -14,8 +14,14 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
       icon: <FaGraduationCap className="text-white" size={20} />,
     },
     // {
-    //   titulo: "Pós Graduação em Arquitetura de Software",
+    //   titulo: "Pós Graduação Software Architecture",
     //   instituicao: "FIAP",
+    //   periodo: "Fev 2027 - Dez 2027",
+    //   icon: <FaGraduationCap className="text-white" size={20} />,
+    // },
+    // {
+    //   titulo: "Pós Graduação Full Stack Development",
+    //   instituicao: "Impacta Digital",
     //   periodo: "Fev 2027 - Dez 2027",
     //   icon: <FaGraduationCap className="text-white" size={20} />,
     // },
@@ -214,7 +220,7 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
 
           {/* Botão para certificados */}
           <motion.a
-            href="/pagina_certificados"
+            href="/PaginaCertificados"
             target="_blank"
             rel="noopener noreferrer"
             onClick={onVerCertificados}

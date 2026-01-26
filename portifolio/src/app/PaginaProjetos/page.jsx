@@ -3,10 +3,9 @@
 import { motion } from "framer-motion";
 import { House } from "lucide-react";
 
-export default function Todos() {
+export default function PaginaProjetos() {
 
     const projetos = [
-
         {
             name: "Projeto: Costs",
             descricao: "Sistema para gerenciar orçamentos e custos de projetos.",
@@ -41,14 +40,13 @@ export default function Todos() {
             github: "https://github.com/kayquemab/Projeto_StarBucks",
             video: "/video_starbucks.mp4",
         },
-        // {
-        //     name: "Projeto: Food",
-        //     descricao: "Criação e desenvolvimento de uma página voltada para um site gastronômico.",
-        //     site: "https://food-projeto.vercel.app/",
-        //     github: "https://github.com/kayquemab/Projeto_Food",
-        //     video:
-        // },
-
+        {
+            name: "Projeto: Food",
+            descricao: "Criação e desenvolvimento de uma página voltada para um site gastronômico.",
+            site: "https://food-projeto.vercel.app/",
+            github: "https://github.com/kayquemab/Projeto_Food",
+            // video:
+        }
     ];
 
     // Variantes de animação
