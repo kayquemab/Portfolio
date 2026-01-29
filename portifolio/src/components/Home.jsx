@@ -24,58 +24,58 @@ export default function Home() {
         'export default function App() { return <h1>Hello World</h1>; }',
 
         // Vue.js
-        '<template><h1>{{ message }}</h1></template>\n<script>export default { data() { return { message: "Hello World" }; } }</script>',
+        // '<template><h1>{{ message }}</h1></template>\n<script>export default { data() { return { message: "Hello World" }; } }</script>',
 
         // Angular
-        '<h1>{{ title }}</h1> // title = "Hello World";',
+        // '<h1>{{ title }}</h1> // title = "Hello World";',
 
         // Next.js
         'export default function Page() { return <h1>Hello World</h1>; }',
 
         // Vite (React)
-        'export default function App() { return <h1>Hello World</h1>; }',
+        // 'export default function App() { return <h1>Hello World</h1>; }',
 
         // Tailwind CSS
         '<h1 class="text-2xl font-bold">Hello World</h1>',
 
         // Bootstrap
-        '<h1 class="text-primary">Hello World</h1>',
+        // '<h1 class="text-primary">Hello World</h1>',
 
         // Material UI (MUI)
-        'import { Typography } from "@mui/material";\n<Typography variant="h1">Hello World</Typography>',
+        // 'import { Typography } from "@mui/material";\n<Typography variant="h1">Hello World</Typography>',
 
         // Node.js
-        'console.log("Hello World")',
+        // 'console.log("Hello World")',
 
         // PHP
-        '<?php echo "Hello World"; ?>',
+        // '<?php echo "Hello World"; ?>',
 
         // Python
-        'print("Hello World")',
+        // 'print("Hello World")',
 
         // Express
-        'app.get("/", (req, res) => res.send("Hello World"));',
+        // 'app.get("/", (req, res) => res.send("Hello World"));',
 
         // Laravel
-        "Route::get('/', function () { return 'Hello World'; });",
+        // "Route::get('/', function () { return 'Hello World'; });",
 
         // Django
-        'def hello(request):\n    return HttpResponse("Hello World")',
+        // 'def hello(request):\n    return HttpResponse("Hello World")',
 
         // MySQL / PostgreSQL
-        "SELECT 'Hello World';",
+        // "SELECT 'Hello World';",
 
         // MongoDB
-        'db.hello.insertOne({ message: "Hello World" })',
+        // 'db.hello.insertOne({ message: "Hello World" })',
 
         // FastAPI
-        'from fastapi import FastAPI\napp = FastAPI()\n@app.get("/")\ndef hello(): return {"message": "Hello World"}',
+        // 'from fastapi import FastAPI\napp = FastAPI()\n@app.get("/")\ndef hello(): return {"message": "Hello World"}',
 
         // Docker
-        'CMD echo "Hello World"',
+        // 'CMD echo "Hello World"',
 
         // Serverless (AWS / GCP / Vercel)
-        'exports.helloWorld = (req, res) => { res.send("Hello World"); };'
+        // 'exports.helloWorld = (req, res) => { res.send("Hello World"); };'
     ];
 
     const [displayedText, setDisplayedText] = useState("");
