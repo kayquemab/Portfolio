@@ -45,7 +45,7 @@ export default function PaginaProjetos() {
             descricao: "Criação e desenvolvimento de uma página voltada para um site gastronômico.",
             site: "https://food-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_Food",
-            // video:
+            video: "/video_food.mp4",
         }
     ];
 
