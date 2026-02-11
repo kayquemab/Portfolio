@@ -97,7 +97,7 @@ export default function PaginaProjetos() {
                         whileHover={{ scale: 1.05 }}
                     >
 
-                        <div className="bg-white dark:bg-white/5 border dark:border-white/10 rounded-2xl shadow-md overflow-hidden backdrop-blur-md flex flex-col h-full">
+                        <div className="bg-white/5 dark:bg-white/5 border border-white/10 rounded-2xl shadow-md overflow-hidden backdrop-blur-md flex flex-col h-full">
 
                             <div className="p-4 flex flex-col h-full">
 
@@ -116,12 +116,12 @@ export default function PaginaProjetos() {
                                 )}
 
                                 {/* Nome do projeto */}
-                                <h3 className="text-lg font-semibold dark:text-white grow">
+                                <h3 className="text-lg font-semibold text-white grow">
                                     {proj.name}
                                 </h3>
 
-                                {/* Nome do projeto */}
-                                <p className="text-sm text-left dark:text-white grow mt-4">
+                                {/* Descrição do projeto */}
+                                <p className="text-sm text-left text-white grow mt-4">
                                     <strong>Descrição:</strong> {proj.descricao}
                                 </p>
 
@@ -133,7 +133,7 @@ export default function PaginaProjetos() {
                                             href={proj.site}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="px-3 py-1 rounded-lg bg-black text-white dark:bg-white dark:text-black text-sm hover:opacity-80 transition"
+                                            className="px-3 py-1 rounded-lg bg-white text-black text-sm hover:opacity-80 transition"
                                         >
                                             Ver Projeto
                                         </a>
@@ -144,7 +144,7 @@ export default function PaginaProjetos() {
                                             href={proj.github}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="px-3 py-1 rounded-lg border dark:border-white/50 text-sm text-black dark:text-white hover:opacity-80 transition"
+                                            className="px-3 py-1 rounded-lg border border-white/50 text-sm text-white hover:opacity-80 transition"
                                         >
                                             GitHub
                                         </a>
