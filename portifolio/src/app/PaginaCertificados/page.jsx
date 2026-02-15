@@ -10,30 +10,6 @@ export default function paginaCertificados() {
 
   const certificacoes = [
     {
-      titulo: "Algoritmo [40 Horas]",
-      org: "Curso em Vídeo",
-      data: "Emitido: Dez 2024",
-      // imagem:
-    },
-    {
-      titulo: "HTML5 [40 Horas]",
-      org: "Curso em Vídeo",
-      data: "Emitido: Jun 2025",
-      // imagem:
-    },
-    {
-      titulo: "Javascript [40 Horas]",
-      org: "Curso em Vídeo",
-      data: "Emitido: Set 2025",
-      // imagem:
-    },
-    {
-      titulo: "Git e GitHub [20 Horas]",
-      org: "Curso em Vídeo",
-      data: "Emitido: Fev 2025",
-      // imagem:
-    },
-    {
       titulo: "Javascript do zero [10 horas]",
       org: "Trybe",
       data: "Emitido: Nov 2025",
@@ -46,11 +22,41 @@ export default function paginaCertificados() {
       imagem: "/certificados/bannerLogicaDeProgramacao.png",
     },
     {
-      titulo: "Typescript [40 horas]",
-      org: "Hora de Codar",
+      titulo: "JavaScript Fundamentals",
+      org: "GreatStack ",
       data: "Emitido: Fev 2026",
-      // imagem:
+      imagem: "/certificados/bannerJavaScriptFundamentals.png",
     },
+    // {
+    //   titulo: "Typescript [40 horas]",
+    //   org: "Hora de Codar",
+    //   data: "Emitido: Fev 2026",
+    //   // imagem:
+    // },
+    // {
+    //   titulo: "Algoritmo [40 Horas]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Dez 2024",
+    //   // imagem:
+    // },
+    // {
+    //   titulo: "HTML5 [40 Horas]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Jun 2025",
+    //   // imagem:
+    // },
+    // {
+    //   titulo: "Javascript [40 Horas]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Set 2025",
+    //   // imagem:
+    // },
+    // {
+    //   titulo: "Git e GitHub [20 Horas]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Fev 2025",
+    //   // imagem:
+    // },
   ];
 
   const cardVariants = {
