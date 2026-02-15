@@ -131,7 +131,7 @@ export default function Home() {
                 {/* Nome e função */}
                 <h1 className="text-4xl md:text-5xl font-bold text-white">
                     Kayque Miqueias<br />
-                    Desenvolvedor Full-Stack
+                    Desenvolvedor <span className="whitespace-nowrap">Full-Stack</span>
                 </h1>
 
                 {/* Descrição */}

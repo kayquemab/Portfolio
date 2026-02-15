@@ -148,7 +148,7 @@ export default function PaginaProjetos() {
 
                                 <div className="p-4 flex flex-col h-full">
 
-                                    {/* ✅ Vídeo do projeto (AutoPlay restaurado igual antes) */}
+                                    {/* Vídeo do projeto */}
                                     {proj.video && (
                                         <video
                                             src={proj.video}
