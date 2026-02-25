@@ -11,20 +11,20 @@ export default function Projetos() {
       descricao: "Sistema para gerenciar orçamentos e custos de projetos.",
       site: "https://costs-projeto.vercel.app/",
       github: "https://github.com/kayquemab/Projeto_Costs",
-      video: "/video_costs.mp4",
+      video: "/VideosProjetos/video_costs.mp4",
     },
     {
       name: "Projeto: StarBucks",
       descricao: "Clone da página inicial do StarBucks com design responsivo.",
       site: "https://star-bucks-projeto.vercel.app/",
       github: "https://github.com/kayquemab/Projeto_StarBucks",
-      video: "/video_starbucks.mp4",
+      video: "/VideosProjetos/video_starbucks.mp4",
     },
     {
       name: "Projeto: 100 Algotitmos",
       descricao: "Repositório com 100 algoritmos de lógica de programação.",
       github: "https://github.com/kayquemab/Projeto_Algoritmos",
-      video: "/video_algoritmos.mp4",
+      video: "/VideosProjetos/video_algoritmos.mp4",
     },
   ];
 
