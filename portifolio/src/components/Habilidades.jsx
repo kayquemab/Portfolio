@@ -17,6 +17,7 @@ import { SiVite } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
 import { FaBootstrap } from "react-icons/fa";
 import { SiMui } from "react-icons/si";
+import { RiSvelteFill } from "react-icons/ri";
 
 /* =========================
   ⚙️ Back-End
@@ -33,6 +34,8 @@ import { SiNumpy } from "react-icons/si";
 import { SiSqlalchemy } from "react-icons/si";
 import { SiPytest } from "react-icons/si";
 import { SiScikitlearn } from "react-icons/si";
+import { DiRuby } from "react-icons/di";
+
 
 /* =========================
   ☁️ DevOps / Cloud
@@ -52,6 +55,7 @@ import { DiMysql } from "react-icons/di";
 import { DiPostgresql } from "react-icons/di";
 import { TbBrandMongodb } from "react-icons/tb";
 import { GrOracle } from "react-icons/gr";
+import { DiMsqlServer } from "react-icons/di";
 
 export default function Habilidades() {
   const frontEnd = [
@@ -63,10 +67,11 @@ export default function Habilidades() {
     // { name: "Vue", icon: FaVuejs },
     // { name: "Angular", icon: FaAngular },
     { name: "Next", icon: SiNextdotjs },
-    // { name: "Vite", icon: SiVite },
+    { name: "Vite", icon: SiVite },
     { name: "Tailwind", icon: SiTailwindcss },
     // { name: "Bootstrap", icon: FaBootstrap },
     // { name: "MUI", icon: SiMui },
+    // { name: "Svelte", icon: RiSvelteFill },
   ];
 
   const backEnd = [
@@ -81,7 +86,8 @@ export default function Habilidades() {
     // { name: "NumPy", icon: SiNumpy },
     // { name: "SQLAlchemy", icon: SiSqlalchemy },
     // { name: "Pytest", icon: SiPytest },
-    // { name: "scikit-learn", icon: SiScikitlearn }
+    // { name: "scikit-learn", icon: SiScikitlearn },
+    // { name: "Ruby", icon: DiRuby }
   ];
 
   const devOpsCloud = [
@@ -99,6 +105,7 @@ export default function Habilidades() {
     // { name: "PostgreSQL", icon: DiPostgresql },
     // { name: "MongoDB", icon: TbBrandMongodb },
     // { name: "Oracle", icon: GrOracle },
+    // { name: "SQL Server", icon: DiMsqlServer },
   ];
 
   // animação padrão para surgimento

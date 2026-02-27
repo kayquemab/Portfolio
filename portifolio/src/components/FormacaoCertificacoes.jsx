@@ -14,14 +14,14 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
       icon: <FaGraduationCap className="text-white" size={20} />,
     },
     // {
-    //   titulo: "Pós Graduação Software Architecture",
-    //   instituicao: "FIAP",
+    //   titulo: "Pós Graduação Full Stack Development",
+    //   instituicao: "Impacta Digital",
     //   periodo: "Fev 2027 - Dez 2027",
     //   icon: <FaGraduationCap className="text-white" size={20} />,
     // },
     // {
-    //   titulo: "Pós Graduação Full Stack Development",
-    //   instituicao: "Impacta Digital",
+    //   titulo: "Pós Graduação Software Architecture",
+    //   instituicao: "FIAP",
     //   periodo: "Fev 2027 - Dez 2027",
     //   icon: <FaGraduationCap className="text-white" size={20} />,
     // },

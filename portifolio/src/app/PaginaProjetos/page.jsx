@@ -152,12 +152,12 @@ export default function PaginaProjetos() {
                                     {proj.video && (
                                         <video
                                             src={proj.video}
-                                            controls
-                                            autoPlay
-                                            muted
-                                            loop
-                                            playsInline
-                                            className="w-full h-45 rounded-md mb-4 object-cover"
+                                            // controls
+                                            // autoPlay
+                                            // muted
+                                            // loop
+                                            // playsInline
+                                            className="w-full h-45 2xl:h-70 rounded-md mb-4 object-cover"
                                         />
                                     )}
 

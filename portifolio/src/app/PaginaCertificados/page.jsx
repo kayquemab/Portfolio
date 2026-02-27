@@ -9,6 +9,81 @@ export default function paginaCertificados() {
   const [selectedCert, setSelectedCert] = useState(null);
 
   const certificacoes = [
+
+    // Curso em Vídeo
+
+    // {
+    //   titulo: "Algoritmo [40 Horas]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Dez 2024",
+    //   // imagem:
+    // },
+    // {
+    //   titulo: "Git e GitHub [20 Horas]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Fev 2025",
+    //   // imagem:
+    // },
+    // {
+    //   titulo: "MySQL [40 Horas]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Jun 2025",
+    //   // imagem:
+    // },
+    // {
+    //   titulo: "HTML5 [40 Horas]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Jun 2025",
+    //   // imagem:
+    // },
+    // {
+    //   titulo: "Curso HTML5 e CSS3: módulo 1 de 5 [40 HORAS]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Jun 2025",
+    //   // imagem:
+    // },
+    // {
+    //   titulo: "Curso HTML5 e CSS3: módulo 2 de 5 [40 HORAS]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Jun 2025",
+    //   // imagem:
+    // },
+    // {
+    //   titulo: "Curso HTML5 e CSS3: módulo 3 de 5 [40 HORAS]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Jun 2025",
+    //   // imagem:
+    // },
+    // {
+    //   titulo: "Curso HTML5 e CSS3: módulo 4 de 5 [40 HORAS]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Jun 2025",
+    //   // imagem:
+    // },
+    // {
+    //   titulo: "Curso HTML5 e CSS3: módulo 5 de 5 [40 HORAS]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Jun 2025",
+    //   // imagem:
+    // },
+    // {
+    //   titulo: "Javascript [40 Horas]",
+    //   org: "Curso em Vídeo",
+    //   data: "Emitido: Set 2025",
+    //   // imagem:
+    // },
+
+    // Hora de Codar
+
+    // {
+    //   titulo: "Typescript [40 horas]",
+    //   org: "Hora de Codar",
+    //   data: "Emitido: Fev 2026",
+    //   // imagem:
+    // },
+
+    // Trybe
+
     {
       titulo: "Javascript do zero [10 horas]",
       org: "Trybe",
@@ -21,42 +96,52 @@ export default function paginaCertificados() {
       data: "Emitido: Nov 2025",
       imagem: "/certificados/bannerLogicaDeProgramacao.png",
     },
+    // {
+    //   titulo: "Bootcamp: IA Generativa com AWS [10 horas]",
+    //   org: "Trybe",
+    //   data: "Emitido: Nov 2025",
+    //   // imagem:
+    // },
+
+    // GreatStack
+
     {
-      titulo: "JavaScript Fundamentals",
-      org: "GreatStack ",
+      titulo: "Beginner's JavaScript",
+      org: "GreatStack",
       data: "Emitido: Fev 2026",
       imagem: "/certificados/bannerJavaScriptFundamentals.png",
     },
     // {
-    //   titulo: "Typescript [40 horas]",
-    //   org: "Hora de Codar",
+    //   titulo: "React Hooks",
+    //   org: "GreatStack",
     //   data: "Emitido: Fev 2026",
     //   // imagem:
     // },
     // {
-    //   titulo: "Algoritmo [40 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2024",
+    //   titulo: "E-Commerce Site",
+    //   org: "GreatStack",
+    //   data: "Emitido: Fev 2026",
     //   // imagem:
     // },
     // {
-    //   titulo: "HTML5 [40 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Jun 2025",
+    //   titulo: "YouTube Clone",
+    //   org: "GreatStack",
+    //   data: "Emitido: Fev 2026",
     //   // imagem:
     // },
     // {
-    //   titulo: "Javascript [40 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Set 2025",
+    //   titulo: "E-Commerce App",
+    //   org: "GreatStack",
+    //   data: "Emitido: Fev 2026",
     //   // imagem:
     // },
     // {
-    //   titulo: "Git e GitHub [20 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Fev 2025",
+    //   titulo: "Food Delivery App",
+    //   org: "GreatStack",
+    //   data: "Emitido: Fev 2026",
     //   // imagem:
     // },
+
   ];
 
   const cardVariants = {
