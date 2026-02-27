@@ -88,13 +88,13 @@ export default function paginaCertificados() {
       titulo: "Javascript do zero [10 horas]",
       org: "Trybe",
       data: "Emitido: Nov 2025",
-      imagem: "/certificados/bannerJavascriptDoZero.png",
+      imagem: "certificados/Trybe/JavascriptDoZero.png",
     },
     {
       titulo: "Lógica de Programação [10 horas]",
       org: "Trybe",
       data: "Emitido: Nov 2025",
-      imagem: "/certificados/bannerLogicaDeProgramacao.png",
+      imagem: "certificados/Trybe/LogicaDeProgramacao.png",
     },
     // {
     //   titulo: "Bootcamp: IA Generativa com AWS [10 horas]",
@@ -106,17 +106,17 @@ export default function paginaCertificados() {
     // GreatStack
 
     {
-      titulo: "Beginner's JavaScript",
+      titulo: "Fundamentos de JavaScript",
       org: "GreatStack",
       data: "Emitido: Fev 2026",
-      imagem: "/certificados/bannerJavaScriptFundamentals.png",
+      imagem: "certificados/GreatStack/FundamentosJavaScript.png",
     },
-    // {
-    //   titulo: "React Hooks",
-    //   org: "GreatStack",
-    //   data: "Emitido: Fev 2026",
-    //   // imagem:
-    // },
+    {
+      titulo: "Curso de React Hooks",
+      org: "GreatStack",
+      data: "Emitido: Fev 2026",
+      imagem: "certificados/GreatStack/ReactHooks.png",
+    },
     // {
     //   titulo: "E-Commerce Site",
     //   org: "GreatStack",
