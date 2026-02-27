@@ -82,6 +82,7 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
 
   return (
 
+
     <section
       id="certificados"
       className="
