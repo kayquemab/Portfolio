@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FolderGit } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Projetos() {
 
@@ -26,6 +27,13 @@ export default function Projetos() {
       github: "https://github.com/kayquemab/Projeto_Algoritmos",
       video: "/VideosProjetos/video_algoritmos.mp4",
     },
+    {
+      name: "Projeto: Clone Spotify",
+      descricao: "Clone da interface do Spotify com funcionalidades básicas de reprodução de música.",
+      site: "https://clone-spotify-projeto.vercel.app/",
+      github: "https://github.com/kayquemab/Projeto_CloneSpotify",
+      video: "/VideosProjetos/video_spotify.mp4",
+    }
   ];
 
   // Variantes de animação
@@ -37,6 +45,15 @@ export default function Projetos() {
       transition: { delay: i * 0.2, type: "spring", stiffness: 300, damping: 20 },
     }),
   };
+
+  const [limit, setLimit] = useState(3);
+
+  useEffect(() => {
+    const update = () => setLimit(window.innerWidth >= 1536 ? 4 : 3);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   return (
 
@@ -73,9 +90,7 @@ export default function Projetos() {
 
       {/* Card de exibição */}
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-
-        {projetos.map((proj, i) => (
-
+        {projetos.slice(0, limit).map((proj, i) => (
           <motion.div
             key={proj.name}
             className="bg-neutral-800 rounded-xl shadow-md overflow-hidden flex flex-col"
@@ -86,12 +101,8 @@ export default function Projetos() {
             custom={i}
             whileHover={{ scale: 1.05 }}
           >
-
             <div className="bg-white/5 dark:bg-white/5 border border-white/10 rounded-2xl shadow-md overflow-hidden backdrop-blur-md flex flex-col h-full">
-
               <div className="p-4 flex flex-col h-full">
-
-                {/* Vídeo do projeto */}
                 {proj.video && (
                   <video
                     src={proj.video}
@@ -104,19 +115,13 @@ export default function Projetos() {
                   />
                 )}
 
-                {/* Nome do projeto */}
-                <h3 className="text-lg font-semibold text-white grow">
-                  {proj.name}
-                </h3>
+                <h3 className="text-lg font-semibold text-white grow">{proj.name}</h3>
 
-                {/* Descrição do projeto */}
                 <p className="text-sm text-left text-white grow mt-4">
                   <strong>Descrição:</strong> {proj.descricao}
                 </p>
 
-                {/* Botões (sempre embaixo) */}
                 <div className="flex gap-3 mt-4">
-
                   {proj.site && (
                     <a
                       href={proj.site}
@@ -138,17 +143,11 @@ export default function Projetos() {
                       GitHub
                     </a>
                   )}
-
                 </div>
-
               </div>
-
             </div>
-
           </motion.div>
-
         ))}
-
       </div>
 
       {/* Botão */}
