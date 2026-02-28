@@ -25,7 +25,7 @@ export default function PaginaProjetos() {
             descricao: "Site informativo sobre o Google Glass e suas especificações.",
             site: "https://google-glass-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_GoogleGlass",
-            video: "/VideosProjetos/video_googleGlass.mp4",
+            video: "/VideosProjetos/video_googleglass.mp4",
         },
         {
             name: "Projeto: PokeNext",
@@ -60,7 +60,7 @@ export default function PaginaProjetos() {
             descricao: "Sistema que converte texto em voz utilizando a API Web Speech",
             site: "https://text-to-voice-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_TextToVoice",
-            video: "/VideosProjetos/video_textToVoice.mp4",
+            video: "/VideosProjetos/video_texttovoice.mp4",
         },
     ];
 
