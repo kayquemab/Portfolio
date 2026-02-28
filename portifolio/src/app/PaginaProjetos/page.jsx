@@ -54,7 +54,14 @@ export default function PaginaProjetos() {
             site: "https://clone-spotify-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_CloneSpotify",
             video: "/VideosProjetos/video_spotify.mp4",
-        }
+        },
+        {
+            name: "Projeto: Text To Voice",
+            descricao: "Sistema que converte texto em voz utilizando a API Web Speech",
+            site: "https://text-to-voice-projeto.vercel.app/",
+            github: "https://github.com/kayquemab/Projeto_TextToVoice",
+            video: "/VideosProjetos/video_textToVoice.mp4",
+        },
     ];
 
     // Estado da busca
@@ -152,11 +159,11 @@ export default function PaginaProjetos() {
                                     {proj.video && (
                                         <video
                                             src={proj.video}
-                                            // controls
-                                            // autoPlay
-                                            // muted
-                                            // loop
-                                            // playsInline
+                                            controls
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
                                             className="w-full h-45 2xl:h-70 rounded-md mb-4 object-cover"
                                         />
                                     )}
