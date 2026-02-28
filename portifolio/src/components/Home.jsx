@@ -33,7 +33,7 @@ export default function Home() {
         'export default function Page() { return <h1>Hello World</h1>; }',
 
         // Vite (React)
-        // 'export default function App() { return <h1>Hello World</h1>; }',
+        'export default function App() { return <h1>Hello World</h1>; }',
 
         // Tailwind CSS
         '<h1 class="text-2xl font-bold">Hello World</h1>',
