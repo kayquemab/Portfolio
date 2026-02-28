@@ -216,7 +216,7 @@ export default function PaginaProjetos() {
                 ) : (
 
                     <p className="col-span-full text-white/60 text-lg mt-6 text-center">
-                        Nenhum projeto encontrado...
+                        Nenhum projeto encontrado para "<strong>{busca}</strong>".
                     </p>
 
                 )}
