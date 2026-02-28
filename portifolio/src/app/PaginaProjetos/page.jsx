@@ -57,7 +57,7 @@ export default function PaginaProjetos() {
         },
         {
             name: "Projeto: Text To Voice",
-            descricao: "Sistema que converte texto em voz utilizando a API Web Speech",
+            descricao: "Sistema que converte texto em voz utilizando API",
             site: "https://text-to-voice-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_TextToVoice",
             video: "/VideosProjetos/video_texttovoice.mp4",
