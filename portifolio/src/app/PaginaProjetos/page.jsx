@@ -25,7 +25,7 @@ export default function PaginaProjetos() {
             descricao: "Site informativo sobre o Google Glass e suas especificações.",
             site: "https://google-glass-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_GoogleGlass",
-            video: "/VideosProjetos/GoogleGlass.mp4",
+            video: "/VideosProjetos/video_googleglass.mp4",
         },
         {
             name: "Projeto: PokeNext",
