@@ -13,57 +13,57 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
       periodo: "Fev 2022 - Dez 2024",
       icon: <FaGraduationCap className="text-white" size={20} />,
     },
-    // {
-    //   titulo: "Pós Graduação Full Stack Development",
-    //   instituicao: "Impacta Digital",
-    //   periodo: "Fev 2027 - Dez 2027",
-    //   icon: <FaGraduationCap className="text-white" size={20} />,
-    // },
-    // {
-    //   titulo: "Pós Graduação Software Architecture",
-    //   instituicao: "FIAP",
-    //   periodo: "Fev 2027 - Dez 2027",
-    //   icon: <FaGraduationCap className="text-white" size={20} />,
-    // },
+    {
+      titulo: "Pós Graduação Full Stack Development",
+      instituicao: "Impacta Digital",
+      periodo: "Fev 2027 - Dez 2027",
+      icon: <FaGraduationCap className="text-white" size={20} />,
+    },
+    {
+      titulo: "Pós Graduação Software Architecture",
+      instituicao: "FIAP",
+      periodo: "Fev 2027 - Dez 2027",
+      icon: <FaGraduationCap className="text-white" size={20} />,
+    },
   ];
 
   const certificacoesTeste = [
-    // {
-    //   id: 1,
-    //   titulo: "CERTIFICAÇÃO AWS",
-    //   instituicao: "Amazon Web Services",
-    //   data: "Emitido: Fev 2028",
-    // },
-    // {
-    //   id: 2,
-    //   titulo: "CERTIFICAÇÃO GOOGLE CLOUD",
-    //   instituicao: "Google Cloud",
-    //   data: "Emitido: Dez 2028",
-    // },
-    // {
-    //   id: 3,
-    //   titulo: "CERTIFICAÇÃO MICROSOFT AZURE",
-    //   instituicao: "Microsoft",
-    //   data: "Emitido: Dez 2028",
-    // },
-    // {
-    //   id: 4,
-    //   titulo: "CERTIFICAÇÃO ORACLE",
-    //   instituicao: "Oracle",
-    //   data: "Emitido: Mar 2028",
-    // },
-    // {
-    //   id: 5,
-    //   titulo: "CERTIFICAÇÃO DOCKER",
-    //   instituicao: "Docker",
-    //   data: "Emitido: Abr 2028",
-    // },
-    // {
-    //   id: 6,
-    //   titulo: "CERTIFICAÇÃO KUBERNETES",
-    //   instituicao: "CNCF",
-    //   data: "Emitido: Mai 2028",
-    // },
+    {
+      id: 1,
+      titulo: "CERTIFICAÇÃO AWS",
+      instituicao: "Amazon Web Services",
+      data: "Emitido: Fev 2028",
+    },
+    {
+      id: 2,
+      titulo: "CERTIFICAÇÃO GOOGLE CLOUD",
+      instituicao: "Google Cloud",
+      data: "Emitido: Dez 2028",
+    },
+    {
+      id: 3,
+      titulo: "CERTIFICAÇÃO MICROSOFT AZURE",
+      instituicao: "Microsoft",
+      data: "Emitido: Dez 2028",
+    },
+    {
+      id: 4,
+      titulo: "CERTIFICAÇÃO ORACLE",
+      instituicao: "Oracle",
+      data: "Emitido: Mar 2028",
+    },
+    {
+      id: 5,
+      titulo: "CERTIFICAÇÃO DOCKER",
+      instituicao: "Docker",
+      data: "Emitido: Abr 2028",
+    },
+    {
+      id: 6,
+      titulo: "CERTIFICAÇÃO KUBERNETES",
+      instituicao: "CNCF",
+      data: "Emitido: Mai 2028",
+    },
   ];
 
   // animação suave, inspirada em Habilidades mas um pouco mais devagar
