@@ -62,6 +62,13 @@ export default function PaginaProjetos() {
             github: "https://github.com/kayquemab/Projeto_TextToVoice",
             video: "/VideosProjetos/video_texttovoice.mp4",
         },
+        {
+            name: "Projeto: Socially",
+            descricao: "Rede social para conectar pessoas com interesses em comum.",
+            site: "https://socially-projeto.vercel.app/",
+            github: "https://github.com/kayquemab/Projeto_Socially",
+            video: "/VideosProjetos/video_socially.mp4",
+        },
     ];
 
     // Estado da busca
