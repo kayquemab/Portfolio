@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FolderGit } from "lucide-react";
-import { useEffect, useState } from "react";
+
 
 export default function Projetos() {
 
@@ -26,13 +26,6 @@ export default function Projetos() {
       descricao: "Repositório com 100 algoritmos de lógica de programação.",
       github: "https://github.com/kayquemab/Projeto_Algoritmos",
       video: "/VideosProjetos/video_algoritmos.mp4",
-    },
-    {
-      name: "Projeto: Clone Spotify",
-      descricao: "Clone da interface do Spotify com funcionalidades básicas de reprodução de música.",
-      site: "https://clone-spotify-projeto.vercel.app/",
-      github: "https://github.com/kayquemab/Projeto_CloneSpotify",
-      video: "/VideosProjetos/video_spotify.mp4",
     }
   ];
 
@@ -45,15 +38,6 @@ export default function Projetos() {
       transition: { delay: i * 0.2, type: "spring", stiffness: 300, damping: 20 },
     }),
   };
-
-  const [limit, setLimit] = useState(3);
-
-  useEffect(() => {
-    const update = () => setLimit(window.innerWidth >= 1536 ? 4 : 3);
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
 
   return (
 
@@ -89,8 +73,8 @@ export default function Projetos() {
       </motion.p>
 
       {/* Card de exibição */}
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-        {projetos.slice(0, limit).map((proj, i) => (
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3">
+        {projetos.slice(0).map((proj, i) => (
           <motion.div
             key={proj.name}
             className="bg-neutral-800 rounded-xl shadow-md overflow-hidden flex flex-col"
@@ -155,8 +139,7 @@ export default function Projetos() {
         href="/PaginaProjetos"
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg
-             shadow-md inline-block transition-none" // evita conflito com Tailwind
+        className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg shadow-md inline-block transition-none"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 70, damping: 15, delay: 0.3 }}
@@ -165,7 +148,7 @@ export default function Projetos() {
           scale: 1.12,
           y: -6,
           boxShadow: "0px 12px 25px rgba(0,0,0,0.35)",
-          transition: { duration: 0.15, ease: "easeOut" } // suave e rápida
+          transition: { duration: 0.15, ease: "easeOut" }
         }}
         whileTap={{
           scale: 0.96,

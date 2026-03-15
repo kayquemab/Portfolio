@@ -1,61 +1,39 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Front-End
 import { FaHtml5 } from "react-icons/fa";
-import { IoLogoCss3 } from "react-icons/io5";
-import { IoLogoJavascript } from "react-icons/io5";
-import { SiTypescript } from "react-icons/si";
-import { SiNextdotjs } from "react-icons/si";
-import { SiVite } from "react-icons/si";
-import { SiTailwindcss } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
-import { FaAngular } from "react-icons/fa6";
-import { FaVuejs } from "react-icons/fa6";
-import { FaBootstrap } from "react-icons/fa";
-import { SiMui } from "react-icons/si";
+import { IoLogoCss3, IoLogoJavascript, IoLogoElectron } from "react-icons/io5";
+import { SiTypescript, SiNextdotjs, SiVite, SiTailwindcss, SiMui } from "react-icons/si";
+import { FaReact, FaBootstrap } from "react-icons/fa";
+import { FaAngular, FaVuejs } from "react-icons/fa6";
 import { RiSvelteFill } from "react-icons/ri";
 
 // Back-End
-import { FaNodeJs } from "react-icons/fa6";
-import { FaPhp } from "react-icons/fa6";
-import { FaLaravel } from "react-icons/fa6";
-import { FaPython } from "react-icons/fa6";
-import { SiExpress } from "react-icons/si";
-import { SiDjango } from "react-icons/si";
-import { SiFastapi } from "react-icons/si";
-import { SiPandas } from "react-icons/si";
-import { SiNumpy } from "react-icons/si";
-import { SiSqlalchemy } from "react-icons/si";
-import { SiPytest } from "react-icons/si";
-import { SiScikitlearn } from "react-icons/si";
+import { FaNodeJs, FaPhp, FaLaravel, FaPython } from "react-icons/fa6";
+import { SiExpress, SiDjango, SiFastapi, SiPandas, SiNumpy, SiSqlalchemy, SiPytest, SiScikitlearn } from "react-icons/si";
 import { DiRuby } from "react-icons/di";
 
-// DevOps / Cloud / Tools
-import { FaDocker } from "react-icons/fa";
-import { FaGitAlt } from "react-icons/fa";
+// DevOps / Tools
+import { FaDocker, FaGitAlt } from "react-icons/fa";
 import { FaAws } from "react-icons/fa6";
 import { RiVercelLine } from "react-icons/ri";
-import { SiPostman } from "react-icons/si";
-import { SiGooglecloud } from "react-icons/si";
+import { SiPostman, SiGooglecloud } from "react-icons/si";
 import { VscAzureDevops } from "react-icons/vsc";
 
-// Bancos de Dados
-import { DiMysql } from "react-icons/di";
-import { DiPostgresql } from "react-icons/di";
-import { DiMsqlServer } from "react-icons/di";
+// Databases
+import { DiMysql, DiPostgresql, DiMsqlServer } from "react-icons/di";
 import { TbBrandMongodb } from "react-icons/tb";
 import { GrOracle } from "react-icons/gr";
 
-// Mobile
-import { IoLogoElectron } from "react-icons/io5";
-
 export default function Habilidades() {
+
   const [abaAtiva, setAbaAtiva] = useState("Frontend");
 
   const gruposDeTecnologias = {
+    // Cada chave representa uma aba, e o valor é um array de tecnologias com nome e ícone
     Frontend: [
       { name: "HTML5", icon: FaHtml5 },
       { name: "CSS3", icon: IoLogoCss3 },
@@ -108,27 +86,13 @@ export default function Habilidades() {
 
     Mobile: [
       { name: "React Native", icon: FaReact },
-      { name: "Electron", icon: IoLogoElectron  },
-    ]
-
+      { name: "Electron", icon: IoLogoElectron },
+    ],
   };
 
-  // Abas geradas automaticamente a partir dos grupos
+  // Gerar as abas dinamicamente a partir das chaves do objeto de tecnologias
   const abas = Object.keys(gruposDeTecnologias);
 
-  // Normalização, tranforma grupos em uma lista única aqui funciona porque os grupos são constantes no componente
-  const tecnologias = useMemo(() => {
-    return Object.entries(gruposDeTecnologias).flatMap(([categoria, itens]) =>
-      itens.map((item) => ({ ...item, category: categoria }))
-    );
-  }, []);
-
-  // Só mostra tecnologias da aba ativa
-  const tecnologiasFiltradas = useMemo(() => {
-    return tecnologias.filter((t) => t.category === abaAtiva);
-  }, [tecnologias, abaAtiva]);
-
-  // Área das animações
   const animacaoCard = {
     hidden: { opacity: 0, y: 24 },
     visible: (i) => ({
@@ -145,34 +109,10 @@ export default function Habilidades() {
     exit: { opacity: 0, y: 8, transition: { duration: 0.18 } },
   };
 
-  // Card de uma tecnologia
-  const renderizarCardTecnologia = (tech, i) => {
-    const Icone = tech.icon;
+  // Obter as tecnologias do grupo ativo para renderizar no grid
+  const tecnologiasAtivas = gruposDeTecnologias[abaAtiva];
 
-    return (
-      <motion.div
-        key={tech.name}
-        className="
-          bg-neutral-900/60 border border-white/10
-          p-5 rounded-2xl
-          flex flex-col items-center justify-center
-          shadow-[0_10px_30px_rgba(0,0,0,0.35)]
-          backdrop-blur-md
-        "
-        variants={animacaoCard}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-        custom={i}
-        whileHover={{ scale: 1.08 }}
-        transition={{ type: "spring", stiffness: 260, damping: 18 }}
-      >
-        <Icone size={40} className="text-white" />
-        <p className="mt-2 text-sm text-center text-white">{tech.name}</p>
-      </motion.div>
-    );
-  };
-
+  // Renderização do componente
   return (
     <section
       className="
@@ -183,6 +123,7 @@ export default function Habilidades() {
         pt-16 sm:pt-20 md:pt-24 lg:pt-32
       "
     >
+
       {/* Título */}
       <motion.h2
         className="text-3xl md:text-4xl font-bold text-white mb-4"
@@ -206,7 +147,7 @@ export default function Habilidades() {
         bem estruturadas.
       </motion.p>
 
-      {/* Abas */}
+      {/* Abas de navegação */}
       <div className="mb-10 flex flex-wrap items-center justify-center gap-3">
         {abas.map((aba) => {
           const estaAtiva = abaAtiva === aba;
@@ -232,8 +173,10 @@ export default function Habilidades() {
         })}
       </div>
 
-      {/* Grid das tecnologias */}
+      {/* Conteúdo das tecnologias */}
       <div className="w-full max-w-6xl">
+
+        {/* Grid de tecnologias */}
         <AnimatePresence mode="wait">
           <motion.div
             key={abaAtiva}
@@ -243,13 +186,37 @@ export default function Habilidades() {
             exit="exit"
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
           >
-            {tecnologiasFiltradas.map((tech, i) =>
-              renderizarCardTecnologia(tech, i)
-            )}
+            {tecnologiasAtivas.map((tech, i) => {
+              const Icone = tech.icon;
+
+              return (
+                <motion.div
+                  key={tech.name}
+                  className="
+                    bg-neutral-900/60 border border-white/10
+                    p-5 rounded-2xl
+                    flex flex-col items-center justify-center
+                    shadow-[0_10px_30px_rgba(0,0,0,0.35)]
+                    backdrop-blur-md
+                  "
+                  variants={animacaoCard}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  custom={i}
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 18 }}
+                >
+                  <Icone size={40} className="text-white" />
+                  <p className="mt-2 text-sm text-center text-white">
+                    {tech.name}
+                  </p>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </AnimatePresence>
       </div>
     </section>
   );
-
 }
