@@ -24,10 +24,10 @@ export default function Home() {
         'export default function App() { return <h1>Hello World</h1>; }',
 
         // Angular
-        'export class AppComponent { title = "Hello World"; } // <h1>{{ title }}</h1>',
+        //'export class AppComponent { title = "Hello World"; } // <h1>{{ title }}</h1>',
 
         // Vue.js
-        '<template><h1>{{ message }}</h1></template>\n<script>export default { data() { return { message: "Hello World" }; } }</script>',
+        //'<template><h1>{{ message }}</h1></template>\n<script>export default { data() { return { message: "Hello World" }; } }</script>',
 
         // Next.js
         'export default function Page() { return <h1>Hello World</h1>; }',
@@ -39,61 +39,61 @@ export default function Home() {
         '<h1 class="text-2xl font-bold">Hello World</h1>',
 
         // Bootstrap
-        '<h1 class="text-primary">Hello World</h1>',
+        //'<h1 class="text-primary">Hello World</h1>',
 
         // Material UI (MUI)
         'import { Typography } from "@mui/material";\nexport default function App(){ return <Typography variant="h4">Hello World</Typography>; }',
 
         // Svelte
-        '<script>\n  let message = "Hello World";\n</script>\n\n<h1>{message}</h1>',
+        //'<script>\n  let message = "Hello World";\n</script>\n\n<h1>{message}</h1>',
 
         // Node.js
-        'console.log("Hello World");',
+        //'console.log("Hello World");',
 
         // PHP
-        '<?php echo "Hello World"; ?>',
+        //'<?php echo "Hello World"; ?>',
 
         // Laravel
-        "Route::get('/', function () { return 'Hello World'; });",
+        //"Route::get('/', function () { return 'Hello World'; });",
 
         // Python
-        'print("Hello World")',
+        //'print("Hello World")',
 
         // Express
-        'app.get("/", (req, res) => res.send("Hello World"));',
+        //'app.get("/", (req, res) => res.send("Hello World"));',
 
         // Django
-        'from django.http import HttpResponse\n\ndef hello(request):\n    return HttpResponse("Hello World")',
+        //'from django.http import HttpResponse\n\ndef hello(request):\n    return HttpResponse("Hello World")',
 
         // FastAPI
         'from fastapi import FastAPI\napp = FastAPI()\n\n@app.get("/")\ndef hello():\n    return {"message": "Hello World"}',
 
         // Pandas
-        'import pandas as pd\nprint(pd.DataFrame({"message": ["Hello World"]}))',
+        //'import pandas as pd\nprint(pd.DataFrame({"message": ["Hello World"]}))',
 
         // NumPy
-        'import numpy as np\nprint(np.array(["Hello World"]))',
+        //'import numpy as np\nprint(np.array(["Hello World"]))',
 
         // SQLAlchemy
-        'from sqlalchemy import text\nresult = session.execute(text("SELECT \'Hello World\'")).scalar_one()\nprint(result)',
+        //'from sqlalchemy import text\nresult = session.execute(text("SELECT \'Hello World\'")).scalar_one()\nprint(result)',
 
         // Pytest
-        'def test_hello_world():\n    assert "Hello World" == "Hello World"',
+        //'def test_hello_world():\n    assert "Hello World" == "Hello World"',
 
         // Scikit-learn
-        'from sklearn.feature_extraction.text import CountVectorizer\nprint(CountVectorizer().fit_transform(["Hello World"]).toarray())',
+        //'from sklearn.feature_extraction.text import CountVectorizer\nprint(CountVectorizer().fit_transform(["Hello World"]).toarray())',
 
         // Ruby
-        'puts "Hello World"',
+        //'puts "Hello World"',
 
         // Docker
-        'CMD echo "Hello World"',
+        //'CMD echo "Hello World"',
 
         // Git
         'git commit -m "Hello World"',
 
         // AWS (Lambda - Node.js)
-        'export const handler = async () => ({ statusCode: 200, body: "Hello World" });',
+        //'export const handler = async () => ({ statusCode: 200, body: "Hello World" });',
 
         // Vercel (Edge/Serverless - Next.js API Route)
         'export default function handler(req, res) { res.status(200).send("Hello World"); }',
@@ -102,7 +102,7 @@ export default function Home() {
         // tecnologia não disponível
 
         // Google Cloud (Cloud Function - Node.js)
-        'exports.helloWorld = (req, res) => res.status(200).send("Hello World");',
+        //'exports.helloWorld = (req, res) => res.status(200).send("Hello World");',
 
         // Azure DevOps
         // tecnologia não disponível 
@@ -111,19 +111,19 @@ export default function Home() {
         "SELECT 'Hello World';",
 
         // PostgreSQL
-        "SELECT 'Hello World';",
+        //"SELECT 'Hello World';",
 
         // SQL Server
-        'SELECT \'Hello World\';',
+        //'SELECT \'Hello World\';',
 
         // MongoDB
-        'db.hello.insertOne({ message: "Hello World" });',
+        //'db.hello.insertOne({ message: "Hello World" });',
 
         // Oracle
-        "SELECT 'Hello World' FROM dual;",
+        //"SELECT 'Hello World' FROM dual;",
 
         // Electron
-        'console.log("Hello World"); // (renderer/main process)'
+        //'console.log("Hello World"); // (renderer/main process)'
     ];
 
     const [displayedText, setDisplayedText] = useState("");
