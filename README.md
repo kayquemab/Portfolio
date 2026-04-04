@@ -1,50 +1,39 @@
-#  📌 Portfólio | Dev — Kayque Miqueias
+# 📌 Portfólio Dev
 
-Portfólio pessoal com projetos e trabalhos de desenvolvimento.
-
----
+Portfólio pessoal desenvolvido para apresentar projetos, habilidades e tecnologias utilizadas no desenvolvimento web.
 
 ## 🚀 Tecnologias
 
 * Next.js
 * JavaScript
-* Tailwind
-
----
+* Tailwind CSS
 
 ## ✨ Funcionalidades
 
 * Exibição de projetos desenvolvidos
-* Informações sobre tecnologias conhecidas
+* Apresentação de tecnologias e habilidades
+* Navegação entre seções
 * Links para repositórios e demonstrações
-
----
 
 ## ⚙️ Como executar
 
 ```bash
-# Clone o repositório
 git clone https://github.com/kayquemab/Portfolio
+cd portfolio
 
-# Entre na pasta do projeto
-cd Portfolio
-
-# Instale as dependências
+# Instalar dependências
 npm install
 
-# Rode o projeto
+# Executar o projeto
 npm run dev
 ```
 
----
+## 📌 Observações
 
-📌 Observações
-
-* Projeto feito para estudo e prática
-* Pode receber melhorias e novos conteúdos com o tempo
-
----
+* Requer Node.js instalado
+* Projeto em constante evolução com adição de novos conteúdos
 
 ## 👤 Autor
 
-Criado por **Vitor Lippi** | Desenvolvido por **Kayque Miqueias**
+* Criado por **Vitor Lippi**
+* Desenvolvido por **Kayque Miqueias**
