@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-export const runtime = "nodejs"; // garante que roda em Node (não Edge)
+export const runtime = "nodejs"; // garante que roda em Node
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 

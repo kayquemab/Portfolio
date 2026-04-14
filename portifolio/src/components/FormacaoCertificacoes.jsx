@@ -239,7 +239,7 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
 
           {/* Botão para certificados */}
           <motion.a
-            href="/PaginaCertificados"
+            href="/Certificados"
             target="_blank"
             rel="noopener noreferrer"
             onClick={onVerCertificados}

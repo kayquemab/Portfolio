@@ -5,7 +5,7 @@ import { House, X } from "lucide-react";
 import { FaLaptopCode } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 
-export default function paginaCertificados() {
+export default function Certificados() {
   const [selectedCert, setSelectedCert] = useState(null);
 
   const certificacoes = [

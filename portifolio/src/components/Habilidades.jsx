@@ -76,13 +76,13 @@ export default function Habilidades() {
       // { name: "AWS", icon: FaAws },
     ],
 
-    // Databases: [
-    //   { name: "MySQL", icon: DiMysql },
-    //   { name: "PostgreSQL", icon: DiPostgresql },
-    //   { name: "MongoDB", icon: TbBrandMongodb },
-    //   { name: "Oracle", icon: GrOracle },
-    //   { name: "SQL Server", icon: DiMsqlServer },
-    // ],
+    Databases: [
+      { name: "MySQL", icon: DiMysql },
+      //   { name: "PostgreSQL", icon: DiPostgresql },
+      //   { name: "MongoDB", icon: TbBrandMongodb },
+      //   { name: "Oracle", icon: GrOracle },
+      //   { name: "SQL Server", icon: DiMsqlServer },
+    ],
 
     // Mobile: [
     //   { name: "React Native", icon: FaReact },

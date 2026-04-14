@@ -136,7 +136,7 @@ export default function Projetos() {
 
       {/* Botão */}
       <motion.a
-        href="/PaginaProjetos"
+        href="/Projetos"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg shadow-md inline-block transition-none"

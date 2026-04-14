@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { House, Search } from "lucide-react";
 import { useState } from "react";
 
-export default function PaginaProjetos() {
+export default function Projetos() {
 
     const projetos = [
         {
@@ -68,6 +68,13 @@ export default function PaginaProjetos() {
             site: "https://socially-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_Socially",
             video: "/VideosProjetos/video_socially.mp4",
+        },
+        {
+            name: "Projeto: Tela de login",
+            descricao: "Tela de login com design moderno e responsivo.",
+            site: "https://tela-de-login-projeto.vercel.app/",
+            github: "https://github.com/kayquemab/Projeto_TelaDeLogin",
+            video: "/VideosProjetos/video_teladelogin.mp4",
         },
     ];
 
