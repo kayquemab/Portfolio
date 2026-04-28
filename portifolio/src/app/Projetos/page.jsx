@@ -76,6 +76,14 @@ export default function Projetos() {
             github: "https://github.com/kayquemab/Projeto_TelaDeLogin",
             video: "/VideosProjetos/video_teladelogin.mp4",
         },
+        {
+            name: "Projeto: Buscar Imagens",
+            descricao: "Sistema para buscar e filtrar imagens por categorias utilizando API.",
+            site: "https://buscar-imagens-projeto.vercel.app/",
+            github: "https://github.com/kayquemab/Projeto_BuscarImagens",
+            video: "/VideosProjetos/video_buscarimagens.mp4",
+        }
+
     ];
 
     // Estado da busca
@@ -148,7 +156,7 @@ export default function Projetos() {
             </div>
 
             {/* Cards */}
-            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4">
 
                 {projetosFiltrados.length > 0 ? (
 
