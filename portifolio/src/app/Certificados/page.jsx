@@ -257,7 +257,15 @@ export default function Certificados() {
   }, []);
 
   return (
-    <section className="min-h-screen px-6 sm:px-10 md:px-16 py-24 text-center">
+    <section
+      className="
+        flex flex-col justify-center items-center
+        px-4 sm:px-6 md:px-10 lg:px-0
+        text-center
+        pb-16 sm:pb-20 md:pb-24 lg:pb-32
+        pt-16 sm:pt-20 md:pt-24 lg:pt-8
+      "
+    >
 
       {/* Título */}
       <motion.h2
@@ -282,7 +290,7 @@ export default function Certificados() {
       </motion.p>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4">
         {certificacoes.map((cert, i) => (
           <motion.div
             key={cert.titulo}
