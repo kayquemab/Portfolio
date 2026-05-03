@@ -82,6 +82,13 @@ export default function Projetos() {
             site: "https://buscar-imagens-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_BuscarImagens",
             video: "/VideosProjetos/video_buscarimagens.mp4",
+        },
+        {
+            name: "Projeto: Cia. Consagração",
+            descricao: "Site institucional para a Cia. Consagração, especializada em eventos e celebrações.",
+            site: "https://cia-consagracao-projeto.vercel.app/",
+            github: "https://github.com/kayquemab/Projeto_CiaConsagracao",
+            video: "/VideosProjetos/video_ciaconsagracao.mp4",
         }
 
     ];
