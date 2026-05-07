@@ -8,7 +8,7 @@ import { FaHtml5 } from "react-icons/fa";
 import { IoLogoCss3, IoLogoJavascript, IoLogoElectron } from "react-icons/io5";
 import { SiTypescript, SiNextdotjs, SiVite, SiTailwindcss, SiMui } from "react-icons/si";
 import { FaReact, FaBootstrap } from "react-icons/fa";
-import { FaAngular, FaVuejs } from "react-icons/fa6";
+import { FaAngular, FaFlutter, FaSwift, FaVuejs } from "react-icons/fa6";
 import { RiSvelteFill } from "react-icons/ri";
 
 // Back-End
@@ -48,6 +48,9 @@ export default function Habilidades() {
       // { name: "Bootstrap", icon: FaBootstrap },
       // { name: "MUI", icon: SiMui },
       // { name: "Svelte", icon: RiSvelteFill },
+      // Remix
+      // Nuxt
+      // SvelteKit
     ],
 
     Backend: [
@@ -64,6 +67,12 @@ export default function Habilidades() {
       // { name: "Pytest", icon: SiPytest },
       // { name: "scikit-learn", icon: SiScikitlearn },
       // { name: "Ruby", icon: DiRuby },
+      // Supabase
+      // Prisma
+      // Firebase
+      // PocketBase
+      // NestJS
+      // Go
     ],
 
     Tools: [
@@ -78,15 +87,16 @@ export default function Habilidades() {
 
     Databases: [
       { name: "MySQL", icon: DiMysql },
-      //   { name: "PostgreSQL", icon: DiPostgresql },
-      //   { name: "MongoDB", icon: TbBrandMongodb },
-      //   { name: "Oracle", icon: GrOracle },
-      //   { name: "SQL Server", icon: DiMsqlServer },
+      // { name: "PostgreSQL", icon: DiPostgresql },
+      // { name: "MongoDB", icon: TbBrandMongodb },
+      // { name: "Oracle", icon: GrOracle },
+      // { name: "SQL Server", icon: DiMsqlServer },
     ],
 
     // Mobile: [
     //   { name: "React Native", icon: FaReact },
-    //   { name: "Electron", icon: IoLogoElectron },
+    //   { name: "Flutter", icon: FaFlutter },
+    //   { name: "Swift", icon: FaSwift },
     // ],
   };
 
