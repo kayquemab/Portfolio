@@ -353,7 +353,7 @@ export default function Certificados() {
               {/* Botão fechar */}
               <button
                 onClick={() => setSelectedCert(null)}
-                className="absolute -top-4 -right-4 bg-neutral-900 text-white p-2 rounded-full hover:bg-neutral-800 transition"
+                className="absolute -top-4 -right-4 bg-neutral-900 text-white p-2 rounded-full hover:bg-neutral-800 transition cursor-pointer"
               >
                 <X size={20} />
               </button>
@@ -362,7 +362,7 @@ export default function Certificados() {
               <img
                 src={selectedCert.imagem}
                 alt={selectedCert.titulo}
-                className="w-full max-h-[85vh] object-contain rounded-xl shadow-2xl"
+                className="w-full max-h-[85vh] object-contain rounded-xl "
               />
             </motion.div>
           </motion.div>
@@ -372,7 +372,7 @@ export default function Certificados() {
       {/* Botão */}
       <motion.a
         href="/"
-        className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg shadow-md inline-block transition-none"
+        className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg shadow-md inline-block transition-none cursor-pointer"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 70, damping: 15, delay: 0.3 }}

@@ -167,7 +167,7 @@ export default function Habilidades() {
               key={aba}
               onClick={() => setAbaAtiva(aba)}
               className={[
-                "rounded-full px-5 py-2 text-sm transition",
+                "rounded-full px-5 py-2 text-sm transition cursor-pointer",
                 "border border-white/10 bg-white/5 text-white/80 hover:bg-white/10",
                 estaAtiva ? "bg-white/10 text-white border-white/20" : "",
               ].join(" ")}

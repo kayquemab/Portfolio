@@ -191,7 +191,7 @@ export default function Contato() {
           className={`
             px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg shadow-md inline-block
             transition-none
-            ${loading ? "opacity-70 cursor-not-allowed" : ""}
+            ${loading ? "opacity-70 cursor-not-allowed" : "cursor-pointer"}
           `}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -249,7 +249,7 @@ export default function Contato() {
               href="https://github.com/kayquemab"
               target="_blank"
               className="bg-transparent text-white px-6 py-3 rounded-lg
-                         transition-all duration-300
+                         transition-all duration-300 cursor-pointer
                          hover:text-white flex items-center justify-center"
             >
               <Github size={24} />
@@ -262,7 +262,7 @@ export default function Contato() {
               href="https://www.linkedin.com/in/kayque-miqueias/"
               target="_blank"
               className="bg-transparent text-white px-6 py-3 rounded-lg
-                         transition-all duration-300
+                         transition-all duration-300 cursor-pointer
                          hover:text-white flex items-center justify-center"
             >
               <Linkedin size={24} />
@@ -274,7 +274,7 @@ export default function Contato() {
             <Link
               href={`mailto:kayquemiqueias17@gmail.com?subject=Contato%20via%20Portfólio&body=Olá,%20tudo%20bem?%0D%0A%0D%0AGostaria%20de%20entrar%20em%20contato%20com%20você%20para%20discutir%20possíveis%20projetos%20ou%20colaborações.`}
               className="bg-transparent text-white px-6 py-3 rounded-lg
-                         transition-all duration-300
+                         transition-all duration-300 cursor-pointer
                          hover:text-white flex items-center justify-center"
             >
               <Mail size={24} />
@@ -309,7 +309,7 @@ export default function Contato() {
             <button
               type="button"
               onClick={closeSnack}
-              className="opacity-80 hover:opacity-100 transition"
+              className="opacity-80 hover:opacity-100 transition cursor-pointer"
               aria-label="Fechar"
             >
               <X size={16} />

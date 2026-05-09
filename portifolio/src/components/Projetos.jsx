@@ -111,7 +111,7 @@ export default function Projetos() {
                       href={proj.site}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1 rounded-lg bg-white text-black text-sm hover:opacity-80 transition"
+                      className="px-3 py-1 rounded-lg bg-white text-black text-sm hover:opacity-80 transition cursor-pointer"
                     >
                       Ver Projeto
                     </a>
@@ -122,7 +122,7 @@ export default function Projetos() {
                       href={proj.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1 rounded-lg border border-white/50 text-sm text-white hover:opacity-80 transition"
+                      className="px-3 py-1 rounded-lg border border-white/50 text-sm text-white hover:opacity-80 transition cursor-pointer"
                     >
                       GitHub
                     </a>
@@ -139,7 +139,7 @@ export default function Projetos() {
         href="/Projetos"
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg shadow-md inline-block transition-none"
+        className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg shadow-md inline-block transition-none cursor-pointer"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 70, damping: 15, delay: 0.3 }}

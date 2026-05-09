@@ -19,7 +19,7 @@ export default function Header({ scrollToSection }) {
             <li>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="hidden md:block hover:opacity-70 transition-opacity"
+                className="hidden md:block hover:opacity-70 transition-opacity cursor-pointer"
               >
                 Kayque Miqueias
               </button>
@@ -35,7 +35,7 @@ export default function Header({ scrollToSection }) {
           <li>
             <button
               onClick={() => scrollToSection("apresentacao")}
-              className="hover:opacity-70 transition-opacity"
+              className="hover:opacity-70 transition-opacity cursor-pointer"
             >
               Apresentação
             </button>
@@ -45,7 +45,7 @@ export default function Header({ scrollToSection }) {
           <li>
             <button
               onClick={() => scrollToSection("projetos")}
-              className="hover:opacity-70 transition-opacity"
+              className="hover:opacity-70 transition-opacity cursor-pointer"
             >
               Projetos
             </button>
@@ -55,7 +55,7 @@ export default function Header({ scrollToSection }) {
           <li>
             <button
               onClick={() => scrollToSection("contato")}
-              className="hover:opacity-70 transition-opacity"
+              className="hover:opacity-70 transition-opacity cursor-pointer"
             >
               Contato
             </button>
