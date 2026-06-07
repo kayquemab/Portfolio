@@ -186,12 +186,12 @@ export default function Certificados() {
       data: "Emitido: Nov 2025",
       imagem: "certificados/Trybe/LogicaDeProgramacao.png",
     },
-    // {
-    //   titulo: "Bootcamp: IA Generativa com AWS [10 horas]",
-    //   org: "Trybe",
-    //   data: "Emitido: Nov 2025",
-    //   // imagem:
-    // },
+    {
+      titulo: "IA Generativa com AWS [10 horas]",
+      org: "Trybe",
+      data: "Emitido: Nov 2025",
+      // imagem:
+    },
 
     // GreatStack
 
@@ -202,35 +202,35 @@ export default function Certificados() {
       imagem: "certificados/GreatStack/FundamentosJavaScript.png",
     },
     {
-      titulo: "Curso de React Hooks",
+      titulo: "Curso Intensivo de React Hooks",
       org: "GreatStack",
       data: "Emitido: Fev 2026",
       imagem: "certificados/GreatStack/ReactHooks.png",
     },
-    // {
-    //   titulo: "E-Commerce Site",
-    //   org: "GreatStack",
-    //   data: "Emitido: Fev 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "YouTube Clone",
-    //   org: "GreatStack",
-    //   data: "Emitido: Fev 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "E-Commerce App",
-    //   org: "GreatStack",
-    //   data: "Emitido: Fev 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Food Delivery App",
-    //   org: "GreatStack",
-    //   data: "Emitido: Fev 2026",
-    //   // imagem:
-    // },
+    {
+      titulo: "E-Commerce Site",
+      org: "GreatStack",
+      data: "Emitido: Fev 2026",
+      // imagem:
+    },
+    {
+      titulo: "YouTube Clone",
+      org: "GreatStack",
+      data: "Emitido: Fev 2026",
+      // imagem:
+    },
+    {
+      titulo: "E-Commerce App",
+      org: "GreatStack",
+      data: "Emitido: Fev 2026",
+      // imagem:
+    },
+    {
+      titulo: "Food Delivery App",
+      org: "GreatStack",
+      data: "Emitido: Fev 2026",
+      // imagem:
+    },
 
   ];
 
@@ -289,48 +289,88 @@ export default function Certificados() {
         Clique em um certificado para ampliá-lo.
       </motion.p>
 
-      {/* Grid */}
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4">
-        {certificacoes.map((cert, i) => (
-          <motion.div
-            key={cert.titulo}
-            onClick={() => setSelectedCert(cert)}
-            className="bg-neutral-800 rounded-xl overflow-hidden text-left shadow-md flex flex-col cursor-pointer"
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={i}
-            whileHover={{
-              scale: 1.05,
-              transition: {
-                type: "spring",
-                stiffness: 200,
-                damping: 20,
-              },
-            }}
-          >
-            {/* Banner */}
-            <div className="w-full h-[180px] bg-neutral-700">
-              <img
-                src={cert.imagem}
-                alt={cert.titulo}
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Conteúdo */}
-            <div className="p-5 flex gap-4 items-start">
-              <FaLaptopCode size={24} className="text-white shrink-0 mt-1" />
-              <div>
-                <p className="text-white font-medium">{cert.titulo}</p>
-                <p className="text-gray-300 text-sm">{cert.org}</p>
-                <p className="text-gray-500 text-xs mt-1">{cert.data}</p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+{/* Grid */}
+<div className="grid w-full max-w-7xl gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-3">
+  {certificacoes.map((cert, i) => (
+    <motion.div
+      key={cert.titulo}
+      onClick={() => cert.imagem && setSelectedCert(cert)}
+      className="
+        bg-neutral-800 rounded-xl overflow-hidden text-left shadow-md
+        flex flex-col cursor-pointer
+      "
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      custom={i}
+      whileHover={{
+        scale: 1.05,
+        transition: {
+          type: "spring",
+          stiffness: 200,
+          damping: 20,
+        },
+      }}
+    >
+      {/* Banner do certificado */}
+      <div className="w-full h-[180px] bg-neutral-700">
+        {cert.imagem ? (
+          <img
+            src={cert.imagem}
+            alt={cert.titulo}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          /*
+            Placeholder:
+            aparece quando o certificado ainda não tem imagem cadastrada.
+          */
+          <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-gray-300">
+            <FaLaptopCode size={34} />
+            <span className="text-sm font-medium">Certificado</span>
+          </div>
+        )}
       </div>
+
+      {/* Conteúdo do card */}
+      <div className="p-4 flex gap-3 items-start">
+        {/* Ícone lateral */}
+        <div
+          className="
+            flex h-9 w-9 shrink-0 items-center justify-center
+            rounded-full bg-white/10
+          "
+        >
+          <FaLaptopCode size={18} className="text-white" />
+        </div>
+
+        {/* Informações do certificado */}
+        <div className="flex flex-col">
+          {/*
+            whitespace-nowrap:
+            mantém o título em uma única linha.
+
+            Não usamos text-ellipsis aqui,
+            porque você quer o texto completo, sem "...".
+          */}
+          <p className="text-white font-medium whitespace-nowrap text-[13px] xl:text-sm leading-snug">
+            {cert.titulo}
+          </p>
+
+          <p className="text-gray-300 text-xs xl:text-sm whitespace-nowrap">
+            {cert.org}
+          </p>
+
+          {/* Data em formato de badge */}
+          <p className="mt-3 w-fit rounded-full bg-white/10 px-3 py-1 text-[11px] text-gray-400 whitespace-nowrap">
+            {cert.data}
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</div>
 
       {/* MODAL */}
       <AnimatePresence>

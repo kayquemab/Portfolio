@@ -6,124 +6,63 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function Home() {
-
     const phrases = [
-        // HTML5
-        '<h1>Hello World</h1>',
+        // Front-End
+        '<h1>Hello World</h1>',                                                                        // HTML5: linguagem de marcação usada para estruturar páginas web.
+        'body::after { content: "Hello World"; }',                                                     // CSS3: linguagem de estilização usada para definir aparência visual.
+        'console.log("Hello World");',                                                                 // JavaScript: linguagem de programação principal da web.
+        'const message = "Hello World"; console.log(message);',                                        // TypeScript: versão do JavaScript com tipagem.
+        'export default function App() { return <h1>Hello World</h1>; }',                              // React: biblioteca JavaScript para criar interfaces.
+        '<template><h1>Hello World</h1></template>',                                                   // Vue: framework JavaScript para criar interfaces.
+        'export class AppComponent { title = "Hello World"; }',                                        // Angular: framework front-end completo criado pelo Google.
+        'export default function Page() { return <h1>Hello World</h1>; }',                             // Next.js: framework React para aplicações web modernas.
+        'console.log("Hello World");',                                                                 // Vite: ferramenta rápida para criar e rodar projetos front-end.
+        '<h1 class="text-2xl font-bold">Hello World</h1>',                                             // Tailwind CSS: framework CSS baseado em classes utilitárias.
+        '<h1 class="text-primary">Hello World</h1>',                                                   // Bootstrap: framework CSS com componentes prontos.
+        'import { Typography } from "@mui/material"; export default function App() { return <Typography>Hello World</Typography>; }', // MUI: biblioteca de componentes React baseada no Material Design.
+        '<h1>Hello World</h1>',                                                                        // Svelte: framework front-end focado em performance e simplicidade.
+        'export default function Index() { return <h1>Hello World</h1>; }',                            // Remix: framework web baseado em React.
+        '<template><h1>Hello World</h1></template>',                                                   // Nuxt: framework baseado em Vue.
 
-        // CSS3
-        'body::after { content: "Hello World"; }',
+        // Back-End
+        'console.log("Hello World");',                                                                 // Node.js: ambiente para executar JavaScript no servidor.
+        '<?php echo "Hello World"; ?>',                                                                // PHP: linguagem muito usada no desenvolvimento web.
+        "Route::get('/', function () { return 'Hello World'; });",                                     // Laravel: framework PHP para back-end.
+        'app.get("/", (req, res) => res.send("Hello World"));',                                        // Express: framework minimalista para Node.js.
+        'print("Hello World")',                                                                        // Python: linguagem de programação versátil, usada no back-end e dados.
+        'from django.http import HttpResponse\ndef hello(request): return HttpResponse("Hello World")', // Django: framework Python completo para aplicações web.
+        'from fastapi import FastAPI\napp = FastAPI()\n@app.get("/")\ndef hello(): return {"message": "Hello World"}', // FastAPI: framework Python moderno para criação de APIs.
+        'import pandas as pd\nprint(pd.DataFrame({"message": ["Hello World"]}))',                      // Pandas: biblioteca Python para análise e manipulação de dados.
+        'import numpy as np\nprint(np.array(["Hello World"]))',                                        // NumPy: biblioteca Python para computação numérica.
+        'from sqlalchemy import text\nresult = session.execute(text("SELECT \\"Hello World\\"")).scalar_one()', // SQLAlchemy: biblioteca Python para trabalhar com banco de dados.
+        'def test_hello_world(): assert "Hello World" == "Hello World"',                               // Pytest: ferramenta Python para testes automatizados.
+        'from sklearn.feature_extraction.text import CountVectorizer\nprint(CountVectorizer().fit_transform(["Hello World"]).toarray())', // Scikit-learn: biblioteca Python para machine learning.
+        'puts "Hello World"',                                                                          // Ruby: linguagem de programação usada no desenvolvimento web.
+        'const { data } = await supabase.from("messages").select("*");',                               // Supabase: plataforma back-end baseada em PostgreSQL.
+        'const messages = await prisma.message.findMany();',                                           // Prisma: ORM para trabalhar com banco de dados em JS/TS.
+        'package main\nimport "fmt"\nfunc main() { fmt.Println("Hello World") }',                      // Go: linguagem de programação focada em performance e simplicidade.
+        'console.log("Hello World from Firebase");',                                                   // Firebase: plataforma do Google para auth, banco de dados e hospedagem.
 
-        // JavaScript
-        'console.log("Hello World");',
+        // DevOps / Tools / Cloud
+        'CMD echo "Hello World"',                                                                      // Docker: ferramenta para criar e rodar aplicações em containers.
+        'export default function handler(req, res) { res.status(200).send("Hello World"); }',          // Vercel: plataforma de deploy usada com front-end e Next.js.
+        'git commit -m "Hello World"',                                                                 // Git: sistema de versionamento de código.
+        'GET /hello-world',                                                                            // Postman: ferramenta para testar APIs.
+        'script: echo "Hello World"',                                                                  // Azure DevOps: plataforma para DevOps, pipelines e gestão de projetos.
+        'exports.helloWorld = (req, res) => res.send("Hello World");',                                 // Google Cloud: plataforma de serviços em nuvem do Google.
+        'export const handler = async () => ({ statusCode: 200, body: "Hello World" });',              // AWS: plataforma de serviços em nuvem da Amazon.
 
-        // TypeScript
-        'console.log("Hello World");',
+        // Databases
+        "SELECT 'Hello World';",                                                                       // MySQL: banco de dados relacional.
+        "SELECT 'Hello World';",                                                                       // PostgreSQL: banco de dados relacional avançado.
+        'db.messages.insertOne({ message: "Hello World" });',                                         // MongoDB: banco de dados NoSQL baseado em documentos.
+        "SELECT 'Hello World' FROM dual;",                                                             // Oracle: banco de dados relacional corporativo.
+        "SELECT 'Hello World';",                                                                       // SQL Server: banco de dados relacional da Microsoft.
 
-        // React
-        'export default function App() { return <h1>Hello World</h1>; }',
-
-        // Angular
-        //'export class AppComponent { title = "Hello World"; } // <h1>{{ title }}</h1>',
-
-        // Vue.js
-        //'<template><h1>{{ message }}</h1></template>\n<script>export default { data() { return { message: "Hello World" }; } }</script>',
-
-        // Next.js
-        'export default function Page() { return <h1>Hello World</h1>; }',
-
-        // Vite (React)
-        'export default function App() { return <h1>Hello World</h1>; }',
-
-        // Tailwind CSS
-        '<h1 class="text-2xl font-bold">Hello World</h1>',
-
-        // Bootstrap
-        //'<h1 class="text-primary">Hello World</h1>',
-
-        // Material UI (MUI)
-        'import { Typography } from "@mui/material";\nexport default function App(){ return <Typography variant="h4">Hello World</Typography>; }',
-
-        // Svelte
-        //'<script>\n  let message = "Hello World";\n</script>\n\n<h1>{message}</h1>',
-
-        // Node.js
-        //'console.log("Hello World");',
-
-        // PHP
-        //'<?php echo "Hello World"; ?>',
-
-        // Laravel
-        //"Route::get('/', function () { return 'Hello World'; });",
-
-        // Python
-        //'print("Hello World")',
-
-        // Express
-        //'app.get("/", (req, res) => res.send("Hello World"));',
-
-        // Django
-        //'from django.http import HttpResponse\n\ndef hello(request):\n    return HttpResponse("Hello World")',
-
-        // FastAPI
-        'from fastapi import FastAPI\napp = FastAPI()\n\n@app.get("/")\ndef hello():\n    return {"message": "Hello World"}',
-
-        // Pandas
-        //'import pandas as pd\nprint(pd.DataFrame({"message": ["Hello World"]}))',
-
-        // NumPy
-        //'import numpy as np\nprint(np.array(["Hello World"]))',
-
-        // SQLAlchemy
-        //'from sqlalchemy import text\nresult = session.execute(text("SELECT \'Hello World\'")).scalar_one()\nprint(result)',
-
-        // Pytest
-        //'def test_hello_world():\n    assert "Hello World" == "Hello World"',
-
-        // Scikit-learn
-        //'from sklearn.feature_extraction.text import CountVectorizer\nprint(CountVectorizer().fit_transform(["Hello World"]).toarray())',
-
-        // Ruby
-        //'puts "Hello World"',
-
-        // Docker
-        //'CMD echo "Hello World"',
-
-        // Git
-        'git commit -m "Hello World"',
-
-        // AWS (Lambda - Node.js)
-        //'export const handler = async () => ({ statusCode: 200, body: "Hello World" });',
-
-        // Vercel (Edge/Serverless - Next.js API Route)
-        'export default function handler(req, res) { res.status(200).send("Hello World"); }',
-
-        // Postman
-        // tecnologia não disponível
-
-        // Google Cloud (Cloud Function - Node.js)
-        //'exports.helloWorld = (req, res) => res.status(200).send("Hello World");',
-
-        // Azure DevOps
-        // tecnologia não disponível 
-
-        // MySQL
-        "SELECT 'Hello World';",
-
-        // PostgreSQL
-        //"SELECT 'Hello World';",
-
-        // SQL Server
-        //'SELECT \'Hello World\';',
-
-        // MongoDB
-        //'db.hello.insertOne({ message: "Hello World" });',
-
-        // Oracle
-        //"SELECT 'Hello World' FROM dual;",
-
-        // Electron
-        //'console.log("Hello World"); // (renderer/main process)'
+        // Mobile
+        'export default function App() { return <Text>Hello World</Text>; }',                          // React Native: framework para criar aplicativos mobile com React.
+        'Text("Hello World")',                                                                         // Flutter: framework para criar aplicativos mobile multiplataforma.
+        'print("Hello World")',                                                                        // Swift: linguagem usada principalmente para apps iOS.
     ];
 
     const [displayedText, setDisplayedText] = useState("");
@@ -143,6 +82,7 @@ export default function Home() {
                     setCharIndex(0);
 
                     let nextIndex;
+
                     do {
                         nextIndex = Math.floor(Math.random() * phrases.length);
                     } while (nextIndex === phraseIndex);
@@ -156,47 +96,49 @@ export default function Home() {
     }, [charIndex, phraseIndex]);
 
     return (
-
         <motion.section
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="
-                min-h-screen 
-                flex flex-col justify-center items-center 
-                px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-32
-                text-center 
-                pb-16 sm:pb-20 md:pb-24 lg:pb-32
-                pt-16 sm:pt-20 md:pt-24 lg:pt-32
-            "
+        min-h-screen 
+        flex flex-col justify-center items-center 
+        px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-32
+        text-center 
+        pb-16 sm:pb-20 md:pb-24 lg:pb-32
+        pt-16 sm:pt-20 md:pt-24 lg:pt-32
+      "
         >
-
             <div className="max-w-3xl flex flex-col items-center gap-6">
-
                 {/* Texto */}
-                <p className="text-white font-mono text-lg">{displayedText}|</p>
+                <p className="text-white font-mono text-lg whitespace-pre-wrap">
+                    {displayedText}|
+                </p>
 
                 {/* Nome e função */}
                 <h1 className="text-4xl md:text-5xl font-bold text-white">
-                    Kayque Miqueias<br />
+                    Kayque Miqueias
+                    <br />
                     Desenvolvedor <span className="whitespace-nowrap">Full-Stack</span>
                 </h1>
 
                 {/* Descrição */}
                 <p className="text-gray-300 text-center">
-                    Apaixonado por desenvolvimento, construo minha trajetória como full-stack, unindo prática em projetos reais e evolução profissional.
+                    Apaixonado por desenvolvimento, construo minha trajetória como
+                    full-stack, unindo prática em projetos reais e evolução profissional.
                 </p>
 
                 {/* Botões */}
                 <div className="flex flex-wrap justify-center gap-4 mt-6">
-
                     {/* Github */}
                     <Link
                         href="https://github.com/kayquemab"
                         target="_blank"
-                        className="bg-transparent text-white px-6 py-3 rounded-lg 
-             transition-all duration-300 cursor-pointer
-             hover:text-white hover:scale-110 hover:shadow-lg hover:-translate-y-1"
+                        className="
+              bg-transparent text-white px-6 py-3 rounded-lg 
+              transition-all duration-300 cursor-pointer
+              hover:text-white hover:scale-110 hover:shadow-lg hover:-translate-y-1
+            "
                     >
                         <Github />
                     </Link>
@@ -205,9 +147,11 @@ export default function Home() {
                     <Link
                         href="https://www.linkedin.com/in/kayque-miqueias/"
                         target="_blank"
-                        className="bg-transparent text-white px-6 py-3 rounded-lg 
-             transition-all duration-300 cursor-pointer
-             hover:text-white hover:scale-110 hover:shadow-lg hover:-translate-y-1"
+                        className="
+              bg-transparent text-white px-6 py-3 rounded-lg 
+              transition-all duration-300 cursor-pointer
+              hover:text-white hover:scale-110 hover:shadow-lg hover:-translate-y-1
+            "
                     >
                         <Linkedin />
                     </Link>
@@ -217,19 +161,16 @@ export default function Home() {
                         href="/Curriculo.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-transparent text-white px-6 py-3 rounded-lg 
-  transition-all duration-300 cursor-pointer
-  hover:text-white hover:scale-110 hover:shadow-lg hover:-translate-y-1"
+                        className="
+              bg-transparent text-white px-6 py-3 rounded-lg 
+              transition-all duration-300 cursor-pointer
+              hover:text-white hover:scale-110 hover:shadow-lg hover:-translate-y-1
+            "
                     >
                         <FileText />
                     </a>
-
                 </div>
-
             </div>
-
         </motion.section>
-
     );
-
 }
