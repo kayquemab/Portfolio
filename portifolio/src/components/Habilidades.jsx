@@ -98,10 +98,9 @@ export default function Habilidades() {
       { name: "Pytest", icon: SiPytest },
       { name: "scikit-learn", icon: SiScikitlearn },
       { name: "Ruby", icon: DiRuby },
-      { name: "Supabase", icon: RiSupabaseFill },
       { name: "Prisma", icon: SiPrisma },
       { name: "Go", icon: SiGo },
-      { name: "Firebase", icon: IoLogoFirebase },
+
     ],
 
     Tools: [
@@ -120,6 +119,8 @@ export default function Habilidades() {
       { name: "MongoDB", icon: TbBrandMongodb },
       { name: "Oracle", icon: GrOracle },
       { name: "SQL Server", icon: DiMsqlServer },
+      { name: "Supabase", icon: RiSupabaseFill },
+      { name: "Firebase", icon: IoLogoFirebase },
     ],
 
     Mobile: [
