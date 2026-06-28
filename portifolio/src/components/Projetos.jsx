@@ -284,6 +284,7 @@ export default function Projetos() {
         href="/Projetos"
         target="_blank"
         rel="noopener noreferrer"
+
         className="
           mt-6 sm:mt-8
           px-5 sm:px-6

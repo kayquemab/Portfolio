@@ -273,7 +273,7 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
           >
             <span className="inline-flex items-center gap-2">
               <FileBadge size={16} className="inline-block" />
-              Ver todos os projetos
+              Ver todos os certificados
             </span>
           </motion.a>
         </div>
