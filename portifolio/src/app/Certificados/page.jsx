@@ -4,178 +4,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { House, Search, X } from "lucide-react";
 import { FaLaptopCode } from "react-icons/fa6";
 import { useState, useEffect } from "react";
+import ResponsiveGrid from "@/components/common/ResponsiveGrid";
 
 export default function Certificados() {
   const [selectedCert, setSelectedCert] = useState(null);
-
-  // Estado da busca
   const [busca, setBusca] = useState("");
 
   const certificacoes = [
-    // Curso em Vídeo
-
-    // {
-    //   titulo: "Algoritmo [40 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2024",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Git e GitHub [20 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Fev 2025",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "MySQL [40 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Jun 2025",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "HTML5 [40 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Jun 2025",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Curso HTML5 e CSS3: módulo 1 de 5 [40 HORAS]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Jun 2025",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Curso HTML5 e CSS3: módulo 2 de 5 [40 HORAS]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Jun 2025",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Curso HTML5 e CSS3: módulo 3 de 5 [40 HORAS]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Jun 2025",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Curso HTML5 e CSS3: módulo 4 de 5 [40 HORAS]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Jun 2025",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Curso HTML5 e CSS3: módulo 5 de 5 [40 HORAS]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Jun 2025",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Javascript [40 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Set 2025",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "PHP POO [40 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Python 3 – Mundo 1 [40 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Python 3 – Mundo 2 [40 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Python 3 – Mundo 3 [40 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Python 3 – Mundo 4 [40 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Bases Numéricas [20 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Hardware [20 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Linux [40 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Redes de Computadores [20 Horas]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Inteligência Artificial - Módulo 1 [40 HORAS]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Inteligência Artificial - Módulo 2 [40 HORAS]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Curso de Inglês – Módulo 01: Beginners – [20 HORAS]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Curso de Inglês – Módulo 02: Beginners – [20 HORAS]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Curso de Inglês – Módulo 03: Beginners – [20 HORAS]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-    // {
-    //   titulo: "Curso de Inglês – Módulo 04: Beginners – [20 HORAS]",
-    //   org: "Curso em Vídeo",
-    //   data: "Emitido: Dez 2026",
-    //   // imagem:
-    // },
-
-    // Hora de Codar
-
     {
       titulo: "Typescript [40 horas]",
       org: "Hora de Codar",
       data: "Emitido: Fev 2026",
-      // imagem:
     },
-
-    // Trybe
-
     {
       titulo: "Javascript do zero [10 horas]",
       org: "Trybe",
@@ -192,11 +32,7 @@ export default function Certificados() {
       titulo: "IA Generativa com AWS [10 horas]",
       org: "Trybe",
       data: "Emitido: Nov 2025",
-      // imagem:
     },
-
-    // GreatStack
-
     {
       titulo: "Fundamentos de JavaScript",
       org: "GreatStack",
@@ -213,32 +49,26 @@ export default function Certificados() {
       titulo: "E-Commerce Site",
       org: "GreatStack",
       data: "Emitido: Fev 2026",
-      // imagem:
     },
     {
       titulo: "YouTube Clone",
       org: "GreatStack",
       data: "Emitido: Fev 2026",
-      // imagem:
     },
     {
       titulo: "E-Commerce App",
       org: "GreatStack",
       data: "Emitido: Fev 2026",
-      // imagem:
     },
     {
       titulo: "Food Delivery App",
       org: "GreatStack",
       data: "Emitido: Fev 2026",
-      // imagem:
     },
   ];
 
-  // Normaliza o texto digitado na busca
   const buscaNormalizada = busca.toLowerCase().trim();
 
-  // Filtra certificados por título, organização ou data
   const certificacoesFiltradas = certificacoes.filter((cert) => {
     const titulo = cert.titulo.toLowerCase();
     const org = cert.org.toLowerCase();
@@ -264,7 +94,6 @@ export default function Certificados() {
     }),
   };
 
-  // Fecha modal com ESC
   useEffect(() => {
     function handleEsc(e) {
       if (e.key === "Escape") setSelectedCert(null);
@@ -284,7 +113,6 @@ export default function Certificados() {
         pt-16 sm:pt-20 md:pt-24 lg:pt-8
       "
     >
-      {/* Título */}
       <motion.h2
         className="text-3xl md:text-4xl font-bold text-white mb-8"
         initial={{ opacity: 0, y: -30 }}
@@ -295,7 +123,6 @@ export default function Certificados() {
         Meus Certificados
       </motion.h2>
 
-      {/* Subtítulo */}
       <motion.p
         className="text-gray-300 mb-8 text-center max-w-2xl mx-auto"
         initial={{ opacity: 0, y: -20 }}
@@ -306,7 +133,6 @@ export default function Certificados() {
         Clique em um certificado para ampliá-lo.
       </motion.p>
 
-      {/* Barra de pesquisa */}
       <div className="relative mb-10 w-full max-w-md">
         <Search size={18} className="absolute left-3 top-3 text-white/60" />
 
@@ -325,144 +151,82 @@ export default function Certificados() {
       </div>
 
       {certificacoesFiltradas.length > 0 ? (
-        <>
-          {/* Mobile */}
-          <div className="grid w-full max-w-md grid-cols-1 gap-3 sm:hidden">
-            {certificacoesFiltradas.map((cert, i) => (
-              <motion.button
-                key={cert.titulo}
-                type="button"
-                onClick={() => {
-                  if (cert.imagem) {
-                    setSelectedCert(cert);
+        <ResponsiveGrid>
+          {certificacoesFiltradas.map((cert, i) => (
+            <motion.div
+              key={cert.titulo}
+              onClick={() => cert.imagem && setSelectedCert(cert)}
+              className={[
+                "bg-neutral-800 rounded-xl overflow-hidden text-left shadow-md",
+                "flex flex-col",
+                cert.imagem ? "cursor-pointer" : "cursor-default opacity-90",
+              ].join(" ")}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={i}
+              whileHover={
+                cert.imagem
+                  ? {
+                    scale: 1.05,
+                    transition: {
+                      type: "spring",
+                      stiffness: 200,
+                      damping: 20,
+                    },
                   }
-                }}
-                disabled={!cert.imagem}
-                className={[
-                  "w-full rounded-2xl border border-white/10 bg-neutral-900/60",
-                  "px-4 py-3 text-left backdrop-blur-md",
-                  "flex items-center gap-3",
-                  cert.imagem
-                    ? "cursor-pointer active:scale-[0.98]"
-                    : "cursor-default opacity-80",
-                ].join(" ")}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                custom={i}
-                whileTap={cert.imagem ? { scale: 0.98 } : undefined}
-              >
+                  : undefined
+              }
+            >
+              <div className="h-[180px] w-full bg-neutral-700">
+                {cert.imagem ? (
+                  <img
+                    src={cert.imagem}
+                    alt={cert.titulo}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-gray-300">
+                    <FaLaptopCode size={34} />
+                    <span className="text-sm font-medium">Certificado</span>
+                  </div>
+                )}
+              </div>
+
+              <div className="flex gap-3 p-4 items-start">
                 <div
                   className="
-                    flex h-11 w-11 shrink-0 items-center justify-center
+                    flex h-9 w-9 shrink-0 items-center justify-center
                     rounded-full bg-white/10
                   "
                 >
                   <FaLaptopCode size={18} className="text-white" />
                 </div>
 
-                <div className="min-w-0 flex-1">
-                  <p className="text-[13px] font-medium leading-snug text-white">
+                <div className="min-w-0 flex flex-col">
+                  <p className="text-[13px] font-medium leading-snug text-white xl:text-sm">
                     {cert.titulo}
                   </p>
 
-                  <div className="mt-1 flex flex-wrap items-center gap-2">
-                    <span className="text-xs text-gray-300">{cert.org}</span>
+                  <p className="mt-1 text-xs text-gray-300 xl:text-sm">
+                    {cert.org}
+                  </p>
 
-                    <span className="rounded-full bg-white/10 px-2.5 py-1 text-[10px] text-gray-400">
-                      {cert.data}
-                    </span>
-                  </div>
+                  <p className="mt-3 w-fit rounded-full bg-white/10 px-3 py-1 text-[11px] text-gray-400">
+                    {cert.data}
+                  </p>
                 </div>
-              </motion.button>
-            ))}
-          </div>
-
-          {/* Tablet / Desktop */}
-          <div className="hidden w-full max-w-7xl gap-6 sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-3">
-            {certificacoesFiltradas.map((cert, i) => (
-              <motion.div
-                key={cert.titulo}
-                onClick={() => cert.imagem && setSelectedCert(cert)}
-                className="
-                  bg-neutral-800 rounded-xl overflow-hidden text-left shadow-md
-                  flex flex-col cursor-pointer
-                "
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                custom={i}
-                whileHover={{
-                  scale: 1.05,
-                  transition: {
-                    type: "spring",
-                    stiffness: 200,
-                    damping: 20,
-                  },
-                }}
-              >
-                {/* Banner do certificado */}
-                <div className="w-full h-[180px] bg-neutral-700">
-                  {cert.imagem ? (
-                    <img
-                      src={cert.imagem}
-                      alt={cert.titulo}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    /*
-                      Placeholder:
-                      aparece quando o certificado ainda não tem imagem cadastrada.
-                    */
-                    <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-gray-300">
-                      <FaLaptopCode size={34} />
-                      <span className="text-sm font-medium">Certificado</span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Conteúdo do card */}
-                <div className="p-4 flex gap-3 items-start">
-                  {/* Ícone lateral */}
-                  <div
-                    className="
-                      flex h-9 w-9 shrink-0 items-center justify-center
-                      rounded-full bg-white/10
-                    "
-                  >
-                    <FaLaptopCode size={18} className="text-white" />
-                  </div>
-
-                  {/* Informações do certificado */}
-                  <div className="flex flex-col">
-                    <p className="text-white font-medium whitespace-nowrap text-[13px] xl:text-sm leading-snug">
-                      {cert.titulo}
-                    </p>
-
-                    <p className="text-gray-300 text-xs xl:text-sm whitespace-nowrap">
-                      {cert.org}
-                    </p>
-
-                    {/* Data em formato de badge */}
-                    <p className="mt-3 w-fit rounded-full bg-white/10 px-3 py-1 text-[11px] text-gray-400 whitespace-nowrap">
-                      {cert.data}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </>
+              </div>
+            </motion.div>
+          ))}
+        </ResponsiveGrid>
       ) : (
-        /* Mensagem quando não encontra nenhum certificado */
         <p className="mt-6 text-center text-lg text-white/60">
           Nenhum certificado encontrado para "<strong>{busca}</strong>".
         </p>
       )}
 
-      {/* MODAL */}
       <AnimatePresence>
         {selectedCert && (
           <motion.div
@@ -480,7 +244,6 @@ export default function Certificados() {
               transition={{ type: "spring", stiffness: 180, damping: 22 }}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Botão fechar */}
               <button
                 onClick={() => setSelectedCert(null)}
                 className="absolute -top-4 -right-4 bg-neutral-900 text-white p-2 rounded-full hover:bg-neutral-800 transition cursor-pointer"
@@ -488,7 +251,6 @@ export default function Certificados() {
                 <X size={20} />
               </button>
 
-              {/* Imagem grande */}
               <img
                 src={selectedCert.imagem}
                 alt={selectedCert.titulo}
@@ -499,7 +261,6 @@ export default function Certificados() {
         )}
       </AnimatePresence>
 
-      {/* Botão */}
       <motion.a
         href="/"
         className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg shadow-md inline-block transition-none cursor-pointer"

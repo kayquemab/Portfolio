@@ -237,33 +237,43 @@ export default function FormacaoCertificacoes({ onVerCertificados }) {
             </div>
           </motion.div>
 
-          {/* Botão para certificados */}
+          {/* Botão */}
           <motion.a
             href="/Certificados"
             target="_blank"
             rel="noopener noreferrer"
             onClick={onVerCertificados}
-            className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg shadow-md inline-block transition-none cursor-pointer"
+            className="
+          mt-6 sm:mt-8
+          px-5 sm:px-6
+          py-3
+          bg-white text-gray-900
+          font-semibold
+          rounded-lg shadow-md
+          inline-block
+          transition-none cursor-pointer
+          text-xs sm:text-sm
+        "
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
-            viewport={{ once: true, amount: 0.3 }}
+            transition={{ type: "spring", stiffness: 70, damping: 15, delay: 0.3 }}
+            viewport={{ once: true }}
             whileHover={{
-              scale: 1.05,
-              y: -2,
-              boxShadow: "0px 10px 22px rgba(0,0,0,0.32)",
-              transition: { duration: 0.12, ease: "easeOut" },
+              scale: 1.12,
+              y: -6,
+              boxShadow: "0px 12px 25px rgba(0,0,0,0.35)",
+              transition: { duration: 0.15, ease: "easeOut" },
             }}
             whileTap={{
-              scale: 0.97,
+              scale: 0.96,
               y: 0,
-              boxShadow: "0px 4px 10px rgba(0,0,0,0.22)",
-              transition: { duration: 0.08, ease: "easeIn" },
+              boxShadow: "0px 4px 10px rgba(0,0,0,0.25)",
+              transition: { duration: 0.1, ease: "easeIn" },
             }}
           >
             <span className="inline-flex items-center gap-2">
               <FileBadge size={16} className="inline-block" />
-              Ver todos os certificados
+              Ver todos os projetos
             </span>
           </motion.a>
         </div>

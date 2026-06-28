@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { House, Search } from "lucide-react";
 import { useState } from "react";
+import ResponsiveGrid from "@/components/common/ResponsiveGrid";
 
 export default function Projetos() {
     const projetos = [
@@ -103,17 +104,14 @@ export default function Projetos() {
         },
     ];
 
-    // Estado da busca
     const [busca, setBusca] = useState("");
 
-    // Filtrar por NOME ou DESCRIÇÃO
     const projetosFiltrados = projetos.filter(
         (proj) =>
             proj.name.toLowerCase().includes(busca.toLowerCase()) ||
             proj.descricao.toLowerCase().includes(busca.toLowerCase())
     );
 
-    // Variantes de animação
     const cardVariants = {
         hidden: { opacity: 0, y: 20 },
         visible: (i) => ({
@@ -138,7 +136,6 @@ export default function Projetos() {
         pt-16 sm:pt-20 md:pt-24 lg:pt-8
       "
         >
-            {/* Título */}
             <motion.h2
                 className="text-3xl md:text-4xl font-bold text-white mb-8"
                 initial={{ opacity: 0, y: -30 }}
@@ -149,7 +146,6 @@ export default function Projetos() {
                 Meus Projetos
             </motion.h2>
 
-            {/* Barra de Pesquisa */}
             <div className="w-full max-w-md mb-10 relative">
                 <Search size={18} className="absolute left-3 top-3 text-white/60" />
 
@@ -167,8 +163,7 @@ export default function Projetos() {
                 />
             </div>
 
-            {/* Cards */}
-            <div className="grid w-full items-start gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4">
+            <ResponsiveGrid>
                 {projetosFiltrados.length > 0 ? (
                     projetosFiltrados.map((proj, i) => (
                         <motion.div
@@ -187,7 +182,6 @@ export default function Projetos() {
                             custom={i}
                             whileHover={{ scale: 1.04 }}
                         >
-                            {/* Vídeo do projeto com altura padronizada */}
                             {proj.video && (
                                 <div className="relative h-[180px] w-full overflow-hidden bg-neutral-700">
                                     <video
@@ -206,20 +200,16 @@ export default function Projetos() {
                                 </div>
                             )}
 
-                            {/* Conteúdo do card com altura padronizada */}
-                            <div className="flex h-[128px] flex-col px-3 py-3">
-                                {/* Nome do projeto */}
+                            <div className="flex min-h-[150px] flex-col px-3 py-3 sm:min-h-[156px] sm:px-4 sm:py-4">
                                 <h3 className="text-sm sm:text-base font-semibold text-white leading-snug">
                                     {proj.name}
                                 </h3>
 
-                                {/* Descrição */}
-                                <p className="mt-2 line-clamp-2 text-[11px] sm:text-xs leading-relaxed text-gray-300">
+                                <p className="mt-2 text-[11px] sm:text-xs leading-relaxed text-gray-300">
                                     {proj.descricao}
                                 </p>
 
-                                {/* Botões */}
-                                <div className="mt-auto flex flex-wrap gap-2 pt-3">
+                                <div className="mt-auto flex flex-wrap gap-2 pt-4">
                                     {proj.site && (
                                         <a
                                             href={proj.site}
@@ -258,16 +248,11 @@ export default function Projetos() {
                         Nenhum projeto encontrado para "<strong>{busca}</strong>".
                     </p>
                 )}
-            </div>
+            </ResponsiveGrid>
 
-            {/* Botão Home */}
             <motion.a
                 href="/"
-                rel="noopener noreferrer"
-                className="
-          mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg
-          shadow-md inline-block transition-none cursor-pointer
-        "
+                className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg shadow-md inline-block transition-none cursor-pointer"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ type: "spring", stiffness: 70, damping: 15, delay: 0.3 }}
@@ -276,13 +261,10 @@ export default function Projetos() {
                     scale: 1.12,
                     y: -6,
                     boxShadow: "0px 12px 25px rgba(0,0,0,0.35)",
-                    transition: { duration: 0.15, ease: "easeOut" },
                 }}
                 whileTap={{
                     scale: 0.96,
                     y: 0,
-                    boxShadow: "0px 4px 10px rgba(0,0,0,0.25)",
-                    transition: { duration: 0.1, ease: "easeIn" },
                 }}
             >
                 <span className="inline-flex items-center gap-2">
