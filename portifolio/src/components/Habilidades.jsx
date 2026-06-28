@@ -58,6 +58,7 @@ import { DiMsqlServer } from "react-icons/di";
 // Mobile
 import { FaFlutter } from "react-icons/fa6";
 import { FaSwift } from "react-icons/fa6";
+import { IoLogoElectron } from "react-icons/io5";
 
 export default function Habilidades() {
   const [abaAtiva, setAbaAtiva] = useState("Frontend");
@@ -123,6 +124,7 @@ export default function Habilidades() {
       { name: "React Native", icon: FaReact },
       { name: "Flutter", icon: FaFlutter },
       { name: "Swift", icon: FaSwift },
+      { name: "Electron", icon: IoLogoElectron },
     ],
   };
 
