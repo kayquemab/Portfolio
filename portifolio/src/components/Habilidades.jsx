@@ -4,63 +4,60 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Front-End
-import { FaHtml5 } from "react-icons/fa";                 // HTML5: linguagem de marcação usada para estruturar páginas web.
-import { IoLogoCss3 } from "react-icons/io5";             // CSS3: linguagem de estilização usada para definir aparência visual.
-import { IoLogoJavascript } from "react-icons/io5";       // JavaScript: linguagem de programação principal da web.
-import { SiTypescript } from "react-icons/si";            // TypeScript: versão do JavaScript com tipagem.
-import { FaReact } from "react-icons/fa";                 // React: biblioteca JavaScript para criar interfaces.
-import { FaVuejs } from "react-icons/fa6";                // Vue: framework JavaScript para criar interfaces.
-import { FaAngular } from "react-icons/fa6";              // Angular: framework front-end completo criado pelo Google.
-import { SiNextdotjs } from "react-icons/si";             // Next.js: framework React para aplicações web modernas.
-import { SiVite } from "react-icons/si";                  // Vite: ferramenta rápida para criar e rodar projetos front-end.
-import { SiTailwindcss } from "react-icons/si";           // Tailwind CSS: framework CSS baseado em classes utilitárias.
-import { FaBootstrap } from "react-icons/fa";             // Bootstrap: framework CSS com componentes prontos.
-import { SiMui } from "react-icons/si";                   // MUI: biblioteca de componentes React baseada no Material Design.
-import { RiSvelteFill } from "react-icons/ri";            // Svelte: framework front-end focado em performance e simplicidade.
-import { RiRemixRunLine } from "react-icons/ri";          // Remix: framework web baseado em React.
-import { SiNuxtdotjs } from "react-icons/si";             // Nuxt: framework baseado em Vue.
+import { FaHtml5 } from "react-icons/fa";
+import { IoLogoCss3 } from "react-icons/io5";
+import { IoLogoJavascript } from "react-icons/io5";
+import { SiTypescript } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
+import { FaVuejs } from "react-icons/fa6";
+import { FaAngular } from "react-icons/fa6";
+import { SiNextdotjs } from "react-icons/si";
+import { SiVite } from "react-icons/si";
+import { SiTailwindcss } from "react-icons/si";
+import { FaBootstrap } from "react-icons/fa";
+import { SiMui } from "react-icons/si";
+import { RiSvelteFill } from "react-icons/ri";
+import { RiRemixRunLine } from "react-icons/ri";
+import { SiNuxtdotjs } from "react-icons/si";
 
 // Back-End
-import { FaNodeJs } from "react-icons/fa6";               // Node.js: ambiente para executar JavaScript no servidor.
-import { FaPhp } from "react-icons/fa6";                  // PHP: linguagem muito usada no desenvolvimento web.
-import { FaLaravel } from "react-icons/fa6";              // Laravel: framework PHP para back-end.
-import { SiExpress } from "react-icons/si";               // Express: framework minimalista para Node.js.
-import { FaPython } from "react-icons/fa6";               // Python: linguagem de programação versátil, usada no back-end e dados.
-import { SiDjango } from "react-icons/si";                // Django: framework Python completo para aplicações web.
-import { SiFastapi } from "react-icons/si";               // FastAPI: framework Python moderno para criação de APIs.
-import { SiPandas } from "react-icons/si";                // Pandas: biblioteca Python para análise e manipulação de dados.
-import { SiNumpy } from "react-icons/si";                 // NumPy: biblioteca Python para computação numérica.
-import { SiSqlalchemy } from "react-icons/si";            // SQLAlchemy: biblioteca Python para trabalhar com banco de dados.
-import { SiPytest } from "react-icons/si";                // Pytest: ferramenta Python para testes automatizados.
-import { SiScikitlearn } from "react-icons/si";           // Scikit-learn: biblioteca Python para machine learning.
-import { DiRuby } from "react-icons/di";                  // Ruby: linguagem de programação usada no desenvolvimento web.
-import { RiSupabaseFill } from "react-icons/ri";          // Supabase: plataforma back-end baseada em PostgreSQL.
-import { SiPrisma } from "react-icons/si";                // Prisma: ORM para trabalhar com banco de dados em JS/TS.
-import { SiGo } from "react-icons/si";                    // Go: linguagem de programação focada em performance e simplicidade.
-import { IoLogoFirebase } from "react-icons/io5";         // Firebase: plataforma do Google para auth, banco de dados e hospedagem.
+import { FaNodeJs } from "react-icons/fa6";
+import { FaPhp } from "react-icons/fa6";
+import { FaLaravel } from "react-icons/fa6";
+import { SiExpress } from "react-icons/si";
+import { FaPython } from "react-icons/fa6";
+import { SiDjango } from "react-icons/si";
+import { SiFastapi } from "react-icons/si";
+import { SiPandas } from "react-icons/si";
+import { SiNumpy } from "react-icons/si";
+import { SiSqlalchemy } from "react-icons/si";
+import { SiPytest } from "react-icons/si";
+import { SiScikitlearn } from "react-icons/si";
+import { DiRuby } from "react-icons/di";
+import { RiSupabaseFill } from "react-icons/ri";
+import { SiPrisma } from "react-icons/si";
+import { SiGo } from "react-icons/si";
+import { IoLogoFirebase } from "react-icons/io5";
 
 // DevOps / Tools / Cloud
-import { FaDocker } from "react-icons/fa";                // Docker: ferramenta para criar e rodar aplicações em containers.
-import { RiVercelLine } from "react-icons/ri";            // Vercel: plataforma de deploy usada com front-end e Next.js.
-import { FaGitAlt } from "react-icons/fa";                // Git: sistema de versionamento de código.
-import { SiPostman } from "react-icons/si";               // Postman: ferramenta para testar APIs.
-import { VscAzureDevops } from "react-icons/vsc";         // Azure DevOps: plataforma para DevOps, pipelines e gestão de projetos.
-import { SiGooglecloud } from "react-icons/si";           // Google Cloud: plataforma de serviços em nuvem do Google.
-import { FaAws } from "react-icons/fa6";                  // AWS: plataforma de serviços em nuvem da Amazon.
+import { FaDocker } from "react-icons/fa";
+import { RiVercelLine } from "react-icons/ri";
+import { FaGitAlt } from "react-icons/fa";
+import { SiPostman } from "react-icons/si";
+import { VscAzureDevops } from "react-icons/vsc";
+import { SiGooglecloud } from "react-icons/si";
+import { FaAws } from "react-icons/fa6";
 
 // Databases
-import { DiMysql } from "react-icons/di";                 // MySQL: banco de dados relacional.
-import { DiPostgresql } from "react-icons/di";            // PostgreSQL: banco de dados relacional avançado.
-import { TbBrandMongodb } from "react-icons/tb";          // MongoDB: banco de dados NoSQL baseado em documentos.
-import { GrOracle } from "react-icons/gr";                // Oracle: banco de dados relacional corporativo.
-import { DiMsqlServer } from "react-icons/di";            // SQL Server: banco de dados relacional da Microsoft.
+import { DiMysql } from "react-icons/di";
+import { DiPostgresql } from "react-icons/di";
+import { TbBrandMongodb } from "react-icons/tb";
+import { GrOracle } from "react-icons/gr";
+import { DiMsqlServer } from "react-icons/di";
 
 // Mobile
-import { FaFlutter } from "react-icons/fa6";              // Flutter: framework para criar aplicativos mobile multiplataforma.
-import { FaSwift } from "react-icons/fa6";                // Swift: linguagem usada principalmente para apps iOS.
-
-
-
+import { FaFlutter } from "react-icons/fa6";
+import { FaSwift } from "react-icons/fa6";
 
 export default function Habilidades() {
   const [abaAtiva, setAbaAtiva] = useState("Frontend");
@@ -100,7 +97,6 @@ export default function Habilidades() {
       { name: "Ruby", icon: DiRuby },
       { name: "Prisma", icon: SiPrisma },
       { name: "Go", icon: SiGo },
-
     ],
 
     Tools: [
@@ -171,7 +167,7 @@ export default function Habilidades() {
       </motion.h2>
 
       <motion.p
-        className="text-gray-300 mb-10 text-center max-w-2xl"
+        className="text-gray-300 mb-8 sm:mb-10 text-center max-w-2xl"
         initial={{ opacity: 0, y: -14 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
@@ -181,7 +177,13 @@ export default function Habilidades() {
         bem estruturadas.
       </motion.p>
 
-      <div className="mb-10 flex flex-wrap items-center justify-center gap-3">
+      <div
+        className="
+          mb-8 sm:mb-10
+          flex flex-wrap items-center justify-center
+          gap-2 sm:gap-3
+        "
+      >
         {abas.map((aba) => {
           const estaAtiva = abaAtiva === aba;
 
@@ -190,7 +192,7 @@ export default function Habilidades() {
               key={aba}
               onClick={() => setAbaAtiva(aba)}
               className={[
-                "rounded-full px-5 py-2 text-sm transition cursor-pointer",
+                "rounded-full px-4 py-2 text-xs sm:px-5 sm:text-sm transition cursor-pointer",
                 "border border-white/10 bg-white/5 text-white/80 hover:bg-white/10",
                 estaAtiva ? "bg-white/10 text-white border-white/20" : "",
               ].join(" ")}
@@ -214,7 +216,12 @@ export default function Habilidades() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+            className="
+              grid grid-cols-2 gap-2.5
+              sm:grid-cols-3 sm:gap-4
+              md:grid-cols-4
+              lg:grid-cols-5
+            "
           >
             {tecnologiasAtivas.map((tech, i) => {
               const Icone = tech.icon;
@@ -223,11 +230,19 @@ export default function Habilidades() {
                 <motion.div
                   key={tech.name}
                   className="
-                    bg-neutral-900/60 border border-white/10
-                    p-5 rounded-2xl
-                    flex flex-col items-center justify-center
-                    shadow-[0_10px_30px_rgba(0,0,0,0.35)]
+                    h-12
+                    rounded-2xl border border-white/10
+                    bg-neutral-900/60
+                    px-2.5
+                    flex items-center justify-start gap-2
                     backdrop-blur-md
+
+                    sm:h-auto sm:min-h-[130px]
+                    sm:rounded-2xl sm:p-5
+                    sm:flex-col sm:items-center sm:justify-center
+                    sm:shadow-[0_10px_30px_rgba(0,0,0,0.35)]
+
+                    lg:min-h-0
                   "
                   variants={animacaoCard}
                   initial="hidden"
@@ -237,9 +252,19 @@ export default function Habilidades() {
                   whileHover={{ scale: 1.08 }}
                   transition={{ type: "spring", stiffness: 260, damping: 18 }}
                 >
-                  <Icone size={40} className="text-white" />
+                  <div
+                    className="
+                      flex h-8 w-8 shrink-0 items-center justify-center
+                      rounded-xl bg-white/10
 
-                  <p className="mt-2 text-sm text-center text-white">
+                      sm:h-auto sm:w-auto
+                      sm:rounded-none sm:bg-transparent
+                    "
+                  >
+                    <Icone className="text-base text-white sm:text-[40px]" />
+                  </div>
+
+                  <p className="truncate text-xs text-white sm:mt-2 sm:text-sm sm:text-center">
                     {tech.name}
                   </p>
                 </motion.div>

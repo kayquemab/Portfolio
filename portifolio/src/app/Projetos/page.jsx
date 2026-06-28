@@ -5,7 +5,6 @@ import { House, Search } from "lucide-react";
 import { useState } from "react";
 
 export default function Projetos() {
-
     const projetos = [
         {
             name: "Projeto: Costs",
@@ -43,14 +42,16 @@ export default function Projetos() {
         },
         {
             name: "Projeto: Food",
-            descricao: "Criação e desenvolvimento de uma página voltada para um site gastronômico.",
+            descricao:
+                "Criação e desenvolvimento de uma página voltada para um site gastronômico.",
             site: "https://food-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_Food",
             video: "/VideosProjetos/video_food.mp4",
         },
         {
             name: "Projeto: Clone Spotify",
-            descricao: "Clone da interface do Spotify com funcionalidades básicas de reprodução de música.",
+            descricao:
+                "Clone da interface do Spotify com funcionalidades básicas de reprodução de música.",
             site: "https://clone-spotify-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_CloneSpotify",
             video: "/VideosProjetos/video_spotify.mp4",
@@ -78,28 +79,38 @@ export default function Projetos() {
         },
         {
             name: "Projeto: Buscar Imagens",
-            descricao: "Sistema para buscar e filtrar imagens por categorias utilizando API.",
+            descricao:
+                "Sistema para buscar e filtrar imagens por categorias utilizando API.",
             site: "https://buscar-imagens-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_BuscarImagens",
             video: "/VideosProjetos/video_buscarimagens.mp4",
         },
         {
             name: "Projeto: Cia. Consagração",
-            descricao: "Site institucional para a Cia. Consagração, especializada em eventos e celebrações.",
+            descricao:
+                "Site institucional para a Cia. Consagração, especializada em eventos e celebrações.",
             site: "https://cia-consagracao-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_CiaConsagracao",
             video: "/VideosProjetos/video_ciaconsagracao.mp4",
-        }
-
+        },
+        {
+            name: "Projeto: Clone Amazon",
+            descricao:
+                "Clone da interface do Amazon com funcionalidades básicas de navegação e compra.",
+            site: "https://clone-amazon-projeto.vercel.app/",
+            github: "https://github.com/kayquemab/Projeto_CloneAmazon",
+            video: "/VideosProjetos/video_amazon.mp4",
+        },
     ];
 
     // Estado da busca
     const [busca, setBusca] = useState("");
 
     // Filtrar por NOME ou DESCRIÇÃO
-    const projetosFiltrados = projetos.filter((proj) =>
-        proj.name.toLowerCase().includes(busca.toLowerCase()) ||
-        proj.descricao.toLowerCase().includes(busca.toLowerCase())
+    const projetosFiltrados = projetos.filter(
+        (proj) =>
+            proj.name.toLowerCase().includes(busca.toLowerCase()) ||
+            proj.descricao.toLowerCase().includes(busca.toLowerCase())
     );
 
     // Variantes de animação
@@ -118,7 +129,6 @@ export default function Projetos() {
     };
 
     return (
-
         <section
             className="
         flex flex-col justify-center items-center
@@ -128,7 +138,6 @@ export default function Projetos() {
         pt-16 sm:pt-20 md:pt-24 lg:pt-8
       "
         >
-
             {/* Título */}
             <motion.h2
                 className="text-3xl md:text-4xl font-bold text-white mb-8"
@@ -142,11 +151,7 @@ export default function Projetos() {
 
             {/* Barra de Pesquisa */}
             <div className="w-full max-w-md mb-10 relative">
-
-                <Search
-                    size={18}
-                    className="absolute left-3 top-3 text-white/60"
-                />
+                <Search size={18} className="absolute left-3 top-3 text-white/60" />
 
                 <input
                     type="text"
@@ -163,93 +168,96 @@ export default function Projetos() {
             </div>
 
             {/* Cards */}
-            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4">
-
+            <div className="grid w-full items-start gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4">
                 {projetosFiltrados.length > 0 ? (
-
                     projetosFiltrados.map((proj, i) => (
-
                         <motion.div
                             key={proj.name}
-                            className="bg-neutral-800 rounded-xl shadow-md overflow-hidden flex flex-col"
+                            className="
+                overflow-hidden rounded-xl
+                border border-white/10
+                bg-neutral-800
+                text-left shadow-md
+                flex flex-col
+              "
                             variants={cardVariants}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
                             custom={i}
-                            whileHover={{ scale: 1.05 }}
+                            whileHover={{ scale: 1.04 }}
                         >
+                            {/* Vídeo do projeto com altura padronizada */}
+                            {proj.video && (
+                                <div className="relative h-[180px] w-full overflow-hidden bg-neutral-700">
+                                    <video
+                                        src={proj.video}
+                                        controls
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        className="
+                      absolute inset-0
+                      h-full w-full
+                      object-cover
+                    "
+                                    />
+                                </div>
+                            )}
 
-                            <div className="bg-white/5 border border-white/10 rounded-2xl shadow-md overflow-hidden backdrop-blur-md flex flex-col h-full">
+                            {/* Conteúdo do card com altura padronizada */}
+                            <div className="flex h-[128px] flex-col px-3 py-3">
+                                {/* Nome do projeto */}
+                                <h3 className="text-sm sm:text-base font-semibold text-white leading-snug">
+                                    {proj.name}
+                                </h3>
 
-                                <div className="p-4 flex flex-col h-full">
+                                {/* Descrição */}
+                                <p className="mt-2 line-clamp-2 text-[11px] sm:text-xs leading-relaxed text-gray-300">
+                                    {proj.descricao}
+                                </p>
 
-                                    {/* Vídeo do projeto */}
-                                    {proj.video && (
-                                        <video
-                                            src={proj.video}
-                                            controls
-                                            autoPlay
-                                            muted
-                                            loop
-                                            playsInline
-                                            className="w-full h-45 2xl:h-70 rounded-md mb-4 object-cover"
-                                        />
+                                {/* Botões */}
+                                <div className="mt-auto flex flex-wrap gap-2 pt-3">
+                                    {proj.site && (
+                                        <a
+                                            href={proj.site}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="
+                        rounded-md bg-white px-3 py-1
+                        text-[11px] sm:text-xs font-medium text-black
+                        hover:opacity-80 transition cursor-pointer
+                      "
+                                        >
+                                            Ver Projeto
+                                        </a>
                                     )}
 
-                                    {/* Nome do projeto */}
-                                    <h3 className="text-lg font-semibold text-white grow">
-                                        {proj.name}
-                                    </h3>
-
-                                    {/* Descrição */}
-                                    <p className="text-sm text-left text-white grow mt-4">
-                                        <strong>Descrição:</strong> {proj.descricao}
-                                    </p>
-
-                                    {/* Botões */}
-                                    <div className="flex gap-3 mt-4">
-
-                                        {proj.site && (
-                                            <a
-                                                href={proj.site}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="px-3 py-1 rounded-lg bg-white text-black text-sm hover:opacity-80 transition cursor-pointer"
-                                            >
-                                                Ver Projeto
-                                            </a>
-                                        )}
-
-                                        {proj.github && (
-                                            <a
-                                                href={proj.github}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="px-3 py-1 rounded-lg border border-white/50 text-sm text-white hover:opacity-80 transition cursor-pointer"
-                                            >
-                                                GitHub
-                                            </a>
-                                        )}
-
-                                    </div>
-
+                                    {proj.github && (
+                                        <a
+                                            href={proj.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="
+                        rounded-md border border-white/50 px-3 py-1
+                        text-[11px] sm:text-xs font-medium text-white
+                        hover:opacity-80 transition cursor-pointer
+                      "
+                                        >
+                                            GitHub
+                                        </a>
+                                    )}
                                 </div>
-
                             </div>
-
                         </motion.div>
-
                     ))
-
                 ) : (
-
                     <p className="col-span-full text-white/60 text-lg mt-6 text-center">
                         Nenhum projeto encontrado para "<strong>{busca}</strong>".
                     </p>
-
                 )}
-
             </div>
 
             {/* Botão Home */}
@@ -268,13 +276,13 @@ export default function Projetos() {
                     scale: 1.12,
                     y: -6,
                     boxShadow: "0px 12px 25px rgba(0,0,0,0.35)",
-                    transition: { duration: 0.15, ease: "easeOut" }
+                    transition: { duration: 0.15, ease: "easeOut" },
                 }}
                 whileTap={{
                     scale: 0.96,
                     y: 0,
                     boxShadow: "0px 4px 10px rgba(0,0,0,0.25)",
-                    transition: { duration: 0.1, ease: "easeIn" }
+                    transition: { duration: 0.1, ease: "easeIn" },
                 }}
             >
                 <span className="inline-flex items-center gap-2">
@@ -282,8 +290,6 @@ export default function Projetos() {
                     Voltar para Home
                 </span>
             </motion.a>
-
         </section>
-
     );
 }

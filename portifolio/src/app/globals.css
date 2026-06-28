@@ -5,3 +5,52 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Carrossel mobile da seção Meus Projetos */
+.projetos-mobile-swiper {
+  width: 100%;
+  padding-bottom: 36px;
+  overflow: visible;
+}
+
+.projetos-mobile-swiper .swiper-slide {
+  height: auto;
+}
+
+.projetos-mobile-swiper .swiper-button-prev,
+.projetos-mobile-swiper .swiper-button-next {
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+  top: 43%;
+  z-index: 20;
+}
+
+.projetos-mobile-swiper .swiper-button-prev {
+  left: 4px;
+}
+
+.projetos-mobile-swiper .swiper-button-next {
+  right: 4px;
+}
+
+.projetos-mobile-swiper .swiper-button-prev::after,
+.projetos-mobile-swiper .swiper-button-next::after {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.projetos-mobile-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.projetos-mobile-swiper .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+}
+
+.projetos-mobile-swiper .swiper-pagination-bullet-active {
+  background: #ffffff;
+}

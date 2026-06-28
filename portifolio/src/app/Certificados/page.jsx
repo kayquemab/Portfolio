@@ -1,15 +1,17 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { House, X } from "lucide-react";
+import { House, Search, X } from "lucide-react";
 import { FaLaptopCode } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 
 export default function Certificados() {
   const [selectedCert, setSelectedCert] = useState(null);
 
-  const certificacoes = [
+  // Estado da busca
+  const [busca, setBusca] = useState("");
 
+  const certificacoes = [
     // Curso em Vídeo
 
     // {
@@ -231,8 +233,23 @@ export default function Certificados() {
       data: "Emitido: Fev 2026",
       // imagem:
     },
-
   ];
+
+  // Normaliza o texto digitado na busca
+  const buscaNormalizada = busca.toLowerCase().trim();
+
+  // Filtra certificados por título, organização ou data
+  const certificacoesFiltradas = certificacoes.filter((cert) => {
+    const titulo = cert.titulo.toLowerCase();
+    const org = cert.org.toLowerCase();
+    const data = cert.data.toLowerCase();
+
+    return (
+      titulo.includes(buscaNormalizada) ||
+      org.includes(buscaNormalizada) ||
+      data.includes(buscaNormalizada)
+    );
+  });
 
   const cardVariants = {
     hidden: { opacity: 0, y: 40 },
@@ -252,6 +269,7 @@ export default function Certificados() {
     function handleEsc(e) {
       if (e.key === "Escape") setSelectedCert(null);
     }
+
     window.addEventListener("keydown", handleEsc);
     return () => window.removeEventListener("keydown", handleEsc);
   }, []);
@@ -266,7 +284,6 @@ export default function Certificados() {
         pt-16 sm:pt-20 md:pt-24 lg:pt-8
       "
     >
-
       {/* Título */}
       <motion.h2
         className="text-3xl md:text-4xl font-bold text-white mb-8"
@@ -289,88 +306,161 @@ export default function Certificados() {
         Clique em um certificado para ampliá-lo.
       </motion.p>
 
-{/* Grid */}
-<div className="grid w-full max-w-7xl gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-3">
-  {certificacoes.map((cert, i) => (
-    <motion.div
-      key={cert.titulo}
-      onClick={() => cert.imagem && setSelectedCert(cert)}
-      className="
-        bg-neutral-800 rounded-xl overflow-hidden text-left shadow-md
-        flex flex-col cursor-pointer
-      "
-      variants={cardVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      custom={i}
-      whileHover={{
-        scale: 1.05,
-        transition: {
-          type: "spring",
-          stiffness: 200,
-          damping: 20,
-        },
-      }}
-    >
-      {/* Banner do certificado */}
-      <div className="w-full h-[180px] bg-neutral-700">
-        {cert.imagem ? (
-          <img
-            src={cert.imagem}
-            alt={cert.titulo}
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          /*
-            Placeholder:
-            aparece quando o certificado ainda não tem imagem cadastrada.
-          */
-          <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-gray-300">
-            <FaLaptopCode size={34} />
-            <span className="text-sm font-medium">Certificado</span>
-          </div>
-        )}
-      </div>
+      {/* Barra de pesquisa */}
+      <div className="relative mb-10 w-full max-w-md">
+        <Search size={18} className="absolute left-3 top-3 text-white/60" />
 
-      {/* Conteúdo do card */}
-      <div className="p-4 flex gap-3 items-start">
-        {/* Ícone lateral */}
-        <div
+        <input
+          type="text"
+          placeholder="Pesquisar por certificado, escola ou data..."
+          value={busca}
+          onChange={(e) => setBusca(e.target.value)}
           className="
-            flex h-9 w-9 shrink-0 items-center justify-center
-            rounded-full bg-white/10
+            w-full rounded-xl border border-white/10
+            bg-neutral-900 py-2 pl-10 pr-4
+            text-white placeholder-white/40
+            focus:outline-none focus:ring-2 focus:ring-white/30
           "
-        >
-          <FaLaptopCode size={18} className="text-white" />
-        </div>
-
-        {/* Informações do certificado */}
-        <div className="flex flex-col">
-          {/*
-            whitespace-nowrap:
-            mantém o título em uma única linha.
-
-            Não usamos text-ellipsis aqui,
-            porque você quer o texto completo, sem "...".
-          */}
-          <p className="text-white font-medium whitespace-nowrap text-[13px] xl:text-sm leading-snug">
-            {cert.titulo}
-          </p>
-
-          <p className="text-gray-300 text-xs xl:text-sm whitespace-nowrap">
-            {cert.org}
-          </p>
-
-          {/* Data em formato de badge */}
-          <p className="mt-3 w-fit rounded-full bg-white/10 px-3 py-1 text-[11px] text-gray-400 whitespace-nowrap">
-            {cert.data}
-          </p>
-        </div>
+        />
       </div>
-    </motion.div>
-  ))}
-</div>
+
+      {certificacoesFiltradas.length > 0 ? (
+        <>
+          {/* Mobile */}
+          <div className="grid w-full max-w-md grid-cols-1 gap-3 sm:hidden">
+            {certificacoesFiltradas.map((cert, i) => (
+              <motion.button
+                key={cert.titulo}
+                type="button"
+                onClick={() => {
+                  if (cert.imagem) {
+                    setSelectedCert(cert);
+                  }
+                }}
+                disabled={!cert.imagem}
+                className={[
+                  "w-full rounded-2xl border border-white/10 bg-neutral-900/60",
+                  "px-4 py-3 text-left backdrop-blur-md",
+                  "flex items-center gap-3",
+                  cert.imagem
+                    ? "cursor-pointer active:scale-[0.98]"
+                    : "cursor-default opacity-80",
+                ].join(" ")}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={i}
+                whileTap={cert.imagem ? { scale: 0.98 } : undefined}
+              >
+                <div
+                  className="
+                    flex h-11 w-11 shrink-0 items-center justify-center
+                    rounded-full bg-white/10
+                  "
+                >
+                  <FaLaptopCode size={18} className="text-white" />
+                </div>
+
+                <div className="min-w-0 flex-1">
+                  <p className="text-[13px] font-medium leading-snug text-white">
+                    {cert.titulo}
+                  </p>
+
+                  <div className="mt-1 flex flex-wrap items-center gap-2">
+                    <span className="text-xs text-gray-300">{cert.org}</span>
+
+                    <span className="rounded-full bg-white/10 px-2.5 py-1 text-[10px] text-gray-400">
+                      {cert.data}
+                    </span>
+                  </div>
+                </div>
+              </motion.button>
+            ))}
+          </div>
+
+          {/* Tablet / Desktop */}
+          <div className="hidden w-full max-w-7xl gap-6 sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-3">
+            {certificacoesFiltradas.map((cert, i) => (
+              <motion.div
+                key={cert.titulo}
+                onClick={() => cert.imagem && setSelectedCert(cert)}
+                className="
+                  bg-neutral-800 rounded-xl overflow-hidden text-left shadow-md
+                  flex flex-col cursor-pointer
+                "
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={i}
+                whileHover={{
+                  scale: 1.05,
+                  transition: {
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 20,
+                  },
+                }}
+              >
+                {/* Banner do certificado */}
+                <div className="w-full h-[180px] bg-neutral-700">
+                  {cert.imagem ? (
+                    <img
+                      src={cert.imagem}
+                      alt={cert.titulo}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    /*
+                      Placeholder:
+                      aparece quando o certificado ainda não tem imagem cadastrada.
+                    */
+                    <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-gray-300">
+                      <FaLaptopCode size={34} />
+                      <span className="text-sm font-medium">Certificado</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Conteúdo do card */}
+                <div className="p-4 flex gap-3 items-start">
+                  {/* Ícone lateral */}
+                  <div
+                    className="
+                      flex h-9 w-9 shrink-0 items-center justify-center
+                      rounded-full bg-white/10
+                    "
+                  >
+                    <FaLaptopCode size={18} className="text-white" />
+                  </div>
+
+                  {/* Informações do certificado */}
+                  <div className="flex flex-col">
+                    <p className="text-white font-medium whitespace-nowrap text-[13px] xl:text-sm leading-snug">
+                      {cert.titulo}
+                    </p>
+
+                    <p className="text-gray-300 text-xs xl:text-sm whitespace-nowrap">
+                      {cert.org}
+                    </p>
+
+                    {/* Data em formato de badge */}
+                    <p className="mt-3 w-fit rounded-full bg-white/10 px-3 py-1 text-[11px] text-gray-400 whitespace-nowrap">
+                      {cert.data}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </>
+      ) : (
+        /* Mensagem quando não encontra nenhum certificado */
+        <p className="mt-6 text-center text-lg text-white/60">
+          Nenhum certificado encontrado para "<strong>{busca}</strong>".
+        </p>
+      )}
 
       {/* MODAL */}
       <AnimatePresence>
@@ -402,7 +492,7 @@ export default function Certificados() {
               <img
                 src={selectedCert.imagem}
                 alt={selectedCert.titulo}
-                className="w-full max-h-[85vh] object-contain rounded-xl "
+                className="w-full max-h-[85vh] object-contain rounded-xl"
               />
             </motion.div>
           </motion.div>
