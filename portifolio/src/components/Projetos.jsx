@@ -1,21 +1,29 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FolderGit } from "lucide-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 
+import ProjetoModal from "@/components/ProjetoModal";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function Projetos() {
+  const [projetoSelecionado, setProjetoSelecionado] = useState(null);
+
   const projetos = [
     {
       name: "Projeto: Clone Spotify",
       descricao:
         "Clone da interface do Spotify com funcionalidades básicas de reprodução de música.",
+      descricaoDetalhada:
+        "Clone da interface do Spotify desenvolvido para praticar componentização, organização visual, responsividade e criação de uma experiência parecida com um player de música.",
+      tecnologias: ["React", "JavaScript", "Vite", "Tailwind CSS"],
       site: "https://clone-spotify-projeto.vercel.app/",
       github: "https://github.com/kayquemab/Projeto_CloneSpotify",
       video: "/VideosProjetos/video_spotify.mp4",
@@ -23,20 +31,25 @@ export default function Projetos() {
     {
       name: "Projeto: Clone Amazon",
       descricao:
-        "Clone da interface do Amazon com funcionalidades básicas de navegação e compra.",
+        "Clone da interface da Amazon com foco em layout, navegação básica e responsividade.",
+      descricaoDetalhada:
+        "Clone da interface da Amazon desenvolvido para praticar estruturação de layout, cards de produtos, organização visual e navegação básica em páginas web.",
+      tecnologias: ["HTML5", "CSS3", "JavaScript"],
       site: "https://clone-amazon-projeto.vercel.app/",
       github: "https://github.com/kayquemab/Projeto_CloneAmazon",
-      video: "/VideosProjetos/video_amazon.mp4",
+      video: "",
     },
     {
-      name: "Projeto: 100 Algotitmos",
+      name: "Projeto: 100 Algoritmos",
       descricao: "Repositório com 100 algoritmos de lógica de programação.",
+      descricaoDetalhada:
+        "Repositório criado para praticar lógica de programação através de exercícios progressivos, trabalhando raciocínio lógico, estruturas condicionais, repetições e resolução de problemas.",
+      tecnologias: ["Lógica de Programação", "Algoritmos"],
       github: "https://github.com/kayquemab/Projeto_Algoritmos",
       video: "/VideosProjetos/video_algoritmos.mp4",
     },
   ];
 
-  // Variantes de animação
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i) => ({
@@ -49,6 +62,13 @@ export default function Projetos() {
         damping: 20,
       },
     }),
+  };
+
+  const abrirModalPeloTeclado = (event, projeto) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setProjetoSelecionado(projeto);
+    }
   };
 
   return (
@@ -65,7 +85,6 @@ export default function Projetos() {
         overflow-x-hidden
       "
     >
-      {/* Título */}
       <motion.h2
         className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-8"
         initial={{ opacity: 0, y: -30 }}
@@ -76,7 +95,6 @@ export default function Projetos() {
         Meus Projetos
       </motion.h2>
 
-      {/* Subtítulo */}
       <motion.p
         className="
           text-gray-300
@@ -94,7 +112,6 @@ export default function Projetos() {
         Confira meus projetos e as soluções criativas que desenvolvi.
       </motion.p>
 
-      {/* Mobile - Carrossel */}
       <div
         className="
           w-full
@@ -110,26 +127,33 @@ export default function Projetos() {
           spaceBetween={14}
           slidesPerView={1}
           grabCursor={true}
+          preventClicks={false}
+          preventClicksPropagation={false}
           className="projetos-mobile-swiper"
         >
           {projetos.map((proj, i) => (
             <SwiperSlide key={proj.name}>
               <motion.div
+                role="button"
+                tabIndex={0}
+                aria-label={`Abrir detalhes do ${proj.name}`}
                 className="
                   overflow-hidden rounded-xl
                   border border-white/10
                   bg-neutral-800
                   text-left shadow-md
                   flex flex-col
+                  cursor-pointer
                 "
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i}
+                onClick={() => setProjetoSelecionado(proj)}
+                onKeyDown={(event) => abrirModalPeloTeclado(event, proj)}
               >
-                {/* Vídeo do projeto no mobile */}
-                {proj.video && (
+                {proj.video ? (
                   <div className="relative h-[135px] w-full overflow-hidden bg-neutral-700">
                     <video
                       src={proj.video}
@@ -145,9 +169,12 @@ export default function Projetos() {
                       "
                     />
                   </div>
+                ) : (
+                  <div className="flex h-[135px] w-full items-center justify-center bg-neutral-700 text-xs text-white/50">
+                    Preview indisponível
+                  </div>
                 )}
 
-                {/* Conteúdo do card */}
                 <div className="px-3 py-3">
                   <h3 className="text-[13px] font-semibold text-white leading-snug">
                     {proj.name}
@@ -157,37 +184,9 @@ export default function Projetos() {
                     {proj.descricao}
                   </p>
 
-                  <div className="mt-3 flex gap-2">
-                    {proj.site && (
-                      <a
-                        href={proj.site}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="
-                          rounded-md bg-white px-3 py-1
-                          text-[10px] font-medium text-black
-                          hover:opacity-80 transition cursor-pointer
-                        "
-                      >
-                        Ver Projeto
-                      </a>
-                    )}
-
-                    {proj.github && (
-                      <a
-                        href={proj.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="
-                          rounded-md border border-white/50 px-3 py-1
-                          text-[10px] font-medium text-white
-                          hover:opacity-80 transition cursor-pointer
-                        "
-                      >
-                        GitHub
-                      </a>
-                    )}
-                  </div>
+                  <p className="mt-3 text-[10px] font-medium text-white/50">
+                    Clique para ver detalhes
+                  </p>
                 </div>
               </motion.div>
             </SwiperSlide>
@@ -195,17 +194,20 @@ export default function Projetos() {
         </Swiper>
       </div>
 
-      {/* Desktop - Mesmo design dos cards do mobile */}
       <div className="hidden w-full gap-6 sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3">
         {projetos.map((proj, i) => (
           <motion.div
             key={proj.name}
+            role="button"
+            tabIndex={0}
+            aria-label={`Abrir detalhes do ${proj.name}`}
             className="
               overflow-hidden rounded-xl
               border border-white/10
               bg-neutral-800
               text-left shadow-md
               flex flex-col
+              cursor-pointer
             "
             variants={cardVariants}
             initial="hidden"
@@ -213,28 +215,32 @@ export default function Projetos() {
             viewport={{ once: true }}
             custom={i}
             whileHover={{ scale: 1.04 }}
+            onClick={() => setProjetoSelecionado(proj)}
+            onKeyDown={(event) => abrirModalPeloTeclado(event, proj)}
           >
-            {/* Vídeo do projeto no desktop */}
-            {proj.video && (
+            {proj.video ? (
               <div className="relative h-[180px] w-full overflow-hidden bg-neutral-700">
                 <video
                   src={proj.video}
-                  controls
                   autoPlay
                   muted
                   loop
                   playsInline
                   className="
+                    pointer-events-none
                     absolute inset-0
                     h-full w-full
                     object-cover
                   "
                 />
               </div>
+            ) : (
+              <div className="flex h-[180px] w-full items-center justify-center bg-neutral-700 text-sm text-white/50">
+                Preview indisponível
+              </div>
             )}
 
-            {/* Conteúdo do card */}
-            <div className="px-4 py-4">
+            <div className="flex flex-1 flex-col px-4 py-4">
               <h3 className="text-base font-semibold text-white leading-snug">
                 {proj.name}
               </h3>
@@ -243,48 +249,18 @@ export default function Projetos() {
                 {proj.descricao}
               </p>
 
-              <div className="mt-4 flex flex-wrap gap-2">
-                {proj.site && (
-                  <a
-                    href={proj.site}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                      rounded-md bg-white px-3 py-1.5
-                      text-xs font-medium text-black
-                      hover:opacity-80 transition cursor-pointer
-                    "
-                  >
-                    Ver Projeto
-                  </a>
-                )}
-
-                {proj.github && (
-                  <a
-                    href={proj.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                      rounded-md border border-white/50 px-3 py-1.5
-                      text-xs font-medium text-white
-                      hover:opacity-80 transition cursor-pointer
-                    "
-                  >
-                    GitHub
-                  </a>
-                )}
-              </div>
+              <p className="mt-auto pt-4 text-xs font-medium text-white/50">
+                Clique para ver detalhes
+              </p>
             </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Botão */}
       <motion.a
         href="/Projetos"
         target="_blank"
         rel="noopener noreferrer"
-
         className="
           mt-6 sm:mt-8
           px-5 sm:px-6
@@ -319,70 +295,10 @@ export default function Projetos() {
         </span>
       </motion.a>
 
-      {/* Estilo do carrossel mobile */}
-      <style>{`
-        .projetos-mobile-swiper {
-          width: 100%;
-          max-width: 100%;
-          padding-bottom: 28px;
-          overflow: hidden;
-        }
-
-        .projetos-mobile-swiper .swiper-wrapper {
-          align-items: stretch;
-        }
-
-        .projetos-mobile-swiper .swiper-slide {
-          height: auto;
-          max-width: 100%;
-          box-sizing: border-box;
-        }
-
-        .projetos-mobile-swiper .swiper-button-prev,
-        .projetos-mobile-swiper .swiper-button-next {
-          width: 22px;
-          height: 22px;
-          color: #ffffff;
-          top: 39%;
-          z-index: 20;
-        }
-
-        .projetos-mobile-swiper .swiper-button-prev {
-          left: 5px;
-        }
-
-        .projetos-mobile-swiper .swiper-button-next {
-          right: 5px;
-        }
-
-        .projetos-mobile-swiper .swiper-button-prev::after,
-        .projetos-mobile-swiper .swiper-button-next::after {
-          font-size: 20px;
-          font-weight: 700;
-        }
-
-        .projetos-mobile-swiper .swiper-pagination {
-          bottom: 0 !important;
-        }
-
-        .projetos-mobile-swiper .swiper-pagination-bullet {
-          width: 6px;
-          height: 6px;
-          background: rgba(255, 255, 255, 0.25);
-          opacity: 1;
-        }
-
-        .projetos-mobile-swiper .swiper-pagination-bullet-active {
-          background: #ffffff;
-        }
-
-        @media (max-width: 380px) {
-          .projetos-mobile-swiper .swiper-button-prev,
-          .projetos-mobile-swiper .swiper-button-next {
-            display: none;
-          }
-        }
-      `}</style>
+      <ProjetoModal
+        projeto={projetoSelecionado}
+        onClose={() => setProjetoSelecionado(null)}
+      />
     </section>
   );
 }

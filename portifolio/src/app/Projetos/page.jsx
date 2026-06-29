@@ -1,28 +1,42 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { House, Search } from "lucide-react";
-import { useState } from "react";
+
+import ProjetoModal from "@/components/ProjetoModal";
 import ResponsiveGrid from "@/components/common/ResponsiveGrid";
 
 export default function Projetos() {
+    const [busca, setBusca] = useState("");
+    const [projetoSelecionado, setProjetoSelecionado] = useState(null);
+
     const projetos = [
         {
             name: "Projeto: Costs",
             descricao: "Sistema para gerenciar orçamentos e custos de projetos.",
+            descricaoDetalhada:
+                "Sistema desenvolvido para praticar conceitos de React, rotas, componentes, formulários e gerenciamento de dados. A proposta do projeto é permitir o cadastro, visualização e acompanhamento de custos relacionados a diferentes projetos.",
+            tecnologias: ["React", "JavaScript", "CSS3", "Vercel"],
             site: "https://costs-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_Costs",
             video: "/VideosProjetos/video_costs.mp4",
         },
         {
-            name: "Projeto: 100 Algotitmos",
+            name: "Projeto: 100 Algoritmos",
             descricao: "Repositório com 100 algoritmos de lógica de programação.",
+            descricaoDetalhada:
+                "Repositório criado para praticar lógica de programação através de exercícios progressivos, trabalhando raciocínio lógico, estruturas condicionais, repetições e resolução de problemas.",
+            tecnologias: ["Lógica de Programação", "Algoritmos"],
             github: "https://github.com/kayquemab/Projeto_Algoritmos",
             video: "/VideosProjetos/video_algoritmos.mp4",
         },
         {
             name: "Projeto: Google Glass",
             descricao: "Site informativo sobre o Google Glass e suas especificações.",
+            descricaoDetalhada:
+                "Site informativo criado para praticar estruturação de páginas, semântica, estilização e organização de conteúdo. O projeto apresenta informações sobre o Google Glass com foco em layout, navegação e prática de HTML, CSS e JavaScript.",
+            tecnologias: ["HTML5", "CSS3", "JavaScript"],
             site: "https://google-glass-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_GoogleGlass",
             video: "/VideosProjetos/video_googleglass.mp4",
@@ -30,6 +44,9 @@ export default function Projetos() {
         {
             name: "Projeto: PokeNext",
             descricao: "Sistema informativo sobre o mundo Pokémon.",
+            descricaoDetalhada:
+                "Aplicação desenvolvida para praticar conceitos de Next.js, consumo de dados, rotas e construção de interfaces dinâmicas. O projeto apresenta informações sobre Pokémon em uma interface simples, organizada e responsiva.",
+            tecnologias: ["Next.js", "React", "JavaScript", "CSS3"],
             site: "https://poke-next-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_PokeNext",
             video: "/VideosProjetos/video_pokenext.mp4",
@@ -37,6 +54,9 @@ export default function Projetos() {
         {
             name: "Projeto: StarBucks",
             descricao: "Clone da página inicial do StarBucks com design responsivo.",
+            descricaoDetalhada:
+                "Clone visual da página inicial do StarBucks desenvolvido para praticar composição de layout, responsividade, organização de seções e estilização com HTML, CSS e JavaScript.",
+            tecnologias: ["HTML5", "CSS3", "JavaScript"],
             site: "https://star-bucks-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_StarBucks",
             video: "/VideosProjetos/video_starbucks.mp4",
@@ -45,6 +65,9 @@ export default function Projetos() {
             name: "Projeto: Food",
             descricao:
                 "Criação e desenvolvimento de uma página voltada para um site gastronômico.",
+            descricaoDetalhada:
+                "Página desenvolvida para praticar criação de interfaces modernas, organização visual, responsividade e apresentação de conteúdo para um site gastronômico. O foco foi trabalhar estrutura, espaçamento, imagens e chamada visual.",
+            tecnologias: ["HTML5", "CSS3", "JavaScript"],
             site: "https://food-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_Food",
             video: "/VideosProjetos/video_food.mp4",
@@ -53,27 +76,39 @@ export default function Projetos() {
             name: "Projeto: Clone Spotify",
             descricao:
                 "Clone da interface do Spotify com funcionalidades básicas de reprodução de música.",
+            descricaoDetalhada:
+                "Clone da interface do Spotify desenvolvido para praticar componentização, organização visual, responsividade e criação de uma experiência parecida com um player de música.",
+            tecnologias: ["React", "JavaScript", "Vite", "Tailwind CSS"],
             site: "https://clone-spotify-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_CloneSpotify",
             video: "/VideosProjetos/video_spotify.mp4",
         },
         {
             name: "Projeto: Text To Voice",
-            descricao: "Sistema que converte texto em voz utilizando API",
+            descricao: "Sistema que converte texto em voz utilizando API.",
+            descricaoDetalhada:
+                "Aplicação criada para converter textos em áudio, utilizando recursos de voz no navegador. O projeto foi desenvolvido para praticar manipulação de inputs, eventos, integração com API do navegador e criação de uma interface simples e funcional.",
+            tecnologias: ["HTML5", "CSS3", "JavaScript", "Web Speech API"],
             site: "https://text-to-voice-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_TextToVoice",
             video: "/VideosProjetos/video_texttovoice.mp4",
         },
         {
             name: "Projeto: Socially",
-            descricao: "Rede social para conectar pessoas com interesses em comum.",
+            descricao: "Mini página animada para apresentação de uma rede social.",
+            descricaoDetalhada:
+                "Página visual desenvolvida para praticar animações, composição de layout e construção de uma interface moderna. O foco do projeto foi trabalhar apresentação visual, responsividade e elementos de destaque com HTML e CSS.",
+            tecnologias: ["HTML5", "CSS3"],
             site: "https://socially-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_Socially",
             video: "/VideosProjetos/video_socially.mp4",
         },
         {
-            name: "Projeto: Tela de login",
+            name: "Projeto: Tela de Login",
             descricao: "Tela de login com design moderno e responsivo.",
+            descricaoDetalhada:
+                "Interface de autenticação desenvolvida para praticar construção de formulários, organização de campos, responsividade e estilização visual. O projeto tem foco em apresentação, experiência visual e estruturação de uma tela comum em aplicações web.",
+            tecnologias: ["React", "JavaScript", "CSS3"],
             site: "https://tela-de-login-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_TelaDeLogin",
             video: "/VideosProjetos/video_teladelogin.mp4",
@@ -82,6 +117,9 @@ export default function Projetos() {
             name: "Projeto: Buscar Imagens",
             descricao:
                 "Sistema para buscar e filtrar imagens por categorias utilizando API.",
+            descricaoDetalhada:
+                "Aplicação desenvolvida para praticar consumo de API, busca, renderização de resultados e interação com o usuário. O projeto permite pesquisar imagens e visualizar resultados de forma simples, trabalhando lógica, eventos e manipulação de dados.",
+            tecnologias: ["HTML5", "CSS3", "JavaScript", "API"],
             site: "https://buscar-imagens-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_BuscarImagens",
             video: "/VideosProjetos/video_buscarimagens.mp4",
@@ -90,6 +128,9 @@ export default function Projetos() {
             name: "Projeto: Cia. Consagração",
             descricao:
                 "Site institucional para a Cia. Consagração, especializada em eventos e celebrações.",
+            descricaoDetalhada:
+                "Site institucional desenvolvido para apresentar a Cia. Consagração de forma profissional, com páginas organizadas, identidade visual, seções informativas e foco em responsividade. O projeto trabalha uma estrutura mais moderna com React, TypeScript, Vite, Tailwind e componentes reutilizáveis.",
+            tecnologias: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui"],
             site: "https://cia-consagracao-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_CiaConsagracao",
             video: "/VideosProjetos/video_ciaconsagracao.mp4",
@@ -97,20 +138,27 @@ export default function Projetos() {
         {
             name: "Projeto: Clone Amazon",
             descricao:
-                "Clone da interface do Amazon com funcionalidades básicas de navegação e compra.",
+                "Clone da interface da Amazon com foco em layout, navegação básica e responsividade.",
+            descricaoDetalhada:
+                "Clone da interface da Amazon desenvolvido para praticar estruturação de layout, cards de produtos, organização visual e navegação básica em páginas web.",
+            tecnologias: ["HTML5", "CSS3", "JavaScript"],
             site: "https://clone-amazon-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_CloneAmazon",
-            video: "/VideosProjetos/video_amazon.mp4",
+            video: "",
         },
     ];
 
-    const [busca, setBusca] = useState("");
+    const projetosFiltrados = projetos.filter((proj) => {
+        const buscaNormalizada = busca.toLowerCase();
 
-    const projetosFiltrados = projetos.filter(
-        (proj) =>
-            proj.name.toLowerCase().includes(busca.toLowerCase()) ||
-            proj.descricao.toLowerCase().includes(busca.toLowerCase())
-    );
+        return (
+            proj.name.toLowerCase().includes(buscaNormalizada) ||
+            proj.descricao.toLowerCase().includes(buscaNormalizada) ||
+            proj.tecnologias.some((tecnologia) =>
+                tecnologia.toLowerCase().includes(buscaNormalizada)
+            )
+        );
+    });
 
     const cardVariants = {
         hidden: { opacity: 0, y: 20 },
@@ -124,6 +172,13 @@ export default function Projetos() {
                 damping: 20,
             },
         }),
+    };
+
+    const abrirModalPeloTeclado = (event, projeto) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            setProjetoSelecionado(projeto);
+        }
     };
 
     return (
@@ -151,7 +206,7 @@ export default function Projetos() {
 
                 <input
                     type="text"
-                    placeholder="Pesquisar por projeto ou descrição..."
+                    placeholder="Pesquisar por projeto, descrição ou tecnologia..."
                     value={busca}
                     onChange={(e) => setBusca(e.target.value)}
                     className="
@@ -168,12 +223,16 @@ export default function Projetos() {
                     projetosFiltrados.map((proj, i) => (
                         <motion.div
                             key={proj.name}
+                            role="button"
+                            tabIndex={0}
+                            aria-label={`Abrir detalhes do ${proj.name}`}
                             className="
                 overflow-hidden rounded-xl
                 border border-white/10
                 bg-neutral-800
                 text-left shadow-md
                 flex flex-col
+                cursor-pointer
               "
                             variants={cardVariants}
                             initial="hidden"
@@ -181,22 +240,28 @@ export default function Projetos() {
                             viewport={{ once: true }}
                             custom={i}
                             whileHover={{ scale: 1.04 }}
+                            onClick={() => setProjetoSelecionado(proj)}
+                            onKeyDown={(event) => abrirModalPeloTeclado(event, proj)}
                         >
-                            {proj.video && (
+                            {proj.video ? (
                                 <div className="relative h-[180px] w-full overflow-hidden bg-neutral-700">
                                     <video
                                         src={proj.video}
-                                        controls
                                         autoPlay
                                         muted
                                         loop
                                         playsInline
                                         className="
+                      pointer-events-none
                       absolute inset-0
                       h-full w-full
                       object-cover
                     "
                                     />
+                                </div>
+                            ) : (
+                                <div className="flex h-[180px] w-full items-center justify-center bg-neutral-700 text-sm text-white/50">
+                                    Preview indisponível
                                 </div>
                             )}
 
@@ -209,37 +274,9 @@ export default function Projetos() {
                                     {proj.descricao}
                                 </p>
 
-                                <div className="mt-auto flex flex-wrap gap-2 pt-4">
-                                    {proj.site && (
-                                        <a
-                                            href={proj.site}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="
-                        rounded-md bg-white px-3 py-1
-                        text-[11px] sm:text-xs font-medium text-black
-                        hover:opacity-80 transition cursor-pointer
-                      "
-                                        >
-                                            Ver Projeto
-                                        </a>
-                                    )}
-
-                                    {proj.github && (
-                                        <a
-                                            href={proj.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="
-                        rounded-md border border-white/50 px-3 py-1
-                        text-[11px] sm:text-xs font-medium text-white
-                        hover:opacity-80 transition cursor-pointer
-                      "
-                                        >
-                                            GitHub
-                                        </a>
-                                    )}
-                                </div>
+                                <p className="mt-auto pt-4 text-[11px] font-medium text-white/50 sm:text-xs">
+                                    Clique para ver detalhes
+                                </p>
                             </div>
                         </motion.div>
                     ))
@@ -272,6 +309,11 @@ export default function Projetos() {
                     Voltar para Home
                 </span>
             </motion.a>
+
+            <ProjetoModal
+                projeto={projetoSelecionado}
+                onClose={() => setProjetoSelecionado(null)}
+            />
         </section>
     );
-}
+}   
