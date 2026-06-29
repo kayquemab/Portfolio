@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ExternalLink, Github, MonitorPlay, X } from "lucide-react";
+import StackIcon from "./StackIcon";
 
 export default function ProjetoModal({ projeto, onClose }) {
     const nomeProjeto = projeto?.name?.replace(/^Projeto:\s*/i, "");
@@ -146,13 +147,18 @@ export default function ProjetoModal({ projeto, onClose }) {
                                         </h4>
 
                                         {projeto.tecnologias?.length > 0 ? (
-                                            <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3">
+                                            <div className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4">
                                                 {projeto.tecnologias.map((tecnologia) => (
                                                     <div
                                                         key={tecnologia}
-                                                        className="flex items-center justify-center rounded-lg bg-neutral-900 px-2 py-3 text-center text-xs text-slate-300 sm:px-3"
+                                                        title={tecnologia}
+                                                        aria-label={tecnologia}
+                                                        className="flex h-14 items-center justify-center rounded-lg bg-neutral-900 text-white transition hover:bg-white/10"
                                                     >
-                                                        {tecnologia}
+                                                        <StackIcon
+                                                            name={tecnologia}
+                                                            className="h-10 w-10 shrink-0 text-white"
+                                                        />
                                                     </div>
                                                 ))}
                                             </div>

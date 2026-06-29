@@ -17,7 +17,7 @@ export default function Projetos() {
             descricao: "Sistema para gerenciar orçamentos e custos de projetos.",
             descricaoDetalhada:
                 "Sistema desenvolvido para praticar conceitos de React, rotas, componentes, formulários e gerenciamento de dados. A proposta do projeto é permitir o cadastro, visualização e acompanhamento de custos relacionados a diferentes projetos.",
-            tecnologias: ["React", "JavaScript", "CSS3", "Vercel"],
+            tecnologias: ["React", "JavaScript"],
             site: "https://costs-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_Costs",
             video: "/VideosProjetos/video_costs.mp4",
@@ -27,7 +27,7 @@ export default function Projetos() {
             descricao: "Repositório com 100 algoritmos de lógica de programação.",
             descricaoDetalhada:
                 "Repositório criado para praticar lógica de programação através de exercícios progressivos, trabalhando raciocínio lógico, estruturas condicionais, repetições e resolução de problemas.",
-            tecnologias: ["Lógica de Programação", "Algoritmos"],
+            tecnologias: ["Algoritmos"],
             github: "https://github.com/kayquemab/Projeto_Algoritmos",
             video: "/VideosProjetos/video_algoritmos.mp4",
         },
@@ -46,7 +46,7 @@ export default function Projetos() {
             descricao: "Sistema informativo sobre o mundo Pokémon.",
             descricaoDetalhada:
                 "Aplicação desenvolvida para praticar conceitos de Next.js, consumo de dados, rotas e construção de interfaces dinâmicas. O projeto apresenta informações sobre Pokémon em uma interface simples, organizada e responsiva.",
-            tecnologias: ["Next.js", "React", "JavaScript", "CSS3"],
+            tecnologias: ["Next.js", "JavaScript", "Tailwind CSS"],
             site: "https://poke-next-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_PokeNext",
             video: "/VideosProjetos/video_pokenext.mp4",
@@ -88,7 +88,7 @@ export default function Projetos() {
             descricao: "Sistema que converte texto em voz utilizando API.",
             descricaoDetalhada:
                 "Aplicação criada para converter textos em áudio, utilizando recursos de voz no navegador. O projeto foi desenvolvido para praticar manipulação de inputs, eventos, integração com API do navegador e criação de uma interface simples e funcional.",
-            tecnologias: ["HTML5", "CSS3", "JavaScript", "Web Speech API"],
+            tecnologias: ["HTML5", "CSS3", "JavaScript"],
             site: "https://text-to-voice-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_TextToVoice",
             video: "/VideosProjetos/video_texttovoice.mp4",
@@ -119,7 +119,7 @@ export default function Projetos() {
                 "Sistema para buscar e filtrar imagens por categorias utilizando API.",
             descricaoDetalhada:
                 "Aplicação desenvolvida para praticar consumo de API, busca, renderização de resultados e interação com o usuário. O projeto permite pesquisar imagens e visualizar resultados de forma simples, trabalhando lógica, eventos e manipulação de dados.",
-            tecnologias: ["HTML5", "CSS3", "JavaScript", "API"],
+            tecnologias: ["HTML5", "CSS3", "JavaScript"],
             site: "https://buscar-imagens-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_BuscarImagens",
             video: "/VideosProjetos/video_buscarimagens.mp4",
@@ -130,7 +130,7 @@ export default function Projetos() {
                 "Site institucional para a Cia. Consagração, especializada em eventos e celebrações.",
             descricaoDetalhada:
                 "Site institucional desenvolvido para apresentar a Cia. Consagração de forma profissional, com páginas organizadas, identidade visual, seções informativas e foco em responsividade. O projeto trabalha uma estrutura mais moderna com React, TypeScript, Vite, Tailwind e componentes reutilizáveis.",
-            tecnologias: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui"],
+            tecnologias: ["React", "TypeScript", "Vite", "Tailwind CSS",],
             site: "https://cia-consagracao-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_CiaConsagracao",
             video: "/VideosProjetos/video_ciaconsagracao.mp4",
@@ -184,12 +184,12 @@ export default function Projetos() {
     return (
         <section
             className="
-        flex flex-col justify-center items-center
-        px-4 sm:px-6 md:px-10 lg:px-0
-        text-center
-        pb-16 sm:pb-20 md:pb-24 lg:pb-32
-        pt-16 sm:pt-20 md:pt-24 lg:pt-8
-      "
+                flex flex-col justify-center items-center
+                px-4 sm:px-6 md:px-10 lg:px-0
+                text-center
+                pb-16 sm:pb-20 md:pb-24 lg:pb-32
+                pt-16 sm:pt-20 md:pt-24 lg:pt-8
+            "
         >
             <motion.h2
                 className="text-3xl md:text-4xl font-bold text-white mb-8"
@@ -210,11 +210,11 @@ export default function Projetos() {
                     value={busca}
                     onChange={(e) => setBusca(e.target.value)}
                     className="
-            w-full pl-10 pr-4 py-2 rounded-xl
-            bg-neutral-900 border border-white/10
-            text-white placeholder-white/40
-            focus:outline-none focus:ring-2 focus:ring-white/30
-          "
+                        w-full pl-10 pr-4 py-2 rounded-xl
+                        bg-neutral-900 border border-white/10
+                        text-white placeholder-white/40
+                        focus:outline-none focus:ring-2 focus:ring-white/30
+                    "
                 />
             </div>
 
@@ -227,13 +227,13 @@ export default function Projetos() {
                             tabIndex={0}
                             aria-label={`Abrir detalhes do ${proj.name}`}
                             className="
-                overflow-hidden rounded-xl
-                border border-white/10
-                bg-neutral-800
-                text-left shadow-md
-                flex flex-col
-                cursor-pointer
-              "
+                                overflow-hidden rounded-xl
+                                border border-white/10
+                                bg-neutral-800
+                                text-left shadow-md
+                                flex flex-col
+                                cursor-pointer
+                            "
                             variants={cardVariants}
                             initial="hidden"
                             whileInView="visible"
@@ -252,11 +252,11 @@ export default function Projetos() {
                                         loop
                                         playsInline
                                         className="
-                      pointer-events-none
-                      absolute inset-0
-                      h-full w-full
-                      object-cover
-                    "
+                                            pointer-events-none
+                                            absolute inset-0
+                                            h-full w-full
+                                            object-cover
+                                        "
                                     />
                                 </div>
                             ) : (
@@ -266,11 +266,11 @@ export default function Projetos() {
                             )}
 
                             <div className="flex min-h-[150px] flex-col px-3 py-3 sm:min-h-[156px] sm:px-4 sm:py-4">
-                                <h3 className="text-sm sm:text-base font-semibold text-white leading-snug">
+                                <h3 className="text-sm sm:text-base font-semibold text-white">
                                     {proj.name}
                                 </h3>
 
-                                <p className="mt-2 text-[11px] sm:text-xs leading-relaxed text-gray-300">
+                                <p className="mt-2 text-[11px] sm:text-xs text-gray-300">
                                     {proj.descricao}
                                 </p>
 
@@ -316,4 +316,4 @@ export default function Projetos() {
             />
         </section>
     );
-}   
+}

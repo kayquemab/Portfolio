@@ -44,7 +44,7 @@ export default function Projetos() {
       descricao: "Repositório com 100 algoritmos de lógica de programação.",
       descricaoDetalhada:
         "Repositório criado para praticar lógica de programação através de exercícios progressivos, trabalhando raciocínio lógico, estruturas condicionais, repetições e resolução de problemas.",
-      tecnologias: ["Lógica de Programação", "Algoritmos"],
+      tecnologias: ["Algoritmos"],
       github: "https://github.com/kayquemab/Projeto_Algoritmos",
       video: "/VideosProjetos/video_algoritmos.mp4",
     },
