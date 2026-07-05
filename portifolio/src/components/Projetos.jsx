@@ -48,6 +48,16 @@ export default function Projetos() {
       github: "https://github.com/kayquemab/Projeto_Algoritmos",
       video: "/VideosProjetos/video_algoritmos.mp4",
     },
+    {
+      name: "Projeto: Vizinho Indica",
+      descricao: "Marketplace de serviços confiáveis para comunidades e condomínios.",
+      descricaoDetalhada:
+        "Aplicação desenvolvida para conectar moradores a profissionais e serviços indicados pela própria comunidade, permitindo anúncios, avaliações, favoritos, mensagens e busca por categorias.",
+      tecnologias: ["React", "TypeScript", "Vite", "Supabase", "PostgreSQL", "Tailwind CSS"],
+      site: "https://vizinho-indica-projeto.vercel.app/",
+      github: "https://github.com/kayquemab/Projeto_VizinhoIndica",
+      video: "/VideosProjetos/video_vizinho_indica.mp4",
+    }
   ];
 
   const cardVariants = {
@@ -194,7 +204,7 @@ export default function Projetos() {
         </Swiper>
       </div>
 
-      <div className="hidden w-full gap-6 sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3">
+      <div className="hidden w-full gap-6 sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4">
         {projetos.map((proj, i) => (
           <motion.div
             key={proj.name}

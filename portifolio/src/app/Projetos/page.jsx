@@ -146,6 +146,16 @@ export default function Projetos() {
             github: "https://github.com/kayquemab/Projeto_CloneAmazon",
             video: "",
         },
+        {
+            name: "Projeto: Vizinho Indica",
+            descricao: "Marketplace de serviços confiáveis para comunidades e condomínios.",
+            descricaoDetalhada:
+                "Aplicação desenvolvida para conectar moradores a profissionais e serviços indicados pela própria comunidade, permitindo anúncios, avaliações, favoritos, mensagens e busca por categorias.",
+            tecnologias: ["React", "TypeScript", "Vite", "Supabase", "PostgreSQL", "Tailwind CSS"],
+            site: "https://vizinho-indica-projeto.vercel.app/",
+            github: "https://github.com/kayquemab/Projeto_VizinhoIndica",
+            video: "/VideosProjetos/video_vizinho_indica.mp4",
+        }
     ];
 
     const projetosFiltrados = projetos.filter((proj) => {
