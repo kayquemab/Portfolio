@@ -154,7 +154,7 @@ export default function Projetos() {
             tecnologias: ["React", "TypeScript", "Vite", "Supabase", "PostgreSQL", "Tailwind CSS"],
             site: "https://vizinho-indica-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_VizinhoIndica",
-            video: "/VideosProjetos/video_vizinho_indica.mp4",
+            video: "/VideosProjetos/video_vizinhoindica.mp4",
         }
     ];
 
