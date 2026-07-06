@@ -104,7 +104,7 @@ export default function Habilidades() {
       // { name: "Docker", icon: FaDocker },
       { name: "Vercel", icon: RiVercelLine },
       { name: "Git", icon: FaGitAlt },
-      // { name: "Postman", icon: SiPostman },
+      { name: "Postman", icon: SiPostman },
       // { name: "DevOps", icon: VscAzureDevops },
       // { name: "Google Cloud", icon: SiGooglecloud },
       // { name: "AWS", icon: FaAws },
