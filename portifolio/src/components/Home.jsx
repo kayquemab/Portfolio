@@ -31,23 +31,17 @@ export default function Home() {
         'app.get("/", (req, res) => res.send("Hello World"));',                                        // Express: framework minimalista para Node.js.
         'print("Hello World")',                                                                        // Python: linguagem de programação versátil, usada no back-end e dados.
         'from django.http import HttpResponse\ndef hello(request): return HttpResponse("Hello World")', // Django: framework Python completo para aplicações web.
-        'from fastapi import FastAPI\napp = FastAPI()\n@app.get("/")\ndef hello(): return {"message": "Hello World"}', // FastAPI: framework Python moderno para criação de APIs.
-        'import pandas as pd\nprint(pd.DataFrame({"message": ["Hello World"]}))',                      // Pandas: biblioteca Python para análise e manipulação de dados.
-        'import numpy as np\nprint(np.array(["Hello World"]))',                                        // NumPy: biblioteca Python para computação numérica.
-        'from sqlalchemy import text\nresult = session.execute(text("SELECT \\"Hello World\\"")).scalar_one()', // SQLAlchemy: biblioteca Python para trabalhar com banco de dados.
-        'def test_hello_world(): assert "Hello World" == "Hello World"',                               // Pytest: ferramenta Python para testes automatizados.
-        'from sklearn.feature_extraction.text import CountVectorizer\nprint(CountVectorizer().fit_transform(["Hello World"]).toarray())', // Scikit-learn: biblioteca Python para machine learning.
         'puts "Hello World"',                                                                          // Ruby: linguagem de programação usada no desenvolvimento web.
         'const { data } = await supabase.from("messages").select("*");',                               // Supabase: plataforma back-end baseada em PostgreSQL.
-        'const messages = await prisma.message.findMany();',                                           // Prisma: ORM para trabalhar com banco de dados em JS/TS.
+        'const messages = await prisma.message.findMany();',                                           // Prisma: ferramenta para trabalhar com bancos de dados em JavaScript e TypeScript.
         'package main\nimport "fmt"\nfunc main() { fmt.Println("Hello World") }',                      // Go: linguagem de programação focada em performance e simplicidade.
-        'console.log("Hello World from Firebase");',                                                   // Firebase: plataforma do Google para auth, banco de dados e hospedagem.
+        'console.log("Hello World from Firebase");',                                                   // Firebase: plataforma back-end com autenticação, banco de dados e hospedagem.
 
         // DevOps / Tools / Cloud
         'CMD echo "Hello World"',                                                                      // Docker: ferramenta para criar e rodar aplicações em containers.
-        'export default function handler(req, res) { res.status(200).send("Hello World"); }',          // Vercel: plataforma de deploy usada com front-end e Next.js.
+        'export default function handler(req, res) { res.status(200).send("Hello World"); }',          // Vercel: plataforma de deploy e hospedagem para aplicações web.
         'git commit -m "Hello World"',                                                                 // Git: sistema de versionamento de código.
-        'GET /hello-world',                                                                            // Postman: ferramenta para testar APIs.
+        'GET /hello-world',                                                                            // Postman: ferramenta para desenvolver e testar APIs.
         'script: echo "Hello World"',                                                                  // Azure DevOps: plataforma para DevOps, pipelines e gestão de projetos.
         'exports.helloWorld = (req, res) => res.send("Hello World");',                                 // Google Cloud: plataforma de serviços em nuvem do Google.
         'export const handler = async () => ({ statusCode: 200, body: "Hello World" });',              // AWS: plataforma de serviços em nuvem da Amazon.
@@ -55,14 +49,14 @@ export default function Home() {
         // Databases
         "SELECT 'Hello World';",                                                                       // MySQL: banco de dados relacional.
         "SELECT 'Hello World';",                                                                       // PostgreSQL: banco de dados relacional avançado.
-        'db.messages.insertOne({ message: "Hello World" });',                                         // MongoDB: banco de dados NoSQL baseado em documentos.
+        'db.messages.insertOne({ message: "Hello World" });',                                          // MongoDB: banco de dados NoSQL baseado em documentos.
         "SELECT 'Hello World' FROM dual;",                                                             // Oracle: banco de dados relacional corporativo.
         "SELECT 'Hello World';",                                                                       // SQL Server: banco de dados relacional da Microsoft.
 
         // Mobile
         'export default function App() { return <Text>Hello World</Text>; }',                          // React Native: framework para criar aplicativos mobile com React.
-        'Text("Hello World")',                                                                         // Flutter: framework para criar aplicativos mobile multiplataforma.
-        'print("Hello World")',                                                                        // Swift: linguagem usada principalmente para apps iOS.
+        'Text("Hello World")',                                                                         // Flutter: framework para criar aplicativos multiplataforma.
+        'print("Hello World")',                                                                        // Swift: linguagem usada principalmente para aplicativos iOS.
     ];
 
     const [displayedText, setDisplayedText] = useState("");

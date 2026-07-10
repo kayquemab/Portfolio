@@ -27,12 +27,6 @@ import { FaLaravel } from "react-icons/fa6";
 import { SiExpress } from "react-icons/si";
 import { FaPython } from "react-icons/fa6";
 import { SiDjango } from "react-icons/si";
-import { SiFastapi } from "react-icons/si";
-import { SiPandas } from "react-icons/si";
-import { SiNumpy } from "react-icons/si";
-import { SiSqlalchemy } from "react-icons/si";
-import { SiPytest } from "react-icons/si";
-import { SiScikitlearn } from "react-icons/si";
 import { DiRuby } from "react-icons/di";
 import { RiSupabaseFill } from "react-icons/ri";
 import { SiPrisma } from "react-icons/si";
@@ -58,7 +52,6 @@ import { DiMsqlServer } from "react-icons/di";
 // Mobile
 import { FaFlutter } from "react-icons/fa6";
 import { FaSwift } from "react-icons/fa6";
-import { IoLogoElectron } from "react-icons/io5";
 
 export default function Habilidades() {
   const [abaAtiva, setAbaAtiva] = useState("Frontend");
@@ -70,62 +63,55 @@ export default function Habilidades() {
       { name: "JavaScript", icon: IoLogoJavascript },
       { name: "TypeScript", icon: SiTypescript },
       { name: "React", icon: FaReact },
-      // { name: "Vue", icon: FaVuejs },
-      // { name: "Angular", icon: FaAngular },
-      { name: "Next", icon: SiNextdotjs },
+      { name: "Vue", icon: FaVuejs },
+      { name: "Angular", icon: FaAngular },
+      { name: "Next.js", icon: SiNextdotjs },
       { name: "Vite", icon: SiVite },
-      { name: "Tailwind", icon: SiTailwindcss },
-      // { name: "Bootstrap", icon: FaBootstrap },
-      // { name: "MUI", icon: SiMui },
-      // { name: "Svelte", icon: RiSvelteFill },
-      // { name: "Remix", icon: RiRemixRunLine },
-      // { name: "Nuxt", icon: SiNuxtdotjs },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "Bootstrap", icon: FaBootstrap },
+      { name: "MUI", icon: SiMui },
+      { name: "Svelte", icon: RiSvelteFill },
+      { name: "Remix", icon: RiRemixRunLine },
+      { name: "Nuxt", icon: SiNuxtdotjs },
     ],
 
-    // Backend: [
-    //   { name: "Node", icon: FaNodeJs },
-    //   { name: "PHP", icon: FaPhp },
-    //   { name: "Laravel", icon: FaLaravel },
-    //   { name: "Express", icon: SiExpress },
-    //   { name: "Python", icon: FaPython },
-    //   { name: "Django", icon: SiDjango },
-    //   { name: "FastAPI", icon: SiFastapi },
-    //   { name: "Pandas", icon: SiPandas },
-    //   { name: "NumPy", icon: SiNumpy },
-    //   { name: "SQLAlchemy", icon: SiSqlalchemy },
-    //   { name: "Pytest", icon: SiPytest },
-    //   { name: "scikit-learn", icon: SiScikitlearn },
-    //   { name: "Ruby", icon: DiRuby },
-    //   { name: "Prisma", icon: SiPrisma },
-    //   { name: "Go", icon: SiGo },
-    // ],
+    Backend: [
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "PHP", icon: FaPhp },
+      { name: "Laravel", icon: FaLaravel },
+      { name: "Express", icon: SiExpress },
+      { name: "Python", icon: FaPython },
+      { name: "Django", icon: SiDjango },
+      { name: "Ruby", icon: DiRuby },
+      { name: "Supabase", icon: RiSupabaseFill },
+      { name: "Prisma", icon: SiPrisma },
+      { name: "Go", icon: SiGo },
+      { name: "Firebase", icon: IoLogoFirebase },
+    ],
 
     Tools: [
-      // { name: "Docker", icon: FaDocker },
+      { name: "Docker", icon: FaDocker },
       { name: "Vercel", icon: RiVercelLine },
       { name: "Git", icon: FaGitAlt },
       { name: "Postman", icon: SiPostman },
-      // { name: "DevOps", icon: VscAzureDevops },
-      // { name: "Google Cloud", icon: SiGooglecloud },
-      // { name: "AWS", icon: FaAws },
+      { name: "Azure DevOps", icon: VscAzureDevops },
+      { name: "Google Cloud", icon: SiGooglecloud },
+      { name: "AWS", icon: FaAws },
     ],
 
     Databases: [
-      // { name: "MySQL", icon: DiMysql },
-      // { name: "PostgreSQL", icon: DiPostgresql },
-      // { name: "MongoDB", icon: TbBrandMongodb },
-      // { name: "Oracle", icon: GrOracle },
-      // { name: "SQL Server", icon: DiMsqlServer },
-      { name: "Supabase", icon: RiSupabaseFill },
-      // { name: "Firebase", icon: IoLogoFirebase },
+      { name: "MySQL", icon: DiMysql },
+      { name: "PostgreSQL", icon: DiPostgresql },
+      { name: "MongoDB", icon: TbBrandMongodb },
+      { name: "Oracle", icon: GrOracle },
+      { name: "SQL Server", icon: DiMsqlServer },
     ],
 
-    // Mobile: [
-    //   { name: "React Native", icon: FaReact },
-    //   { name: "Flutter", icon: FaFlutter },
-    //   { name: "Swift", icon: FaSwift },
-    //   { name: "Electron", icon: IoLogoElectron },
-    // ],
+    Mobile: [
+      { name: "React Native", icon: FaReact },
+      { name: "Flutter", icon: FaFlutter },
+      { name: "Swift", icon: FaSwift },
+    ],
   };
 
   const abas = Object.keys(gruposDeTecnologias);
