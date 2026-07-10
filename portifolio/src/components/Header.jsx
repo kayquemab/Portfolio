@@ -31,13 +31,13 @@ export default function Header({ scrollToSection }) {
         {/* Links */}
         <ul className="flex items-center gap-6 text-sm font-medium text-gray-200 dark:text-gray-200 font-sans">
 
-          {/* Apresentação */}
+          {/* Sobre mim */}
           <li>
             <button
               onClick={() => scrollToSection("apresentacao")}
               className="hover:opacity-70 transition-opacity cursor-pointer"
             >
-              Apresentação
+              Sobre mim
             </button>
           </li>
 
