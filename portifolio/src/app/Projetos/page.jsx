@@ -136,9 +136,9 @@ export default function Projetos() {
             video: "/VideosProjetos/video_ciaconsagracao.mp4",
         },
         {
-            name: "Projeto: Clone Amazon",
+            name: "Projeto: Clone Amazon (2024)",
             descricao:
-                "Clone da interface da Amazon com foco em layout, navegação básica e responsividade.",
+                "Clone da interface da Amazon, de 2024, com foco em layout, navegação básica e responsividade.",
             descricaoDetalhada:
                 "Clone da interface da Amazon desenvolvido para praticar estruturação de layout, cards de produtos, organização visual e navegação básica em páginas web.",
             tecnologias: ["HTML5", "CSS3", "JavaScript"],
