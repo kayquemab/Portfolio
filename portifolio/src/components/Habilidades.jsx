@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // Front-End
 import { FaHtml5 } from "react-icons/fa";
-import { IoLogoCss3 } from "react-icons/io5";
+import { IoLogoCss3, IoLogoElectron } from "react-icons/io5";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
@@ -83,9 +83,9 @@ export default function Habilidades() {
       { name: "Python", icon: FaPython },
       { name: "Django", icon: SiDjango },
       { name: "Ruby", icon: DiRuby },
-      { name: "Supabase", icon: RiSupabaseFill },
       { name: "Prisma", icon: SiPrisma },
       { name: "Go", icon: SiGo },
+      { name: "Supabase", icon: RiSupabaseFill },
       { name: "Firebase", icon: IoLogoFirebase },
     ],
 
@@ -111,6 +111,7 @@ export default function Habilidades() {
       { name: "React Native", icon: FaReact },
       { name: "Flutter", icon: FaFlutter },
       { name: "Swift", icon: FaSwift },
+      { name: "Electron", icon: IoLogoElectron },
     ],
   };
 
