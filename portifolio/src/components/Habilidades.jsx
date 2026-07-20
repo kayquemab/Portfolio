@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // Front-End
 import { FaHtml5 } from "react-icons/fa";
-import { IoLogoCss3, IoLogoElectron } from "react-icons/io5";
+import { IoLogoCss3 } from "react-icons/io5";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
@@ -38,6 +38,7 @@ import { FaDocker } from "react-icons/fa";
 import { RiVercelLine } from "react-icons/ri";
 import { FaGitAlt } from "react-icons/fa";
 import { SiPostman } from "react-icons/si";
+import { SiN8N } from "react-icons/si";
 import { VscAzureDevops } from "react-icons/vsc";
 import { SiGooglecloud } from "react-icons/si";
 import { FaAws } from "react-icons/fa6";
@@ -52,11 +53,14 @@ import { DiMsqlServer } from "react-icons/di";
 // Mobile
 import { FaFlutter } from "react-icons/fa6";
 import { FaSwift } from "react-icons/fa6";
+import { IoLogoElectron } from "react-icons/io5";
 
 export default function Habilidades() {
   const [abaAtiva, setAbaAtiva] = useState("Frontend");
 
+  // Tecnologias organizadas por área.
   const gruposDeTecnologias = {
+    // Front-End
     Frontend: [
       { name: "HTML5", icon: FaHtml5 },
       { name: "CSS3", icon: IoLogoCss3 },
@@ -75,6 +79,7 @@ export default function Habilidades() {
       { name: "Nuxt", icon: SiNuxtdotjs },
     ],
 
+    // Back-End
     Backend: [
       { name: "Node.js", icon: FaNodeJs },
       { name: "PHP", icon: FaPhp },
@@ -83,22 +88,25 @@ export default function Habilidades() {
       { name: "Python", icon: FaPython },
       { name: "Django", icon: SiDjango },
       { name: "Ruby", icon: DiRuby },
+      { name: "Supabase", icon: RiSupabaseFill },
       { name: "Prisma", icon: SiPrisma },
       { name: "Go", icon: SiGo },
-      { name: "Supabase", icon: RiSupabaseFill },
       { name: "Firebase", icon: IoLogoFirebase },
     ],
 
+    // DevOps / Tools / Cloud
     Tools: [
       { name: "Docker", icon: FaDocker },
       { name: "Vercel", icon: RiVercelLine },
       { name: "Git", icon: FaGitAlt },
       { name: "Postman", icon: SiPostman },
+      { name: "n8n", icon: SiN8N },
       { name: "Azure DevOps", icon: VscAzureDevops },
       { name: "Google Cloud", icon: SiGooglecloud },
       { name: "AWS", icon: FaAws },
     ],
 
+    // Databases
     Databases: [
       { name: "MySQL", icon: DiMysql },
       { name: "PostgreSQL", icon: DiPostgresql },
@@ -107,6 +115,7 @@ export default function Habilidades() {
       { name: "SQL Server", icon: DiMsqlServer },
     ],
 
+    // Mobile
     Mobile: [
       { name: "React Native", icon: FaReact },
       { name: "Flutter", icon: FaFlutter },
@@ -115,24 +124,60 @@ export default function Habilidades() {
     ],
   };
 
+  // Abas geradas a partir dos grupos de tecnologias.
   const abas = Object.keys(gruposDeTecnologias);
 
+  // Animação individual dos cards.
   const animacaoCard = {
-    hidden: { opacity: 0, y: 24 },
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+
     visible: (i) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.45, delay: i * 0.06, ease: "easeOut" },
+      transition: {
+        duration: 0.45,
+        delay: i * 0.06,
+        ease: "easeOut",
+      },
     }),
-    exit: { opacity: 0, y: 16, transition: { duration: 0.2 } },
+
+    exit: {
+      opacity: 0,
+      y: 16,
+      transition: {
+        duration: 0.2,
+      },
+    },
   };
 
+  // Animação aplicada durante a troca da grid.
   const animacaoGrid = {
-    hidden: { opacity: 0, y: 12 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.25 } },
-    exit: { opacity: 0, y: 8, transition: { duration: 0.18 } },
+    hidden: {
+      opacity: 0,
+      y: 12,
+    },
+
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.25,
+      },
+    },
+
+    exit: {
+      opacity: 0,
+      y: 8,
+      transition: {
+        duration: 0.18,
+      },
+    },
   };
 
+  // Tecnologias pertencentes à aba selecionada.
   const tecnologiasAtivas = gruposDeTecnologias[abaAtiva];
 
   return (
@@ -145,6 +190,7 @@ export default function Habilidades() {
         pt-16 sm:pt-20 md:pt-24 lg:pt-32
       "
     >
+      {/* Título da seção */}
       <motion.h2
         className="text-3xl md:text-4xl font-bold text-white mb-4"
         initial={{ opacity: 0, y: -22 }}
@@ -155,6 +201,7 @@ export default function Habilidades() {
         Linguagens e Tecnologias
       </motion.h2>
 
+      {/* Descrição da seção */}
       <motion.p
         className="text-gray-300 mb-8 sm:mb-10 text-center max-w-2xl"
         initial={{ opacity: 0, y: -14 }}
@@ -166,6 +213,7 @@ export default function Habilidades() {
         bem estruturadas.
       </motion.p>
 
+      {/* Navegação entre as categorias */}
       <div
         className="
           mb-8 sm:mb-10
@@ -179,17 +227,22 @@ export default function Habilidades() {
           return (
             <button
               key={aba}
+              type="button"
               onClick={() => setAbaAtiva(aba)}
+              aria-pressed={estaAtiva}
               className={[
                 "rounded-full px-4 py-2 text-xs sm:px-5 sm:text-sm transition cursor-pointer",
                 "border border-white/10 bg-white/5 text-white/80 hover:bg-white/10",
-                estaAtiva ? "bg-white/10 text-white border-white/20" : "",
+                estaAtiva
+                  ? "bg-white/10 text-white border-white/20"
+                  : "",
               ].join(" ")}
             >
               <span className="inline-flex items-center gap-2">
                 {estaAtiva && (
                   <span className="h-1.5 w-1.5 rounded-full bg-white" />
                 )}
+
                 {aba}
               </span>
             </button>
@@ -197,6 +250,7 @@ export default function Habilidades() {
         })}
       </div>
 
+      {/* Grid de tecnologias da categoria selecionada */}
       <div className="w-full max-w-6xl">
         <AnimatePresence mode="wait">
           <motion.div
@@ -239,8 +293,13 @@ export default function Habilidades() {
                   exit="exit"
                   custom={i}
                   whileHover={{ scale: 1.08 }}
-                  transition={{ type: "spring", stiffness: 260, damping: 18 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 18,
+                  }}
                 >
+                  {/* Ícone da tecnologia */}
                   <div
                     className="
                       flex h-8 w-8 shrink-0 items-center justify-center
@@ -253,6 +312,7 @@ export default function Habilidades() {
                     <Icone className="text-base text-white sm:text-[40px]" />
                   </div>
 
+                  {/* Nome da tecnologia */}
                   <p className="truncate text-xs text-white sm:mt-2 sm:text-sm sm:text-center">
                     {tech.name}
                   </p>
