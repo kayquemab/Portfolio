@@ -155,6 +155,16 @@ export default function Projetos() {
             site: "https://vizinho-indica-projeto.vercel.app/",
             github: "https://github.com/kayquemab/Projeto_VizinhoIndica",
             video: "/VideosProjetos/video_vizinhoindica.mp4",
+        },
+        {
+            name: "Projeto: Spark",
+            descricao: "Plataforma de compartilhamento de ideias e projetos, com foco em colaboração e feedback.",
+            descricaoDetalhada:
+                "Plataforma desenvolvida para facilitar o compartilhamento de ideias e projetos, promovendo colaboração e feedback entre usuários.",
+            tecnologias: ["HTML5", "CSS3"],
+            site: "https://spark-projeto.vercel.app/",
+            github: "https://github.com/kayquemab/Projeto_Spark",
+            video: "/VideosProjetos/video_spark.mp4",
         }
     ];
 
