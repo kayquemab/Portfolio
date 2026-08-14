@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export default function FaviconSwitcher({ lightIcon = "/iconlight.svg", darkIcon = "/icondark.svg" }) {
+export default function SeletorFavicon({ lightIcon = "/iconlight.svg", darkIcon = "/icondark.svg" }) {
   
   useEffect(() => {
     
