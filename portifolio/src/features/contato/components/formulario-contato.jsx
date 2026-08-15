@@ -1,6 +1,8 @@
 "use client";
 
-import { Check, Loader2, Send } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
+
+import BotaoAcao from "@/shared/components/button/botao-acao";
 
 const tiposProjeto = [
   "Site",
@@ -24,7 +26,9 @@ export default function FormularioContato({
     let novosTipos;
 
     if (formulario.tiposProjeto.includes(tipo)) {
-      novosTipos = formulario.tiposProjeto.filter((item) => item !== tipo);
+      novosTipos = formulario.tiposProjeto.filter(
+        (item) => item !== tipo,
+      );
     } else {
       novosTipos = formulario.tiposProjeto.concat(tipo);
     }
@@ -36,11 +40,16 @@ export default function FormularioContato({
     <form onSubmit={aoEnviar} className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-2 text-left">
-          <span className="text-xs text-white/55">Seu nome</span>
+          <span className="text-xs text-white/55">
+            Seu nome
+          </span>
+
           <input
             type="text"
             value={formulario.nome}
-            onChange={(event) => atualizarCampo("nome", event.target.value)}
+            onChange={(event) =>
+              atualizarCampo("nome", event.target.value)
+            }
             placeholder="Como posso chamar você?"
             className={estiloCampo}
             required
@@ -48,11 +57,16 @@ export default function FormularioContato({
         </label>
 
         <label className="space-y-2 text-left">
-          <span className="text-xs text-white/55">Seu e-mail</span>
+          <span className="text-xs text-white/55">
+            Seu e-mail
+          </span>
+
           <input
             type="email"
             value={formulario.email}
-            onChange={(event) => atualizarCampo("email", event.target.value)}
+            onChange={(event) =>
+              atualizarCampo("email", event.target.value)
+            }
             placeholder="voce@email.com"
             className={estiloCampo}
             required
@@ -61,10 +75,15 @@ export default function FormularioContato({
       </div>
 
       <label className="space-y-2 text-left">
-        <span className="text-xs text-white/55">Sua mensagem</span>
+        <span className="text-xs text-white/55">
+          Sua mensagem
+        </span>
+
         <textarea
           value={formulario.mensagem}
-          onChange={(event) => atualizarCampo("mensagem", event.target.value)}
+          onChange={(event) =>
+            atualizarCampo("mensagem", event.target.value)
+          }
           placeholder="Conte um pouco sobre sua ideia ou oportunidade..."
           className={`${estiloCampo} min-h-28 resize-none`}
           required
@@ -72,24 +91,29 @@ export default function FormularioContato({
       </label>
 
       <div className="space-y-3 text-left">
-        <p className="text-xs text-white/45">Estou procurando por</p>
+        <p className="text-xs text-white/45">
+          Estou procurando por
+        </p>
 
         <div className="flex flex-wrap gap-2">
           {tiposProjeto.map((tipo) => {
-            const selecionado = formulario.tiposProjeto.includes(tipo);
+            const selecionado =
+              formulario.tiposProjeto.includes(tipo);
 
             return (
               <button
                 key={tipo}
                 type="button"
                 onClick={() => selecionarTipo(tipo)}
-                className={`flex min-h-9 cursor-pointer items-center gap-2 rounded-full border px-3.5 text-xs transition ${
-                  selecionado
+                className={`flex min-h-9 cursor-pointer items-center gap-2 rounded-full border px-3.5 text-xs transition ${selecionado
                     ? "border-white bg-white text-neutral-950"
                     : "border-white/10 text-white/50 hover:border-white/20 hover:text-white"
-                }`}
+                  }`}
               >
-                {selecionado && <Check className="size-3.5" />}
+                {selecionado && (
+                  <Check className="size-3.5" />
+                )}
+
                 {tipo}
               </button>
             );
@@ -97,18 +121,24 @@ export default function FormularioContato({
         </div>
       </div>
 
-      <button
+      <BotaoAcao
         type="submit"
         disabled={carregando}
-        className="flex min-h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-white px-5 text-sm font-semibold text-neutral-950 hover:bg-neutral-200 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full"
       >
-        {carregando ? (
-          <Loader2 className="size-4 animate-spin" />
-        ) : (
-          <Send className="size-4" />
-        )}
-        {carregando ? "Enviando..." : "Enviar mensagem"}
-      </button>
+        <span className="inline-flex items-center gap-2">
+          {carregando && (
+            <Loader2
+              className="size-4 animate-spin"
+              aria-hidden="true"
+            />
+          )}
+
+          {carregando
+            ? "Enviando..."
+            : "Enviar mensagem"}
+        </span>
+      </BotaoAcao>
     </form>
   );
 }

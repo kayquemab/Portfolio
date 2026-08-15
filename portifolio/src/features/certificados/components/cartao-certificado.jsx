@@ -1,73 +1,100 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaLaptopCode } from "react-icons/fa6";
 
 const variantes = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
   visible: (index) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: index * 0.08, duration: 0.4 },
+    transition: {
+      delay: index * 0.08,
+      type: "spring",
+      stiffness: 260,
+      damping: 22,
+    },
   }),
 };
 
-export default function CartaoCertificado({ certificado, index, aoAbrir }) {
+export default function CartaoCertificado({
+  certificado,
+  index,
+  aoAbrir,
+}) {
   const possuiImagem = Boolean(certificado.imagem);
+
+  function abrirPeloTeclado(event) {
+    if (
+      possuiImagem &&
+      (event.key === "Enter" || event.key === " ")
+    ) {
+      event.preventDefault();
+      aoAbrir();
+    }
+  }
 
   return (
     <motion.article
       role={possuiImagem ? "button" : undefined}
       tabIndex={possuiImagem ? 0 : undefined}
-      aria-label={possuiImagem ? `Ampliar ${certificado.titulo}` : undefined}
+      aria-label={
+        possuiImagem
+          ? `Abrir certificado ${certificado.titulo}`
+          : undefined
+      }
       onClick={possuiImagem ? aoAbrir : undefined}
-      onKeyDown={(event) => {
-        if (possuiImagem && (event.key === "Enter" || event.key === " ")) {
-          event.preventDefault();
-          aoAbrir();
-        }
-      }}
-      className={[
-        "flex flex-col overflow-hidden rounded-xl bg-neutral-800 text-left shadow-md",
-        possuiImagem ? "cursor-pointer" : "cursor-default opacity-90",
-      ].join(" ")}
+      onKeyDown={abrirPeloTeclado}
+      className={`group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-neutral-900 text-left shadow-2xl shadow-black/20 ${possuiImagem
+          ? "cursor-pointer"
+          : "cursor-default"
+        }`}
       variants={variantes}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       custom={index}
-      whileHover={possuiImagem ? { y: -5 } : undefined}
+      whileHover={possuiImagem ? { y: -6 } : undefined}
     >
-      <div className="h-[180px] w-full bg-neutral-700">
+      <div className="relative h-[180px] overflow-hidden bg-white/[0.025]">
         {possuiImagem ? (
           <img
             src={certificado.imagem}
             alt={certificado.titulo}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
           />
         ) : (
-          <div className="flex h-full flex-col items-center justify-center gap-3 text-gray-300">
-            <FaLaptopCode size={34} />
-            <span className="text-sm font-medium">Certificado</span>
+          <div className="flex h-full items-center justify-center px-6 text-center">
+            <span className="text-xs uppercase tracking-[0.18em] text-white/25">
+              Certificado
+            </span>
           </div>
         )}
+
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-950/35 to-transparent" />
       </div>
 
-      <div className="flex items-start gap-3 p-4">
-        <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/10">
-          <FaLaptopCode size={18} className="text-white" />
-        </span>
-        <div className="min-w-0">
-          <h3 className="text-[13px] font-medium leading-snug text-white xl:text-sm">
-            {certificado.titulo}
-          </h3>
-          <p className="mt-1 text-xs text-gray-300 xl:text-sm">
-            {certificado.org}
-          </p>
-          <p className="mt-3 w-fit rounded-full bg-white/10 px-3 py-1 text-[11px] text-gray-400">
-            {certificado.data}
-          </p>
-        </div>
+      <div className="flex flex-1 flex-col p-4 sm:p-5">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40">
+          {certificado.org}
+        </p>
+
+        <h3 className="mt-2 text-sm font-semibold leading-snug text-white sm:text-base">
+          {certificado.titulo}
+        </h3>
+
+        <p className="mt-auto pt-4 text-xs text-white/40">
+          {certificado.data}
+        </p>
+
+        {possuiImagem && (
+          <span className="mt-3 inline-flex items-center gap-2 text-[11px] font-medium text-white/45 transition-colors group-hover:text-white">
+            Ver certificado
+            <span aria-hidden="true">→</span>
+          </span>
+        )}
       </div>
     </motion.article>
   );

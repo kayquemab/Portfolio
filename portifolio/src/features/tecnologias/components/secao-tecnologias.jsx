@@ -1,18 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import NuvemTecnologias from "./nuvem-tecnologias";
+
 import CabecalhoSecao from "@/shared/components/layout/cabecalho-secao";
+import SecaoPadrao from "@/shared/components/layout/secao-padrao";
+
+import NuvemTecnologias from "./nuvem-tecnologias";
 
 export default function SecaoTecnologias() {
   return (
-    <section
-      className="
-        min-h-screen flex flex-col justify-center items-center
-        px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-32
-        text-center py-16 sm:py-20 md:py-24 lg:py-32
-      "
-    >
+    <SecaoPadrao>
       <CabecalhoSecao
         rotulo="Stack técnica"
         titulo="Linguagens e Tecnologias"
@@ -28,6 +25,6 @@ export default function SecaoTecnologias() {
       >
         <NuvemTecnologias />
       </motion.div>
-    </section>
+    </SecaoPadrao>
   );
 }
