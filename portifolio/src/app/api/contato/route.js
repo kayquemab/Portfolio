@@ -11,7 +11,10 @@ export async function POST(requisicao) {
     const corpo = await requisicao.json();
     const dados = await enviarContatoUseCaseServer(corpo);
 
-    return NextResponse.json({ ok: true, ...dados });
+    return NextResponse.json({
+      ok: true,
+      id: dados.id,
+    });
   } catch (erro) {
     const status = erro instanceof ErroContato ? erro.status : 500;
 

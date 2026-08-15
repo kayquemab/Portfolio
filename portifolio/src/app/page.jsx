@@ -1,5 +1,5 @@
-import { PaginaPortfolio } from "@/features/portfolio";
+import { HomePage } from "@/features/home";
 
 export default function Page() {
-  return <PaginaPortfolio />;
+  return <HomePage />;
 }

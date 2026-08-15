@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MonitorPlay, X } from "lucide-react";
 import IconeStack from "./icone-stack";
-import BotaoAcao from "@/shared/components/botao-acao";
+import BotaoAcao from "@/shared/components/button/botao-acao";
 
 export default function ProjetoModal({ projeto, onClose }) {
     const nomeProjeto = projeto?.name?.replace(/^Projeto:\s*/i, "");

@@ -1,58 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import NuvemIcones from "@/shared/components/nuvem-icones-interativa";
-import CabecalhoSecao from "@/shared/components/cabecalho-secao";
+import NuvemTecnologias from "./nuvem-tecnologias";
+import CabecalhoSecao from "@/shared/components/layout/cabecalho-secao";
 
-const tecnologias = [
-  "html5",
-  "css",
-  "javascript",
-  "typescript",
-  "react",
-  "vuedotjs",
-  "angular",
-  "nextdotjs",
-  "vite",
-  "tailwindcss",
-  "bootstrap",
-  "mui",
-  "svelte",
-  "remix",
-  "nuxt",
-
-  "nodedotjs",
-  "php",
-  "laravel",
-  "express",
-  "python",
-  "django",
-  "ruby",
-  "supabase",
-  "prisma",
-  "go",
-  "firebase",
-
-  "docker",
-  "vercel",
-  "git",
-  "postman",
-  "n8n",
-  "azuredevops",
-  "googlecloud",
-  "amazonwebservices",
-
-  "mysql",
-  "postgresql",
-  "mongodb",
-  "oracle",
-
-  "flutter",
-  "swift",
-  "electron",
-];
-
-export default function Habilidades() {
+export default function SecaoTecnologias() {
   return (
     <section
       className="
@@ -74,7 +26,7 @@ export default function Habilidades() {
         transition={{ duration: 0.6, delay: 0.15 }}
         viewport={{ once: true }}
       >
-        <NuvemIcones iconSlugs={tecnologias} />
+        <NuvemTecnologias />
       </motion.div>
     </section>
   );

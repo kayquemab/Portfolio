@@ -7,7 +7,7 @@ import {
   Home,
   Mail,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useNavegacaoSecoes } from "./use-navegacao-secoes";
 
 const opcoes = [
   { id: "inicio", label: "Início", icon: Home },
@@ -17,33 +17,10 @@ const opcoes = [
   { id: "contato", label: "Contato", icon: Mail },
 ];
 
+const idsSecoes = opcoes.map(({ id }) => id);
+
 export default function NavegacaoInferior() {
-  const [opcaoAtiva, setOpcaoAtiva] = useState("inicio");
-
-  useEffect(() => {
-    const secoes = opcoes
-      .map(({ id }) => document.getElementById(id))
-      .filter(Boolean);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visivel = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visivel) setOpcaoAtiva(visivel.target.id);
-      },
-      { rootMargin: "-35% 0px -50%", threshold: [0, 0.15, 0.4] },
-    );
-
-    secoes.forEach((secao) => observer.observe(secao));
-    return () => observer.disconnect();
-  }, []);
-
-  const navegarPara = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setOpcaoAtiva(id);
-  };
+  const { navegarPara, secaoAtiva } = useNavegacaoSecoes(idsSecoes);
 
   return (
     <nav
@@ -52,7 +29,7 @@ export default function NavegacaoInferior() {
     >
       <div className="flex items-center gap-1 rounded-[20px] border border-white/[0.08] bg-neutral-950/95 p-1 shadow-2xl shadow-black/50 backdrop-blur-xl sm:gap-1.5 sm:rounded-[22px]">
         {opcoes.map(({ id, label, icon: Icone }) => {
-          const ativa = opcaoAtiva === id;
+          const ativa = secaoAtiva === id;
 
           return (
             <button

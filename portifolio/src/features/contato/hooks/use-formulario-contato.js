@@ -15,21 +15,34 @@ export function useFormularioContato() {
   useEffect(() => () => window.clearTimeout(temporizadorRef.current), []);
 
   const atualizarCampo = (campo, valor) => {
-    setFormulario((atual) => ({ ...atual, [campo]: valor }));
+    setFormulario((atual) => ({
+      nome: campo === "nome" ? valor : atual.nome,
+      email: campo === "email" ? valor : atual.email,
+      mensagem: campo === "mensagem" ? valor : atual.mensagem,
+    }));
   };
 
   const abrirAviso = (type, message) => {
     window.clearTimeout(temporizadorRef.current);
     setAviso({ open: true, type, message });
     temporizadorRef.current = window.setTimeout(
-      () => setAviso((atual) => ({ ...atual, open: false })),
+      () =>
+        setAviso((atual) => ({
+          open: false,
+          type: atual.type,
+          message: atual.message,
+        })),
       3500,
     );
   };
 
   const fecharAviso = () => {
     window.clearTimeout(temporizadorRef.current);
-    setAviso((atual) => ({ ...atual, open: false }));
+    setAviso((atual) => ({
+      open: false,
+      type: atual.type,
+      message: atual.message,
+    }));
   };
 
   const enviarFormulario = async (event) => {

@@ -6,6 +6,7 @@ import {
   fetchSimpleIcons,
   renderSimpleIcon,
 } from "react-icon-cloud";
+import { tecnologias } from "../data/tecnologias.data";
 
 const cloudProps = {
   containerProps: {
@@ -48,20 +49,20 @@ function renderIcon(icon) {
   });
 }
 
-export default function NuvemIcones({ iconSlugs }) {
+export default function NuvemTecnologias() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     let ativo = true;
 
-    fetchSimpleIcons({ slugs: iconSlugs }).then((icons) => {
+    fetchSimpleIcons({ slugs: tecnologias }).then((icons) => {
       if (ativo) setData(icons);
     });
 
     return () => {
       ativo = false;
     };
-  }, [iconSlugs]);
+  }, []);
 
   const icons = useMemo(() => {
     if (!data) return null;
@@ -71,5 +72,12 @@ export default function NuvemIcones({ iconSlugs }) {
 
   if (!icons) return null;
 
-  return <Cloud {...cloudProps}>{icons}</Cloud>;
+  return (
+    <Cloud
+      containerProps={cloudProps.containerProps}
+      options={cloudProps.options}
+    >
+      {icons}
+    </Cloud>
+  );
 }
