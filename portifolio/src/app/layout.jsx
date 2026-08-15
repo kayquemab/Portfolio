@@ -19,11 +19,13 @@ export default function RootLayout({ children }) {
     <html lang="pt-br" suppressHydrationWarning>
       <head>
         <title>{metadata.title}</title>
+
         <link
           rel="icon"
           href="/Iconlight.svg"
           media="(prefers-color-scheme: dark)"
         />
+
         <link
           rel="icon"
           href="/Icondark.svg"
@@ -32,14 +34,9 @@ export default function RootLayout({ children }) {
       </head>
 
       <body>
-        <section
-          className="
-            min-h-screen flex flex-col justify-center items-center
-            px-6 text-center bg-neutral-900
-          "
-        >
+        <div className="min-h-screen bg-neutral-900">
           {children}
-        </section>
+        </div>
       </body>
     </html>
   );
