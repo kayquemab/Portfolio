@@ -104,7 +104,8 @@ export const stacks = [
   { nome: "React Native", icone: FaReact, cor: "deepskyblue" },
 
   // Geral
-  { nome: "Algoritmos", icone: FaCode, cor: "white" },
+  // Geral
+  { nome: "Algoritmos", icone: FaCode, cor: "white", exibirNaNuvem: false },
 ];
 
 function normalizarNome(nome) {

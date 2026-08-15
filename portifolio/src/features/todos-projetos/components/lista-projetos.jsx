@@ -6,7 +6,7 @@ export default function ListaProjetos({ busca, projetos, aoAbrir }) {
     <GridResponsivo>
       {projetos.length > 0 ? (
         projetos.map((projeto, index) => (
-          <CartaoProjeto key={projeto.name} projeto={projeto} index={index} aoAbrir={() => aoAbrir(projeto)} />
+          <CartaoProjeto key={projeto.name} projeto={projeto} index={index} aoAbrir={() => aoAbrir(projeto)} mostrarIcone={false} mostrarTecnologias={false} />
         ))
       ) : (
         <p className="col-span-full text-white/60 text-lg mt-6 text-center">

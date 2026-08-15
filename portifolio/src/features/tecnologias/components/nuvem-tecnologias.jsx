@@ -49,7 +49,7 @@ export default function NuvemTecnologias() {
       containerProps={cloudProps.containerProps}
       options={cloudProps.options}
     >
-      {stacks.map(renderizarIcone)}
+      {stacks.filter((stack) => stack.exibirNaNuvem !== false).map(renderizarIcone)}
     </Cloud>
   );
 }
