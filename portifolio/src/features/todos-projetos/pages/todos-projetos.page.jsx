@@ -3,12 +3,12 @@
 import BotaoVoltar from "@/shared/components/button/botao-voltar";
 import CampoBusca from "@/shared/components/form/campo-busca";
 import CabecalhoSecao from "@/shared/components/layout/cabecalho-secao";
+import ModalProjeto from "@/shared/components/projeto/modal-projeto";
 import ListaProjetos from "../components/lista-projetos";
-import ModalProjeto from "../components/modal-projeto";
-import { useProjetos } from "../hooks/use-projetos";
+import { useTodosProjetos } from "../hooks/use-todos-projetos";
 
-export default function ProjetosPage() {
-  const { busca, projetosFiltrados, projetoSelecionado, selecionarProjeto, setBusca } = useProjetos();
+export default function TodosProjetosPage() {
+  const { busca, projetosFiltrados, projetoSelecionado, selecionarProjeto, setBusca } = useTodosProjetos();
 
   return (
     <section className="flex flex-col justify-center items-center px-4 sm:px-6 md:px-10 lg:px-0 text-center pb-16 sm:pb-20 md:pb-24 lg:pb-32 pt-16 sm:pt-20 md:pt-24 lg:pt-8">

@@ -17,7 +17,7 @@ const variantes = {
   }),
 };
 
-export default function CartaoProjeto({ projeto, index, aoAbrir }) {
+export default function CartaoProjetoCompartilhado({ projeto, index, aoAbrir }) {
   const nomeProjeto = projeto.name.replace(/^Projeto:\s*/i, "");
 
   const abrirPeloTeclado = (event) => {

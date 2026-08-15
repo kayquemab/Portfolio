@@ -149,7 +149,7 @@ function normalizarStack(stack) {
     return String(stack).toLowerCase().trim();
 }
 
-export default function IconeStack({ name, className = "h-5 w-5" }) {
+export default function IconeStackProjeto({ name, className = "h-5 w-5" }) {
     const key = normalizarStack(name);
     const Icon = STACK_ICONS[key] || FaCode;
 

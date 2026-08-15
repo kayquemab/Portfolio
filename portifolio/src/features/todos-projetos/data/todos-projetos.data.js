@@ -1,4 +1,4 @@
-export const projetos = [
+export const todosProjetos = [
         {
             name: "Projeto: Costs",
             descricao: "Sistema para gerenciar orçamentos e custos de projetos.",

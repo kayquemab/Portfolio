@@ -1,4 +1,4 @@
-export function filtrarProjetos(projetos, busca) {
+export function filtrarTodosProjetos(projetos, busca) {
   const buscaNormalizada = busca.toLowerCase();
   return projetos.filter(
     (projeto) =>

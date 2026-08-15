@@ -1,11 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import {
-  Cloud,
-  fetchSimpleIcons,
-  renderSimpleIcon,
-} from "react-icon-cloud";
+import { Cloud } from "react-icon-cloud";
+import { renderToStaticMarkup } from "react-dom/server";
 import { tecnologias } from "../data/tecnologias.data";
 
 const cloudProps = {
@@ -33,51 +29,27 @@ const cloudProps = {
   },
 };
 
-function renderIcon(icon) {
-  return renderSimpleIcon({
-    icon,
-    bgHex: "#171717",
-    fallbackHex: "#ffffff",
-    minContrastRatio: 2,
-    size: 42,
-    aProps: {
-      href: undefined,
-      target: undefined,
-      rel: undefined,
-      onClick: (event) => event.preventDefault(),
-    },
-  });
+function renderizarIcone({ nome, icone: Icone, cor }) {
+  const svg = renderToStaticMarkup(
+    <Icone color={cor} size={42} aria-hidden="true" />,
+  );
+  const src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+
+  return (
+    <a key={nome} title={nome} onClick={(event) => event.preventDefault()}>
+      <img src={src} width={42} height={42} alt={nome} />
+    </a>
+  );
 }
 
 export default function NuvemTecnologias() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    let ativo = true;
-
-    fetchSimpleIcons({ slugs: tecnologias }).then((icons) => {
-      if (ativo) setData(icons);
-    });
-
-    return () => {
-      ativo = false;
-    };
-  }, []);
-
-  const icons = useMemo(() => {
-    if (!data) return null;
-
-    return Object.values(data.simpleIcons).map(renderIcon);
-  }, [data]);
-
-  if (!icons) return null;
-
   return (
     <Cloud
+      id="nuvem-tecnologias"
       containerProps={cloudProps.containerProps}
       options={cloudProps.options}
     >
-      {icons}
+      {tecnologias.map(renderizarIcone)}
     </Cloud>
   );
 }

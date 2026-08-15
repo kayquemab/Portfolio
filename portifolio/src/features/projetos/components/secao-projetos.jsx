@@ -6,9 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 import BotaoAcao from "@/shared/components/button/botao-acao";
 import CabecalhoSecao from "@/shared/components/layout/cabecalho-secao";
+import CartaoProjeto from "@/shared/components/projeto/cartao-projeto";
+import ModalProjeto from "@/shared/components/projeto/modal-projeto";
 import { projetosDestaque } from "../data/projetos-destaque.data";
-import CartaoProjeto from "./cartao-projeto";
-import ModalProjeto from "./modal-projeto";
 
 import "swiper/css";
 import "swiper/css/navigation";

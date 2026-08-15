@@ -1,5 +1,5 @@
 import GridResponsivo from "@/shared/components/layout/grid-responsivo";
-import CartaoProjeto from "./cartao-projeto";
+import CartaoProjeto from "@/shared/components/projeto/cartao-projeto";
 
 export default function ListaProjetos({ busca, projetos, aoAbrir }) {
   return (

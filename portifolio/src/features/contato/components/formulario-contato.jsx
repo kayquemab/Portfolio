@@ -1,26 +1,114 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Loader2 } from "lucide-react";
-import { FaEnvelope, FaUser } from "react-icons/fa";
-import BotaoAcao from "@/shared/components/button/botao-acao";
-import CampoFormulario from "./campo-formulario";
+import { Check, Loader2, Send } from "lucide-react";
 
-export default function FormularioContato({ formulario, carregando, atualizarCampo, aoEnviar }) {
+const tiposProjeto = [
+  "Site",
+  "Aplicação web",
+  "Aplicativo mobile",
+  "E-commerce",
+  "API / Backend",
+  "Outro",
+];
+
+const estiloCampo =
+  "w-full rounded-xl border border-white/10 bg-white/[0.025] px-4 py-3 text-sm text-white outline-none placeholder:text-white/25 focus:border-white/30";
+
+export default function FormularioContato({
+  formulario,
+  carregando,
+  atualizarCampo,
+  aoEnviar,
+}) {
+  function selecionarTipo(tipo) {
+    let novosTipos;
+
+    if (formulario.tiposProjeto.includes(tipo)) {
+      novosTipos = formulario.tiposProjeto.filter((item) => item !== tipo);
+    } else {
+      novosTipos = formulario.tiposProjeto.concat(tipo);
+    }
+
+    atualizarCampo("tiposProjeto", novosTipos);
+  }
+
   return (
-    <motion.form onSubmit={aoEnviar} className="w-full max-w-md flex flex-col gap-4 relative" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.3 }} viewport={{ once: true }}>
-      <CampoFormulario id="nome" valor={formulario.nome} aoAlterar={(valor) => atualizarCampo("nome", valor)} placeholder="Digite seu nome:" icon={FaUser} />
-      <CampoFormulario id="email" tipo="email" valor={formulario.email} aoAlterar={(valor) => atualizarCampo("email", valor)} placeholder="Digite seu e-mail:" icon={FaEnvelope} />
-      <CampoFormulario id="mensagem" valor={formulario.mensagem} aoAlterar={(valor) => atualizarCampo("mensagem", valor)} placeholder="Escreva sua mensagem:" multiline />
+    <form onSubmit={aoEnviar} className="space-y-6">
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="space-y-2 text-left">
+          <span className="text-xs text-white/55">Seu nome</span>
+          <input
+            type="text"
+            value={formulario.nome}
+            onChange={(event) => atualizarCampo("nome", event.target.value)}
+            placeholder="Como posso chamar você?"
+            className={estiloCampo}
+            required
+          />
+        </label>
 
-      <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 70, damping: 15, delay: 0.3 }} viewport={{ once: true }}>
-        <BotaoAcao type="submit" disabled={carregando} className="w-full">
-          <span className="inline-flex items-center gap-2">
-            {carregando && <Loader2 size={16} className="animate-spin" />}
-            {carregando ? "Enviando..." : "Enviar"}
-          </span>
-        </BotaoAcao>
-      </motion.div>
-    </motion.form>
+        <label className="space-y-2 text-left">
+          <span className="text-xs text-white/55">Seu e-mail</span>
+          <input
+            type="email"
+            value={formulario.email}
+            onChange={(event) => atualizarCampo("email", event.target.value)}
+            placeholder="voce@email.com"
+            className={estiloCampo}
+            required
+          />
+        </label>
+      </div>
+
+      <label className="space-y-2 text-left">
+        <span className="text-xs text-white/55">Sua mensagem</span>
+        <textarea
+          value={formulario.mensagem}
+          onChange={(event) => atualizarCampo("mensagem", event.target.value)}
+          placeholder="Conte um pouco sobre sua ideia ou oportunidade..."
+          className={`${estiloCampo} min-h-28 resize-none`}
+          required
+        />
+      </label>
+
+      <div className="space-y-3 text-left">
+        <p className="text-xs text-white/45">Estou procurando por</p>
+
+        <div className="flex flex-wrap gap-2">
+          {tiposProjeto.map((tipo) => {
+            const selecionado = formulario.tiposProjeto.includes(tipo);
+
+            return (
+              <button
+                key={tipo}
+                type="button"
+                onClick={() => selecionarTipo(tipo)}
+                className={`flex min-h-9 cursor-pointer items-center gap-2 rounded-full border px-3.5 text-xs transition ${
+                  selecionado
+                    ? "border-white bg-white text-neutral-950"
+                    : "border-white/10 text-white/50 hover:border-white/20 hover:text-white"
+                }`}
+              >
+                {selecionado && <Check className="size-3.5" />}
+                {tipo}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        disabled={carregando}
+        className="flex min-h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-white px-5 text-sm font-semibold text-neutral-950 hover:bg-neutral-200 disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        {carregando ? (
+          <Loader2 className="size-4 animate-spin" />
+        ) : (
+          <Send className="size-4" />
+        )}
+        {carregando ? "Enviando..." : "Enviar mensagem"}
+      </button>
+    </form>
   );
 }

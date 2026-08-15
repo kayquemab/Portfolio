@@ -1,66 +1,55 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { enviarContatoUseCaseClient } from "../use-cases/enviar-contato.use-case.client";
 
-const formularioInicial = { nome: "", email: "", mensagem: "" };
-const avisoInicial = { open: false, type: "success", message: "" };
+const formularioVazio = {
+  nome: "",
+  email: "",
+  mensagem: "",
+  tiposProjeto: [],
+};
 
 export function useFormularioContato() {
-  const [formulario, setFormulario] = useState(formularioInicial);
+  const [formulario, setFormulario] = useState(formularioVazio);
   const [carregando, setCarregando] = useState(false);
-  const [aviso, setAviso] = useState(avisoInicial);
-  const temporizadorRef = useRef(null);
+  const [aviso, setAviso] = useState(null);
 
-  useEffect(() => () => window.clearTimeout(temporizadorRef.current), []);
-
-  const atualizarCampo = (campo, valor) => {
-    setFormulario((atual) => ({
-      nome: campo === "nome" ? valor : atual.nome,
-      email: campo === "email" ? valor : atual.email,
-      mensagem: campo === "mensagem" ? valor : atual.mensagem,
+  function atualizarCampo(campo, valor) {
+    setFormulario((formularioAtual) => ({
+      nome: campo === "nome" ? valor : formularioAtual.nome,
+      email: campo === "email" ? valor : formularioAtual.email,
+      mensagem: campo === "mensagem" ? valor : formularioAtual.mensagem,
+      tiposProjeto:
+        campo === "tiposProjeto" ? valor : formularioAtual.tiposProjeto,
     }));
-  };
+  }
 
-  const abrirAviso = (type, message) => {
-    window.clearTimeout(temporizadorRef.current);
-    setAviso({ open: true, type, message });
-    temporizadorRef.current = window.setTimeout(
-      () =>
-        setAviso((atual) => ({
-          open: false,
-          type: atual.type,
-          message: atual.message,
-        })),
-      3500,
-    );
-  };
-
-  const fecharAviso = () => {
-    window.clearTimeout(temporizadorRef.current);
-    setAviso((atual) => ({
-      open: false,
-      type: atual.type,
-      message: atual.message,
-    }));
-  };
-
-  const enviarFormulario = async (event) => {
+  async function enviarFormulario(event) {
     event.preventDefault();
+
     if (carregando) return;
 
     setCarregando(true);
+    setAviso(null);
 
     try {
       await enviarContatoUseCaseClient(formulario);
-      setFormulario(formularioInicial);
-      abrirAviso("success", "Enviado com sucesso.");
+      setFormulario(formularioVazio);
+      setAviso({ tipo: "sucesso", mensagem: "Enviado com sucesso." });
     } catch (error) {
-      abrirAviso("error", error.message || "Erro de conexão. Tente novamente.");
+      setAviso({
+        tipo: "erro",
+        mensagem: error.message || "Erro de conexão. Tente novamente.",
+      });
     } finally {
       setCarregando(false);
     }
-  };
+  }
+
+  function fecharAviso() {
+    setAviso(null);
+  }
 
   return {
     formulario,

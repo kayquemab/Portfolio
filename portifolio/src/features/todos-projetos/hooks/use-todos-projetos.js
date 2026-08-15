@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { projetos } from "../data/projetos.data";
-import { filtrarProjetos } from "../utils/filtrar-projetos";
+import { todosProjetos } from "../data/todos-projetos.data";
+import { filtrarTodosProjetos } from "../utils/filtrar-todos-projetos";
 
-export function useProjetos() {
+export function useTodosProjetos() {
   const [busca, setBusca] = useState("");
   const [projetoSelecionado, setProjetoSelecionado] = useState(null);
   return {
     busca,
-    projetosFiltrados: filtrarProjetos(projetos, busca),
+    projetosFiltrados: filtrarTodosProjetos(todosProjetos, busca),
     projetoSelecionado,
     selecionarProjeto: setProjetoSelecionado,
     setBusca,
