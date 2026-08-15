@@ -2,7 +2,7 @@
 
 import { Cloud } from "react-icon-cloud";
 import { renderToStaticMarkup } from "react-dom/server";
-import { tecnologias } from "../data/tecnologias.data";
+import { stacks } from "@/shared/data/stacks.data";
 
 const cloudProps = {
   containerProps: {
@@ -49,7 +49,7 @@ export default function NuvemTecnologias() {
       containerProps={cloudProps.containerProps}
       options={cloudProps.options}
     >
-      {tecnologias.map(renderizarIcone)}
+      {stacks.map(renderizarIcone)}
     </Cloud>
   );
 }

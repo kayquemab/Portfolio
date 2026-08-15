@@ -16,13 +16,13 @@ export default function HomePage() {
 
   return (
     <div className="pb-20 sm:pb-24">
-      {/* <Secao id="inicio">
+      <Secao id="inicio">
         <SecaoInicio />
-      </Secao> */}
+      </Secao>
 
-      {/* <Secao id="tecnologias">
+      <Secao id="tecnologias">
         <SecaoTecnologias />
-      </Secao> */}
+      </Secao>
 
       <Secao id="formacao">
         <SecaoFormacao />
@@ -32,9 +32,9 @@ export default function HomePage() {
         <SecaoProjetos />
       </Secao>
 
-      {/* <Secao id="contato">
+      <Secao id="contato">
         <SecaoContato />
-      </Secao> */}
+      </Secao>
 
       <NavegacaoInferior />
     </div>

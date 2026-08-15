@@ -29,7 +29,13 @@ export default function SecaoProjetos() {
         <Swiper modules={[Navigation, Pagination, A11y]} navigation pagination={{ clickable: true }} spaceBetween={14} slidesPerView={1} grabCursor={true} preventClicks={false} preventClicksPropagation={false} className="projetos-mobile-swiper">
           {projetosDestaque.map((projeto, index) => (
             <SwiperSlide key={projeto.name}>
-              <CartaoProjeto projeto={projeto} index={index} aoAbrir={() => setProjetoSelecionado(projeto)} />
+              <CartaoProjeto
+                projeto={projeto}
+                index={index}
+                aoAbrir={() => setProjetoSelecionado(projeto)}
+                mostrarIcone={false}
+                mostrarTecnologias={false}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -37,7 +43,14 @@ export default function SecaoProjetos() {
 
       <div className="hidden w-full max-w-7xl gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-4">
         {projetosDestaque.map((projeto, index) => (
-          <CartaoProjeto key={projeto.name} projeto={projeto} index={index} aoAbrir={() => setProjetoSelecionado(projeto)} />
+          <CartaoProjeto
+            key={projeto.name}
+            projeto={projeto}
+            index={index}
+            aoAbrir={() => setProjetoSelecionado(projeto)}
+            mostrarIcone={false}
+            mostrarTecnologias={false}
+          />
         ))}
       </div>
 

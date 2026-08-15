@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Code2 } from "lucide-react";
+import { buscarStacks } from "@/shared/data/stacks.data";
 
 const variantes = {
   hidden: { opacity: 0, y: 20 },
@@ -17,8 +18,18 @@ const variantes = {
   }),
 };
 
-export default function CartaoProjetoCompartilhado({ projeto, index, aoAbrir }) {
+export default function CartaoProjetoCompartilhado({
+  projeto,
+  index,
+  aoAbrir,
+  mostrarIcone = true,
+  mostrarTecnologias = true,
+}) {
   const nomeProjeto = projeto.name.replace(/^Projeto:\s*/i, "");
+  const nomesStacks = buscarStacks(projeto.tecnologias)
+    .slice(0, 2)
+    .map((stack) => stack.nome)
+    .join(" • ");
 
   const abrirPeloTeclado = (event) => {
     if (event.key === "Enter" || event.key === " ") {
@@ -55,17 +66,21 @@ export default function CartaoProjetoCompartilhado({ projeto, index, aoAbrir }) 
 
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-neutral-900/30 via-neutral-900/75 to-neutral-950" />
 
-      <div className="relative z-10 flex items-center justify-between p-4 sm:p-5">
-        <span className="flex size-9 items-center justify-center rounded-full border border-white/10 bg-black/15 text-white/75 backdrop-blur-sm">
-          <Code2 className="size-[18px] stroke-[1.7]" />
-        </span>
+      <div className="relative z-10 flex items-center justify-end p-4 sm:p-5">
+        {mostrarIcone && (
+          <span className="mr-auto flex size-9 items-center justify-center rounded-full border border-white/10 bg-black/15 text-white/75 backdrop-blur-sm">
+            <Code2 className="size-[18px] stroke-[1.7]" />
+          </span>
+        )}
         <span className="size-2.5 rounded-full bg-white/65 shadow-[0_0_12px_rgba(255,255,255,0.35)]" />
       </div>
 
       <div className="relative z-10 mt-auto p-4 sm:p-5">
-        <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-white/45">
-          {projeto.tecnologias.slice(0, 2).join(" • ")}
-        </p>
+        {mostrarTecnologias && nomesStacks && (
+          <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-white/45">
+            {nomesStacks}
+          </p>
+        )}
         <h3 className="text-lg font-semibold leading-snug text-white">
           {nomeProjeto}
         </h3>

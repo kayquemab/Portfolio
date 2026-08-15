@@ -48,8 +48,9 @@ import { GrOracle } from "react-icons/gr";
 // Mobile
 import { FaFlutter } from "react-icons/fa6";
 import { FaSwift } from "react-icons/fa6";
+import { FaCode } from "react-icons/fa6";
 
-export const tecnologias = [
+export const stacks = [
   // Frontend
   { nome: "HTML5", icone: FaHtml5, cor: "orangered" },
   { nome: "CSS3", icone: IoLogoCss3, cor: "steelblue" },
@@ -101,5 +102,33 @@ export const tecnologias = [
   { nome: "Flutter", icone: FaFlutter, cor: "royalblue" },
   { nome: "Swift", icone: FaSwift, cor: "tomato" },
   { nome: "React Native", icone: FaReact, cor: "deepskyblue" },
+
+  // Geral
+  { nome: "Algoritmos", icone: FaCode, cor: "white" },
 ];
 
+function normalizarNome(nome) {
+  return String(nome).toLowerCase().trim();
+}
+
+export function buscarStack(nome) {
+  const nomeNormalizado = normalizarNome(nome);
+
+  return stacks.find((stack) => {
+    return normalizarNome(stack.nome) === nomeNormalizado;
+  });
+}
+
+export function buscarStacks(nomes) {
+  const resultado = [];
+
+  nomes.forEach((nome) => {
+    const stack = buscarStack(nome);
+
+    if (stack) {
+      resultado.push(stack);
+    }
+  });
+
+  return resultado;
+}
