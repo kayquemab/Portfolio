@@ -124,7 +124,6 @@ export default function FormularioContato({
       <BotaoAcao
         type="submit"
         disabled={carregando}
-        className="w-full"
       >
         <span className="inline-flex items-center gap-2">
           {carregando && (

@@ -3,8 +3,10 @@
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MonitorPlay, X } from "lucide-react";
+
 import BotaoAcao from "@/shared/components/button/botao-acao";
 import { buscarStacks } from "@/shared/data/stacks.data";
+
 import IconeStack from "./icone-stack";
 
 export default function ModalProjeto({ projeto, onClose }) {
@@ -12,7 +14,9 @@ export default function ModalProjeto({ projeto, onClose }) {
   const stacksProjeto = buscarStacks(projeto?.tecnologias || []);
 
   useEffect(() => {
-    if (!projeto) return;
+    if (!projeto) {
+      return;
+    }
 
     function fecharComEscape(event) {
       if (event.key === "Escape") {
@@ -45,9 +49,21 @@ export default function ModalProjeto({ projeto, onClose }) {
               aria-modal="true"
               aria-labelledby="projeto-modal-title"
               className="w-full max-w-4xl rounded-3xl border border-white/10 bg-neutral-950 p-5 text-left text-white shadow-2xl shadow-black/50 sm:p-7"
-              initial={{ opacity: 0, y: 20, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 16, scale: 0.98 }}
+              initial={{
+                opacity: 0,
+                y: 20,
+                scale: 0.98,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              exit={{
+                opacity: 0,
+                y: 16,
+                scale: 0.98,
+              }}
               transition={{ duration: 0.2 }}
               onClick={(event) => event.stopPropagation()}
             >
@@ -56,6 +72,7 @@ export default function ModalProjeto({ projeto, onClose }) {
                   <p className="text-[10px] uppercase tracking-[0.2em] text-white/35">
                     Projeto selecionado
                   </p>
+
                   <h3
                     id="projeto-modal-title"
                     className="mt-2 text-xl font-semibold sm:text-2xl"
@@ -92,7 +109,10 @@ export default function ModalProjeto({ projeto, onClose }) {
                     <div className="flex aspect-video items-center justify-center rounded-2xl bg-white/[0.03]">
                       <div className="flex flex-col items-center gap-2 text-white/30">
                         <MonitorPlay className="size-9" />
-                        <span className="text-sm">Preview indisponível</span>
+
+                        <span className="text-sm">
+                          Preview indisponível
+                        </span>
                       </div>
                     </div>
                   )}
@@ -102,7 +122,6 @@ export default function ModalProjeto({ projeto, onClose }) {
                       <BotaoAcao
                         href={projeto.site}
                         externo
-                        className="min-h-10 px-4 text-xs"
                       >
                         Ver projeto
                       </BotaoAcao>
@@ -113,7 +132,6 @@ export default function ModalProjeto({ projeto, onClose }) {
                         href={projeto.github}
                         externo
                         variante="escuro"
-                        className="min-h-10 px-4 text-xs"
                       >
                         GitHub
                       </BotaoAcao>
@@ -154,8 +172,10 @@ export default function ModalProjeto({ projeto, onClose }) {
                     <h4 className="text-xs font-medium uppercase tracking-[0.16em] text-white/40">
                       Sobre o projeto
                     </h4>
+
                     <p className="mt-4 text-sm leading-7 text-white/65">
-                      {projeto.descricaoDetalhada || projeto.descricao}
+                      {projeto.descricaoDetalhada ||
+                        projeto.descricao}
                     </p>
                   </section>
                 </div>
