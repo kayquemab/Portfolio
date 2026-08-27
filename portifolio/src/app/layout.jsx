@@ -3,6 +3,17 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import "./globals.css";
+import { Geist, Geist_Mono } from "next/font/google";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata = {
   metadataBase: new URL("https://kayque-dev.vercel.app"),
@@ -68,8 +79,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body>
-        <div className="min-h-screen bg-neutral-900">{children}</div>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <div className="site-shell min-h-screen">{children}</div>
       </body>
     </html>
   );

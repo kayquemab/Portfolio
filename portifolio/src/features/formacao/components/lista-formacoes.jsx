@@ -60,11 +60,11 @@ export default function ListaFormacoes() {
 
             <div className="min-w-0 flex-1">
               <div className="flex flex-wrap items-center gap-2">
-                <p className="text-sm font-semibold text-white sm:text-xs sm:font-medium sm:uppercase sm:tracking-wider sm:text-white/40">
+                <p className="text-sm font-semibold text-white sm:text-xs sm:font-medium sm:uppercase sm:tracking-wider sm:text-white/35">
                   {formacao.instituicao}
                 </p>
 
-                <span className="rounded-full border border-white/10 px-2 py-0.5 text-[9px] text-white/50 sm:px-2.5 sm:text-[10px]">
+                <span className="rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[9px] text-white/55 sm:px-2.5 sm:text-[10px]">
                   {formacao.status}
                 </span>
               </div>
@@ -77,7 +77,7 @@ export default function ListaFormacoes() {
                 {formacao.tipo}
               </p>
 
-              <p className="mt-0.5 text-xs text-white/40 sm:hidden">
+              <p className="mt-0.5 text-xs text-white/35 sm:hidden">
                 {formacao.periodo}
               </p>
 
@@ -92,7 +92,7 @@ export default function ListaFormacoes() {
                   href={formacao.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center gap-1 text-xs text-white/45 transition hover:text-white sm:hidden"
+                  className="mt-2 inline-flex items-center gap-1 text-xs text-white/55 transition hover:text-white sm:hidden"
                 >
                   Ver formação
                   <ExternalLink className="size-3" />
@@ -106,7 +106,7 @@ export default function ListaFormacoes() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Conhecer ${formacao.titulo}`}
-                className="hidden size-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-white/60 transition-colors hover:bg-white hover:text-neutral-950 sm:flex"
+                className="hidden size-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-white/55 transition-colors hover:border-[#43b9ff] hover:bg-[#43b9ff] hover:text-[#071016] sm:flex"
               >
                 <ExternalLink className="size-4" />
               </a>

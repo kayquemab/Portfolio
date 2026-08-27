@@ -33,7 +33,7 @@ export default function ModalInstituicao({
         <AnimatePresence>
             {instituicao && (
                 <motion.div
-                    className="fixed inset-0 z-40 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
+                    className="fixed inset-0 z-[70] flex items-center justify-center bg-black/60 p-4 backdrop-blur-[2px]"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -41,7 +41,7 @@ export default function ModalInstituicao({
                     onClick={aoFechar}
                 >
                     <motion.div
-                        className="flex max-h-[85vh] min-h-[420px] w-full max-w-5xl flex-col rounded-2xl border border-white/10 bg-neutral-900 p-8 shadow-2xl"
+                        className="flex max-h-[85vh] min-h-[420px] w-full max-w-5xl flex-col rounded-3xl border border-white/10 bg-[#0b0d0b] p-8 shadow-2xl shadow-black/50"
                         initial={{
                             opacity: 0,
                             y: 12,
@@ -75,7 +75,7 @@ export default function ModalInstituicao({
                             <button
                                 type="button"
                                 onClick={aoFechar}
-                                className="absolute right-0 flex size-9 cursor-pointer items-center justify-center rounded-lg text-white/50 transition hover:bg-white/10 hover:text-white"
+                                className="absolute right-0 flex size-9 cursor-pointer items-center justify-center rounded-full bg-white/[0.04] text-white/55 transition hover:bg-white/[0.07] hover:text-white"
                                 aria-label="Fechar"
                             >
                                 <X className="size-5" />

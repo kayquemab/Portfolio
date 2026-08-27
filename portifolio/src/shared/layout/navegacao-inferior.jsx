@@ -7,6 +7,7 @@ import {
   Home,
   Mail,
 } from "lucide-react";
+import DockHover from "@/shared/components/navigation/dock-hover";
 import { useNavegacaoSecoes } from "./use-navegacao-secoes";
 
 const opcoes = [
@@ -27,30 +28,33 @@ export default function NavegacaoInferior() {
       className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 sm:bottom-6"
       aria-label="Navegação principal"
     >
-      <div className="flex items-center gap-1 rounded-[20px] border border-white/[0.08] bg-neutral-950/95 p-1 shadow-2xl shadow-black/50 backdrop-blur-xl sm:gap-1.5 sm:rounded-[22px]">
-        {opcoes.map(({ id, label, icon: Icone }) => {
+      <div className="rounded-full border border-white/[0.1] bg-[#111411]/90 p-1 shadow-2xl shadow-black/50 backdrop-blur-xl">
+        <DockHover
+          itens={opcoes}
+          buscarChave={(opcao) => opcao.id}
+          className="w-full"
+          renderizarItem={({ id, label, icon: Icone }, _index, sobCursor) => {
           const ativa = secaoAtiva === id;
 
           return (
             <button
-              key={id}
               type="button"
               onClick={() => navegarPara(id)}
               aria-label={label}
               aria-current={ativa ? "page" : undefined}
               title={label}
               className={[
-                "group relative flex size-10 cursor-pointer items-center justify-center rounded-2xl text-white/55 transition-all duration-300 hover:text-white sm:size-11",
-                ativa ? "bg-neutral-800 text-white" : "hover:bg-white/[0.06]",
+                "relative z-[1] flex size-12 cursor-pointer items-center justify-center rounded-full text-white/55 transition-colors duration-300 hover:text-white",
+                ativa ? "bg-[#43b9ff] text-[#071016] shadow-[0_0_20px_rgba(67,185,255,0.18)]" : "hover:bg-white/[0.07]",
               ].join(" ")}
             >
-              <Icone className="size-[19px] stroke-[1.5] sm:size-5" />
-              <span className="pointer-events-none absolute -top-9 hidden whitespace-nowrap rounded-md bg-neutral-800 px-2 py-1 text-[11px] text-white opacity-0 transition-opacity group-hover:opacity-100 sm:block">
-                {label}
-              </span>
+              <Icone
+                className={`size-[22px] stroke-[1.5] transition-transform duration-300 ${sobCursor ? "-translate-y-0.5 scale-[1.18]" : ""}`}
+              />
             </button>
           );
-        })}
+        }}
+        />
       </div>
     </nav>
   );

@@ -37,7 +37,7 @@ export default function ModalProjeto({ projeto, onClose }) {
     <AnimatePresence>
       {projeto && (
         <motion.div
-          className="fixed inset-0 z-50 overflow-y-auto bg-black/80 p-3 backdrop-blur-sm sm:p-6"
+          className="fixed inset-0 z-[70] overflow-y-auto bg-black/60 p-3 backdrop-blur-[2px] sm:p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -48,7 +48,7 @@ export default function ModalProjeto({ projeto, onClose }) {
               role="dialog"
               aria-modal="true"
               aria-labelledby="projeto-modal-title"
-              className="w-full max-w-4xl rounded-3xl border border-white/10 bg-neutral-950 p-5 text-left text-white shadow-2xl shadow-black/50 sm:p-7"
+              className="w-full max-w-4xl rounded-3xl border border-white/10 bg-[#0b0d0b] p-5 text-left text-white shadow-2xl shadow-black/50 sm:p-7"
               initial={{
                 opacity: 0,
                 y: 20,
@@ -85,7 +85,7 @@ export default function ModalProjeto({ projeto, onClose }) {
                   type="button"
                   onClick={onClose}
                   aria-label="Fechar modal"
-                  className="flex size-9 cursor-pointer items-center justify-center rounded-full bg-white/[0.04] text-white/45 transition hover:bg-white/10 hover:text-white"
+                  className="flex size-9 cursor-pointer items-center justify-center rounded-full bg-white/[0.04] text-white/55 transition hover:bg-white/[0.07] hover:text-white"
                 >
                   <X className="size-[18px]" />
                 </button>
@@ -94,7 +94,7 @@ export default function ModalProjeto({ projeto, onClose }) {
               <div className="grid gap-7 md:grid-cols-[1.5fr_1fr]">
                 <div>
                   {projeto.video ? (
-                    <div className="aspect-video overflow-hidden rounded-2xl bg-neutral-900">
+                    <div className="aspect-video overflow-hidden rounded-2xl bg-[#111411]">
                       <video
                         src={projeto.video}
                         controls
@@ -106,8 +106,8 @@ export default function ModalProjeto({ projeto, onClose }) {
                       />
                     </div>
                   ) : (
-                    <div className="flex aspect-video items-center justify-center rounded-2xl bg-white/[0.03]">
-                      <div className="flex flex-col items-center gap-2 text-white/30">
+                    <div className="flex aspect-video items-center justify-center rounded-2xl bg-white/[0.04]">
+                      <div className="flex flex-col items-center gap-2 text-white/35">
                         <MonitorPlay className="size-9" />
 
                         <span className="text-sm">
@@ -141,7 +141,7 @@ export default function ModalProjeto({ projeto, onClose }) {
 
                 <div className="flex flex-col gap-6">
                   <section className="border-b border-white/[0.07] pb-6">
-                    <h4 className="text-xs font-medium uppercase tracking-[0.16em] text-white/40">
+                    <h4 className="text-xs font-medium uppercase tracking-[0.16em] text-white/35">
                       Stacks
                     </h4>
 
@@ -152,7 +152,7 @@ export default function ModalProjeto({ projeto, onClose }) {
                             key={stack.nome}
                             title={stack.nome}
                             aria-label={stack.nome}
-                            className="flex size-11 items-center justify-center rounded-xl bg-white/[0.04] text-white/80"
+                            className="flex size-11 items-center justify-center rounded-xl bg-white/[0.04] text-white/75"
                           >
                             <IconeStack
                               nome={stack.nome}
@@ -169,11 +169,11 @@ export default function ModalProjeto({ projeto, onClose }) {
                   </section>
 
                   <section>
-                    <h4 className="text-xs font-medium uppercase tracking-[0.16em] text-white/40">
+                    <h4 className="text-xs font-medium uppercase tracking-[0.16em] text-white/35">
                       Sobre o projeto
                     </h4>
 
-                    <p className="mt-4 text-sm leading-7 text-white/65">
+                    <p className="mt-4 text-sm leading-7 text-white/55">
                       {projeto.descricaoDetalhada ||
                         projeto.descricao}
                     </p>

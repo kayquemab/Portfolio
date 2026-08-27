@@ -34,7 +34,7 @@ function CartaoCertificacao({ certificacao, index }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Conhecer ${certificacao.titulo}`}
-      className="group flex h-full flex-col rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 text-left transition-colors hover:border-white/15 hover:bg-white/[0.04]"
+      className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-left transition-colors hover:bg-white/[0.07]"
       variants={animacaoCard}
       initial="hidden"
       whileInView="visible"
@@ -71,7 +71,7 @@ function CartaoCertificacao({ certificacao, index }) {
         {certificacao.foco}
       </p>
 
-      <span className="mt-5 inline-flex items-center gap-2 text-xs text-white/50 transition-colors group-hover:text-white">
+      <span className="mt-5 inline-flex items-center gap-2 text-xs text-white/55 transition-colors group-hover:text-white">
         Conhecer certificação
 
         <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />

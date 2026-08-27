@@ -43,7 +43,7 @@ export default function CartaoProjetoCompartilhado({
       role="button"
       tabIndex={0}
       aria-label={`Abrir detalhes do ${projeto.name}`}
-      className="group relative flex h-[310px] cursor-pointer flex-col overflow-hidden rounded-2xl border border-white/10 bg-neutral-900 text-left shadow-2xl shadow-black/20 sm:h-[340px]"
+      className="group relative flex h-[330px] cursor-pointer flex-col overflow-hidden rounded-[26px] border border-white/10 bg-[#111411] text-left shadow-2xl shadow-black/20 sm:h-[380px]"
       variants={variantes}
       initial="hidden"
       whileInView="visible"
@@ -64,7 +64,7 @@ export default function CartaoProjetoCompartilhado({
         />
       )}
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-neutral-900/30 via-neutral-900/75 to-neutral-950" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-[#0b0d0b]/60 to-[#0b0d0b]" />
 
       <div className="relative z-10 flex items-center justify-end p-4 sm:p-5">
         {mostrarIcone && (
@@ -72,22 +72,22 @@ export default function CartaoProjetoCompartilhado({
             <Code2 className="size-[18px] stroke-[1.7]" />
           </span>
         )}
-        <span className="size-2.5 rounded-full bg-white/65 shadow-[0_0_12px_rgba(255,255,255,0.35)]" />
+        <span className="flex size-8 items-center justify-center rounded-full border border-white/10 bg-black/25 font-mono text-[10px] text-white/55 backdrop-blur">0{index + 1}</span>
       </div>
 
       <div className="relative z-10 mt-auto p-4 sm:p-5">
         {mostrarTecnologias && nomesStacks && (
-          <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-white/45">
+          <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-white/35">
             {nomesStacks}
           </p>
         )}
-        <h3 className="text-lg font-semibold leading-snug text-white">
+        <h3 className="display-title text-2xl font-semibold leading-none text-white">
           {nomeProjeto}
         </h3>
         <p className="mt-2 line-clamp-2 text-xs leading-5 text-gray-300/80 sm:text-sm">
           {projeto.descricao}
         </p>
-        <span className="mt-3 inline-flex items-center gap-2 text-[11px] font-medium text-white/50 transition-colors group-hover:text-white">
+        <span className="mt-4 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.12em] text-[#43b9ff]/65 transition-colors group-hover:text-[#43b9ff]">
           Ver detalhes <span aria-hidden="true">→</span>
         </span>
       </div>

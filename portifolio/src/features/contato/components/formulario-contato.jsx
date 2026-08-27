@@ -14,7 +14,7 @@ const tiposProjeto = [
 ];
 
 const estiloCampo =
-  "w-full rounded-xl border border-white/10 bg-white/[0.025] px-4 py-3 text-sm text-white outline-none placeholder:text-white/25 focus:border-white/30";
+  "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 hover:bg-white/[0.07] focus:border-[#43b9ff]/55";
 
 export default function FormularioContato({
   formulario,
@@ -91,7 +91,7 @@ export default function FormularioContato({
       </label>
 
       <div className="space-y-3 text-left">
-        <p className="text-xs text-white/45">
+        <p className="text-xs text-white/35">
           Estou procurando por
         </p>
 
@@ -107,7 +107,7 @@ export default function FormularioContato({
                 onClick={() => selecionarTipo(tipo)}
                 className={`flex min-h-9 cursor-pointer items-center gap-2 rounded-full border px-3.5 text-xs transition ${selecionado
                     ? "border-white bg-white text-neutral-950"
-                    : "border-white/10 text-white/50 hover:border-white/20 hover:text-white"
+                    : "border-white/10 bg-white/[0.04] text-white/55 hover:bg-white/[0.07] hover:text-white"
                   }`}
               >
                 {selecionado && (

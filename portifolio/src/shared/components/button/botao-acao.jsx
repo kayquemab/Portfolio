@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const estilos = {
-  claro: "border-white bg-white text-neutral-950 hover:bg-neutral-200",
+  claro: "border-[#43b9ff] bg-[#43b9ff] text-[#090b0a] hover:bg-[#78cdff]",
   escuro:
-    "border-white/10 bg-transparent text-white/75 hover:border-white/20 hover:bg-white/[0.06] hover:text-white",
+    "border-white/10 bg-white/[0.04] text-white/75 hover:bg-white/[0.07] hover:text-white",
 };
 
 export default function BotaoAcao({
@@ -17,7 +17,7 @@ export default function BotaoAcao({
   disabled = false,
   onClick,
 }) {
-  const classes = `group inline-flex min-h-11 items-center justify-center overflow-hidden rounded-xl border px-5 text-sm font-semibold transition duration-200 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 ${estilos[variante]} ${className}`;
+  const classes = `group inline-flex min-h-12 items-center justify-center overflow-hidden rounded-full border px-6 text-sm font-semibold transition duration-200 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 ${estilos[variante]} ${className}`;
 
   const conteudo = (
     <>

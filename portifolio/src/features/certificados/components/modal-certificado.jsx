@@ -41,12 +41,12 @@ export default function ModalCertificado({
 
   return (
     <div
-      className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-black/80 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[70] overflow-y-auto overscroll-contain bg-black/60 p-4 backdrop-blur-[2px]"
       onClick={aoFechar}
     >
       <div className="flex min-h-full items-center justify-center">
         <div
-          className="w-full max-w-4xl rounded-2xl border border-white/10 bg-neutral-950 p-5"
+          className="w-full max-w-4xl rounded-3xl border border-white/10 bg-[#0b0d0b] p-5 shadow-2xl shadow-black/50"
           onClick={(event) => event.stopPropagation()}
         >
           <div className="mb-5 flex items-start justify-between gap-4 text-left">
@@ -55,7 +55,7 @@ export default function ModalCertificado({
                 {certificado.titulo}
               </h2>
 
-              <p className="mt-1 text-sm text-white/40">
+              <p className="mt-1 text-sm text-white/55">
                 {instituicao} • {certificado.data}
               </p>
             </div>
@@ -63,7 +63,7 @@ export default function ModalCertificado({
             <button
               type="button"
               onClick={aoFechar}
-              className="flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-lg text-white/50 transition hover:bg-white/10 hover:text-white"
+              className="flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-full bg-white/[0.04] text-white/55 transition hover:bg-white/[0.07] hover:text-white"
               aria-label="Fechar"
             >
               <X className="size-4" />
@@ -78,7 +78,7 @@ export default function ModalCertificado({
                 className="max-h-[75vh] max-w-full rounded-lg object-contain"
               />
             ) : (
-              <div className="flex flex-col items-center gap-3 py-16 text-white/30">
+              <div className="flex flex-col items-center gap-3 py-16 text-white/35">
                 <Award className="size-12" />
 
                 <p className="text-sm">

@@ -3,7 +3,55 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  background: #090b0a;
+  color: #f4f4ef;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #090b0a;
+}
+
+::selection {
+  background: #43b9ff;
+  color: #090b0a;
+}
+
+.site-shell {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 8%, rgba(67, 185, 255, 0.09), transparent 27rem),
+    radial-gradient(circle at 8% 48%, rgba(102, 118, 255, 0.07), transparent 30rem),
+    #090b0a;
+}
+
+.site-shell::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  opacity: 0.28;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+.display-title {
+  font-family: var(--font-geist-sans), sans-serif;
+  letter-spacing: -0.065em;
+}
+
+.eyebrow {
+  font-family: var(--font-geist-mono), monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 /* Scrollbar global */
@@ -76,5 +124,5 @@ body {
 }
 
 .projetos-mobile-swiper .swiper-pagination-bullet-active {
-  background: #ffffff;
+  background: #43b9ff;
 }
