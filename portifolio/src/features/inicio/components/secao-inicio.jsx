@@ -24,7 +24,7 @@ export default function SecaoInicio() {
         </div>
       </header>
 
-      <div className="mx-auto grid w-full max-w-7xl flex-1 items-center gap-12 py-16 lg:grid-cols-[minmax(0,1.55fr)_minmax(280px,0.45fr)] lg:py-20">
+      <div className="mx-auto grid w-full max-w-7xl flex-1 items-center gap-12 py-16 lg:grid-cols-[minmax(0,1.5fr)_minmax(320px,0.5fr)] lg:py-20">
         <div className="text-left">
           <p className="eyebrow mb-6 text-[10px] text-white/35 sm:text-xs">Desenvolvedor full-stack · 2026</p>
 
@@ -41,7 +41,7 @@ export default function SecaoInicio() {
           </div>
         </div>
 
-        <aside className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] p-5 text-left shadow-2xl shadow-black/30 backdrop-blur-sm lg:rotate-2">
+        <aside className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.04] p-6 text-left shadow-2xl shadow-black/30 backdrop-blur-sm lg:rotate-2">
           <div className="pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-[#43b9ff]/[0.07] blur-3xl" />
 
           <div className="relative flex items-center justify-between border-b border-white/[0.07] pb-4 text-[10px] uppercase tracking-[0.14em] text-white/35">
@@ -53,12 +53,12 @@ export default function SecaoInicio() {
             <span className="flex items-center gap-1.5"><MapPin className="size-3" /> Brasil</span>
           </div>
 
-          <div className="relative mt-12 overflow-hidden rounded-2xl border border-white/[0.07] bg-black/25">
+          <div className="relative mt-14 overflow-hidden rounded-2xl border border-white/[0.07] bg-black/25">
             <div className="flex items-center justify-between border-b border-white/[0.07] px-4 py-2.5 font-mono text-[9px] text-white/35">
               <span>hello-world</span>
               <span>UTF-8</span>
             </div>
-            <div className="flex min-h-24 items-end gap-2 p-4">
+            <div className="flex min-h-28 items-end gap-2 p-4">
               <span className="mb-0.5 font-mono text-xs text-white/35" aria-hidden="true">›</span>
               <p className="break-words font-mono text-xs leading-5 text-[#43b9ff]/75 sm:text-sm">
                 {textoDigitado}
