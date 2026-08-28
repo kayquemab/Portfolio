@@ -13,7 +13,7 @@ export default function TodosProjetosPage() {
   return (
     <section className="flex flex-col justify-center items-center px-4 sm:px-6 md:px-10 lg:px-0 text-center pb-16 sm:pb-20 md:pb-24 lg:pb-32 pt-16 sm:pt-20 md:pt-24 lg:pt-8">
       <CabecalhoSecao
-        rotulo="Portfólio completo"
+        rotulo="Criatividade em prática"
         titulo="Meus Projetos"
         descricao="Explore projetos, tecnologias e soluções desenvolvidas."
       />

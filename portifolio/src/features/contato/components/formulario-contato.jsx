@@ -74,7 +74,7 @@ export default function FormularioContato({
         </label>
       </div>
 
-      <label className="space-y-2 text-left">
+      <label className="block w-full space-y-2 text-left sm:inline sm:w-auto">
         <span className="text-xs text-white/55">
           Sua mensagem
         </span>
