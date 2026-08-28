@@ -41,17 +41,17 @@ export default function SecaoInicio() {
           </div>
         </div> */}
 
-        <aside className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.04] p-6 text-left shadow-2xl shadow-black/30 backdrop-blur-sm lg:rotate-2">
-          {/* <div className="pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-[#43b9ff]/[0.07] blur-3xl" />
+        {/* <aside className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.04] p-6 text-left shadow-2xl shadow-black/30 backdrop-blur-sm lg:rotate-2"> */}
+          {/* <div className="pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-[#43b9ff]/[0.07] blur-3xl" /> */}
 
-          <div className="relative flex items-center justify-between border-b border-white/[0.07] pb-4 text-[10px] uppercase tracking-[0.14em] text-white/35">
+          {/* <div className="relative flex items-center justify-between border-b border-white/[0.07] pb-4 text-[10px] uppercase tracking-[0.14em] text-white/35">
             <div className="flex items-center gap-1.5" aria-hidden="true">
               <span className="size-1.5 rounded-full bg-[#ff5f57]" />
               <span className="size-1.5 rounded-full bg-[#febc2e]" />
               <span className="size-1.5 rounded-full bg-[#28c840]" />
             </div>
             <span className="flex items-center gap-1.5"><MapPin className="size-3" /> Brasil</span>
-          </div>
+          </div> */}
 
           <div className="relative mt-14 overflow-hidden rounded-2xl border border-white/[0.07] bg-black/25">
             <div className="flex items-center justify-between border-b border-white/[0.07] px-4 py-2.5 font-mono text-[9px] text-white/35">
@@ -67,14 +67,14 @@ export default function SecaoInicio() {
             </div>
           </div>
 
-          <div className="relative mt-4 flex items-center justify-between text-[10px] uppercase tracking-[0.1em] text-white/35">
+          {/* <div className="relative mt-4 flex items-center justify-between text-[10px] uppercase tracking-[0.1em] text-white/35">
             <span className="flex items-center gap-2">
               <span className="size-1.5 rounded-full bg-[#43b9ff]/70" />
               Front-end ↔ Back-end
             </span>
             <span className="font-mono tracking-normal">01 / 05</span>
-          </div> */}
-        </aside>
+          </div>  */}
+        {/* </aside>*/}
       </div>
 
       {/* <div className="flex items-end justify-between border-t border-white/10 pt-5">
