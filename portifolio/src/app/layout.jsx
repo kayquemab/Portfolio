@@ -81,8 +81,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="site-shell min-h-screen">
-          <FundoPontilhadoInterativo />
+        <div className=" min-h-screen">
+          {/* site-shell */}
+          {/* <FundoPontilhadoInterativo /> */}
           <div className="relative z-10">{children}</div>
         </div>
       </body>
