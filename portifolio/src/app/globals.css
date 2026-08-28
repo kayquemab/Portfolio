@@ -78,6 +78,13 @@ html {
   background: rgba(255, 255, 255, 0.3);
 }
 
+@media (max-width: 639px) {
+  *::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
 /* Carrossel mobile da seção Meus Projetos */
 .projetos-mobile-swiper {
   width: 100%;
