@@ -77,6 +77,11 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  colorScheme: "dark",
+  themeColor: "#090b0a",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
