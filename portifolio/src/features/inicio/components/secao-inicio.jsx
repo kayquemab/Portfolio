@@ -41,7 +41,7 @@ export default function SecaoInicio() {
           </div>
         </div>
 
-        <aside className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.04] p-6 text-left shadow-2xl shadow-black/30 backdrop-blur-sm lg:rotate-2">
+        {/* <aside className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.04] p-6 text-left shadow-2xl shadow-black/30 backdrop-blur-sm lg:rotate-2">
           <div className="pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-[#43b9ff]/[0.07] blur-3xl" />
 
           <div className="relative flex items-center justify-between border-b border-white/[0.07] pb-4 text-[10px] uppercase tracking-[0.14em] text-white/35">
@@ -74,7 +74,7 @@ export default function SecaoInicio() {
             </span>
             <span className="font-mono tracking-normal">01 / 05</span>
           </div>
-        </aside>
+        </aside> */}
       </div>
 
       <div className="flex items-end justify-between border-t border-white/10 pt-5">

@@ -20,7 +20,7 @@ export default function HomePage() {
         <SecaoInicio />
       </Secao>
 
-      <Secao id="tecnologias">
+      {/* <Secao id="tecnologias">
         <SecaoTecnologias />
       </Secao>
 
@@ -36,7 +36,7 @@ export default function HomePage() {
         <SecaoContato />
       </Secao>
 
-      <NavegacaoInferior />
+      <NavegacaoInferior /> */}
     </div>
   );
 }
