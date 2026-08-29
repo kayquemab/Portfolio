@@ -16,8 +16,13 @@ export default function FundoPontilhadoInterativo() {
 
     if (!canvas || !contexto) return;
 
-    const aceitaHover = window.matchMedia("(hover: hover) and (pointer: fine)");
-    const reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const aceitaHover = window.matchMedia(
+      "(hover: hover) and (pointer: fine)",
+    );
+    const reduzirMovimento = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
+
     const cursor = {
       x: -RAIO_INTERACAO,
       y: -RAIO_INTERACAO,
@@ -33,26 +38,43 @@ export default function FundoPontilhadoInterativo() {
     function desenhar() {
       contexto.clearRect(0, 0, largura, altura);
 
-      for (let y = ESPACAMENTO, linha = 1; y < altura; y += ESPACAMENTO, linha++) {
-        for (let x = ESPACAMENTO, coluna = 1; x < largura; x += ESPACAMENTO, coluna++) {
+      for (
+        let y = ESPACAMENTO, linha = 1;
+        y < altura;
+        y += ESPACAMENTO, linha++
+      ) {
+        for (
+          let x = ESPACAMENTO, coluna = 1;
+          x < largura;
+          x += ESPACAMENTO, coluna++
+        ) {
           const pontoPrincipal = linha % 2 === 0 && coluna % 2 === 0;
+
           const distanciaX = x - cursor.x;
           const distanciaY = y - cursor.y;
           const distancia = Math.hypot(distanciaX, distanciaY);
+
           const influencia = cursor.ativo
             ? Math.max(0, 1 - distancia / RAIO_INTERACAO)
             : 0;
-          const deslocamento = influencia * influencia * DESLOCAMENTO_MAXIMO;
+
+          const deslocamento =
+            influencia * influencia * DESLOCAMENTO_MAXIMO;
+
           const direcaoX = distancia > 0 ? distanciaX / distancia : 0;
           const direcaoY = distancia > 0 ? distanciaY / distancia : 0;
+
           const raioBase = pontoPrincipal ? 1 : RAIO_PONTO;
           const opacidadeBase = pontoPrincipal ? 0.24 : 0.16;
+
           const raio = raioBase + influencia * 0.55;
           const opacidade = opacidadeBase + influencia * 0.46;
+
           const vermelho = Math.round(244 - influencia * 177);
           const verde = Math.round(244 - influencia * 59);
 
           contexto.beginPath();
+
           contexto.arc(
             x + direcaoX * deslocamento,
             y + direcaoY * deslocamento,
@@ -60,6 +82,7 @@ export default function FundoPontilhadoInterativo() {
             0,
             Math.PI * 2,
           );
+
           contexto.fillStyle = `rgba(${vermelho}, ${verde}, 255, ${opacidade})`;
           contexto.fill();
         }
@@ -69,6 +92,7 @@ export default function FundoPontilhadoInterativo() {
     function animar() {
       cursor.x += (cursor.destinoX - cursor.x) * 0.18;
       cursor.y += (cursor.destinoY - cursor.y) * 0.18;
+
       desenhar();
 
       const distanciaRestante = Math.hypot(
@@ -91,14 +115,16 @@ export default function FundoPontilhadoInterativo() {
 
     function redimensionar() {
       const proporcao = Math.min(window.devicePixelRatio || 1, 2);
+      const retangulo = canvas.getBoundingClientRect();
 
-      largura = window.innerWidth;
-      altura = window.innerHeight;
-      canvas.width = largura * proporcao;
-      canvas.height = altura * proporcao;
-      canvas.style.width = `${largura}px`;
-      canvas.style.height = `${altura}px`;
+      largura = Math.ceil(retangulo.width);
+      altura = Math.ceil(retangulo.height);
+
+      canvas.width = Math.ceil(largura * proporcao);
+      canvas.height = Math.ceil(altura * proporcao);
+
       contexto.setTransform(proporcao, 0, 0, proporcao, 0, 0);
+
       desenhar();
     }
 
@@ -113,6 +139,7 @@ export default function FundoPontilhadoInterativo() {
       cursor.destinoX = evento.clientX;
       cursor.destinoY = evento.clientY;
       cursor.ativo = true;
+
       iniciarAnimacao();
     }
 
@@ -120,18 +147,37 @@ export default function FundoPontilhadoInterativo() {
       cursor.ativo = false;
       cursor.destinoX = -RAIO_INTERACAO;
       cursor.destinoY = cursor.y;
+
       iniciarAnimacao();
     }
 
     redimensionar();
+
     window.addEventListener("resize", redimensionar);
-    window.addEventListener("pointermove", moverCursor, { passive: true });
-    document.documentElement.addEventListener("pointerleave", removerCursor);
+    window.visualViewport?.addEventListener("resize", redimensionar);
+
+    window.addEventListener("pointermove", moverCursor, {
+      passive: true,
+    });
+
+    document.documentElement.addEventListener(
+      "pointerleave",
+      removerCursor,
+    );
 
     return () => {
       window.removeEventListener("resize", redimensionar);
+      window.visualViewport?.removeEventListener(
+        "resize",
+        redimensionar,
+      );
+
       window.removeEventListener("pointermove", moverCursor);
-      document.documentElement.removeEventListener("pointerleave", removerCursor);
+
+      document.documentElement.removeEventListener(
+        "pointerleave",
+        removerCursor,
+      );
 
       if (animacaoId !== null) {
         window.cancelAnimationFrame(animacaoId);
@@ -143,7 +189,7 @@ export default function FundoPontilhadoInterativo() {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-0"
+      className="pointer-events-none fixed inset-0 z-0 h-full w-full"
     />
   );
 }
